@@ -6,19 +6,20 @@
 //  Copyright (c) 2015年 My-Zone. All rights reserved.
 //
 
-#import "MMPhoneCheckVC.h"
+#import "MMLoginVC.h"
 
-@interface MMPhoneCheckVC ()
+
+@interface MMLoginVC ()
+
 
 @end
 
-@implementation MMPhoneCheckVC
+@implementation MMLoginVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [[self navigationController] setNavigationBarHidden:YES];
+
 }
 
 - (void)didReceiveMemoryWarning {

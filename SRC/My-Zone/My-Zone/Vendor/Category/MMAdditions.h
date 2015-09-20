@@ -12,5 +12,6 @@
 #import "UIColor+Addition.h"
 #import "UIFont+Addition.h"
 #import "NSUserDefaults+Addition.h"
+#import "CALayer+Addition.h"
 
 #endif

@@ -9,15 +9,20 @@
 #import <Foundation/Foundation.h>
 #import "MMIntroViewModel.h"
 
-@interface MMPhoneCheckVM : NSObject
+typedef NS_ENUM(NSInteger, MMEnterType) {
+    MMEnterTypeLogin,
+    MMEnterTypeRegister
+};
+
+@interface MMLoginVM : NSObject
 
 @property (nonatomic, strong) NSString *userName;
 @property (nonatomic, strong) NSString *password;
 @property (nonatomic, strong) NSString *checkString;
 @property (nonatomic, assign) BOOL checkSelected;
 @property (nonatomic, assign) BOOL introViewNeedShow;
+@property (nonatomic, assign) MMEnterType enterType;
 @property (nonatomic, strong) MMIntroViewModel *introViewModel;
 
-- (instancetype)initWithModel:(id)sender;
 
 @end

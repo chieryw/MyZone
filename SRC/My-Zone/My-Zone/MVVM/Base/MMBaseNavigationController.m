@@ -1,26 +1,24 @@
 //
-//  MMBaseViewController.m
+//  MMBaseNavigationController.m
 //  My-Zone
 //
-//  Created by chiery on 15/9/13.
-//  Copyright (c) 2015年 My-Zone. All rights reserved.
+//  Created by chiery on 15/9/20.
+//  Copyright © 2015年 My-Zone. All rights reserved.
 //
 
-#import "MMBaseViewController.h"
+#import "MMBaseNavigationController.h"
 
-@interface MMBaseViewController ()
+@interface MMBaseNavigationController ()
 
 @end
 
-@implementation MMBaseViewController
+@implementation MMBaseNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    // 设置所有的view布局和bar不冲突
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    
+    [self.navigationBar setBarStyle:UIBarStyleBlack];
+    [self.navigationBar setTranslucent:NO];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,8 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "MMAppSetting.h"
+#import "MMIntroView.h"
+#import "MMBaseNavigationController.h"
+#import "MMIntroViewModel.h"
 
 @interface AppDelegate ()
+
+@property (nonatomic, strong) MMIntroView *introView;
 
 @end
 
@@ -19,25 +25,20 @@
     // Override point for customization after application launch.
     
     // 相关配置
-    [self selfSetting];
+    [[MMAppSetting getInstance] configureIntroView];
+    
+    // 初始化window
+    [self initWindow];
+    
+    // 初始化RootView
+    [self initRootViewController];
+    
+    // 初始化IntroView
+    [self addIntroView];
     
     return YES;
 }
 
-- (void)selfSetting {
-
-    NSNumber *isFirstDownload = [NSUserDefaults valueForKey:MMApplicationFirstDownload];
-    NSNumber *isFirstEnter = [NSUserDefaults valueForKey:MMApplicationFirstEnter];
-    
-    if (!isFirstDownload) {
-        [NSUserDefaults setValue:[NSNumber numberWithBool:YES] forKey:MMApplicationFirstDownload];
-    }
-    
-    if (!isFirstEnter) {
-        [NSUserDefaults setValue:[NSNumber numberWithBool:YES] forKey:MMApplicationFirstEnter];
-    }
-    
-}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -59,6 +60,55 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    
+}
+
+#pragma mark - 辅助函数
+- (void)initWindow {
+
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
+}
+
+- (void)addIntroView {
+
+    NSNumber *isfirstEnter = [[NSUserDefaults standardUserDefaults] valueForKey:MMApplicationFirstEnter];
+    if (isfirstEnter && isfirstEnter.boolValue) {
+       
+        [self.window addSubview:self.introView];
+    }
+    
+}
+
+- (MMIntroView *)introView {
+
+    if (!_introView) {
+        
+        _introView = [[MMIntroView alloc] init];
+        
+        MMIntroViewModel *model = [[MMIntroViewModel alloc] init];
+        _introView.model = model;
+        
+        [[_introView.enterButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+            // 将首次进入的标志删除
+            [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:NO] forKey:MMApplicationFirstEnter];
+        }];
+    }
+    
+    return _introView;
+    
+}
+
+- (void)initRootViewController {
+
+    if (YES) {
+        UIStoryboard *loginStoryBoard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+        
+        MMBaseNavigationController *loginNavigation = [loginStoryBoard instantiateViewControllerWithIdentifier:@"LoginNavigationC"];
+        [self.window setRootViewController:loginNavigation];
+    }
     
 }
 

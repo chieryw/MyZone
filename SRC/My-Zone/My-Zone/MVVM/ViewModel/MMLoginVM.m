@@ -6,11 +6,11 @@
 //  Copyright (c) 2015年 My-Zone. All rights reserved.
 //
 
-#import "MMPhoneCheckVM.h"
+#import "MMLoginVM.h"
 
-@implementation MMPhoneCheckVM
+@implementation MMLoginVM
 
-- (instancetype)initWithModel:(id)sender {
+- (instancetype)init {
 
     self = [super init];
     if (self) {
@@ -19,6 +19,9 @@
     
     return self;
 }
+
+
+
 
 - (void)initSelf {
 

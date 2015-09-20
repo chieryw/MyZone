@@ -8,6 +8,7 @@
 
 #import "MMBaseViewController.h"
 
-@interface MMPhoneCheckVC : MMBaseViewController
+
+@interface MMLoginVC : MMBaseViewController
 
 @end
