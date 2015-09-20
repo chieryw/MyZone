@@ -20,17 +20,15 @@
     return self;
 }
 
-
-
-
 - (void)initSelf {
 
-    _userName = @"";
-    _password = @"";
-    _checkSelected = NO;
-    _checkString = @"";
-    _introViewNeedShow = NO;
-    _introViewModel = [[MMIntroViewModel alloc] init];
+    self.userName = @"";
+    self.password = @"";
+    self.checkSelected = NO;
+    self.checkString = @"";
+
+    NSNumber *enterType = [[NSUserDefaults standardUserDefaults] valueForKey:MMApplicationFirstEnter];
+    self.enterType = enterType.boolValue;
     
 }
 

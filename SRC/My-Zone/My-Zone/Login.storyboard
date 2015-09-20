@@ -25,7 +25,7 @@
                                     <constraint firstAttribute="height" constant="30" id="9pm-RL-5Ff"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入你的密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xx0-56-lK2">
                                 <rect key="frame" x="30" y="148" width="540" height="30"/>
@@ -34,7 +34,7 @@
                                     <constraint firstAttribute="height" constant="30" id="wM1-E8-cbW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBq-i2-SwC">
                                 <rect key="frame" x="30" y="192" width="20" height="20"/>
@@ -54,6 +54,9 @@
                                         <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="checkAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Pr1-5Q-T0Z"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="验证码登录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCI-tr-XuA">
                                 <rect key="frame" x="60" y="192" width="90" height="21"/>
@@ -91,6 +94,9 @@
                                         <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goNext:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZNo-Xz-UBi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -113,11 +119,21 @@
                             <constraint firstItem="adB-xx-BND" firstAttribute="top" secondItem="fVb-OV-mLr" secondAttribute="bottom" constant="90" id="rdG-DI-KYX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="登录" id="z5x-CP-pZD"/>
+                    <navigationItem key="navigationItem" title="登录" id="z5x-CP-pZD">
+                        <barButtonItem key="rightBarButtonItem" title="我没账号" id="agX-Lm-aSx"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="checkButton" destination="xBq-i2-SwC" id="GyH-gB-bu9"/>
+                        <outlet property="checkLabel" destination="vCI-tr-XuA" id="rUE-Nh-Qew"/>
+                        <outlet property="checkTF" destination="fVb-OV-mLr" id="4PP-lA-Ilm"/>
+                        <outlet property="confirmButton" destination="adB-xx-BND" id="24L-qU-rtl"/>
+                        <outlet property="passwordTF" destination="xx0-56-lK2" id="VX5-Ut-YKT"/>
+                        <outlet property="userNameTF" destination="Q9F-7q-68f" id="Mgp-Hh-Bgm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1121" y="1023"/>
+            <point key="canvasLocation" x="1135" y="998"/>
         </scene>
         <!--Base Navigation Controller-->
         <scene sceneID="aVI-m1-9RF">

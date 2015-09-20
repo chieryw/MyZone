@@ -24,6 +24,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    // 配置对应的UI显示
+    [self configureApplication:application];
+    
     // 相关配置
     [[MMAppSetting getInstance] configureIntroView];
     
@@ -64,6 +67,17 @@
 }
 
 #pragma mark - 辅助函数
+// 做一些UI上的预设置
+- (void)configureApplication:(UIApplication *)application {
+
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{
+                                                           NSFontAttributeName:[UIFont MMTextFont12],
+                                                           NSForegroundColorAttributeName:[UIColor whiteColor]
+                                                           }
+                                                forState:UIControlStateNormal];
+    
+}
+
 - (void)initWindow {
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MMIntroViewModel.h"
 
 typedef NS_ENUM(NSInteger, MMEnterType) {
     MMEnterTypeLogin,
@@ -20,9 +19,7 @@ typedef NS_ENUM(NSInteger, MMEnterType) {
 @property (nonatomic, strong) NSString *password;
 @property (nonatomic, strong) NSString *checkString;
 @property (nonatomic, assign) BOOL checkSelected;
-@property (nonatomic, assign) BOOL introViewNeedShow;
 @property (nonatomic, assign) MMEnterType enterType;
-@property (nonatomic, strong) MMIntroViewModel *introViewModel;
 
 
 @end

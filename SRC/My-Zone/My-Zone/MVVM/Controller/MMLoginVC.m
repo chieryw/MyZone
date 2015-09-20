@@ -7,10 +7,17 @@
 //
 
 #import "MMLoginVC.h"
-
+#import "MMLoginVM.h"
 
 @interface MMLoginVC ()
 
+@property (nonatomic, strong) MMLoginVM *model;
+@property (weak, nonatomic) IBOutlet UITextField *userNameTF;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTF;
+@property (weak, nonatomic) IBOutlet UIButton *checkButton;
+@property (weak, nonatomic) IBOutlet UILabel *checkLabel;
+@property (weak, nonatomic) IBOutlet UITextField *checkTF;
+@property (weak, nonatomic) IBOutlet UIButton *confirmButton;
 
 @end
 
@@ -19,7 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
 
+    [self configUI];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,14 +36,41 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - 事件处理函数
+- (IBAction)goNext:(id)sender {
 }
-*/
+
+- (IBAction)checkAction:(id)sender {
+}
+
+#pragma mark - 微调UI元素
+- (void)configUI {
+
+    _confirmButton.backgroundColor = [UIColor MMBlueColor];
+    
+}
+
+#pragma mark - 初始化配置
+- (MMLoginVM *)model {
+
+    if (!_model) {
+        _model = [[MMLoginVM alloc] init];
+    }
+    
+    return _model;
+    
+}
+
+- (UIButton *)confirmButton {
+
+    return _confirmButton;
+    
+}
+
+- (UITextField *)userNameTF {
+    
+    return _userNameTF;
+    
+}
 
 @end
