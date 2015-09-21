@@ -45,7 +45,7 @@
     
     }
     
-    [self addSubview:self.scrollView];
+    [self addSubview:_scrollView];
 }
 
 - (instancetype)init

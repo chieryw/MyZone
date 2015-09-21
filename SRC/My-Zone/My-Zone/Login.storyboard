@@ -58,7 +58,7 @@
                                     <action selector="checkAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Pr1-5Q-T0Z"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="验证码登录" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCI-tr-XuA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我有邀请码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCI-tr-XuA">
                                 <rect key="frame" x="60" y="192" width="90" height="21"/>
                                 <animations/>
                                 <constraints>
@@ -120,13 +120,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="登录" id="z5x-CP-pZD">
-                        <barButtonItem key="rightBarButtonItem" title="我没账号" id="agX-Lm-aSx"/>
+                        <barButtonItem key="rightBarButtonItem" title="我没账号" id="agX-Lm-aSx">
+                            <connections>
+                                <action selector="changeEnterType:" destination="vXZ-lx-hvc" id="4zw-kC-V0w"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="checkButton" destination="xBq-i2-SwC" id="GyH-gB-bu9"/>
                         <outlet property="checkLabel" destination="vCI-tr-XuA" id="rUE-Nh-Qew"/>
                         <outlet property="checkTF" destination="fVb-OV-mLr" id="4PP-lA-Ilm"/>
                         <outlet property="confirmButton" destination="adB-xx-BND" id="24L-qU-rtl"/>
+                        <outlet property="enterBarButtonItem" destination="agX-Lm-aSx" id="7Rg-Dh-UIr"/>
                         <outlet property="passwordTF" destination="xx0-56-lK2" id="VX5-Ut-YKT"/>
                         <outlet property="userNameTF" destination="Q9F-7q-68f" id="Mgp-Hh-Bgm"/>
                     </connections>

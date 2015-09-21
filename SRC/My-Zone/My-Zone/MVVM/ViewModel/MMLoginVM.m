@@ -28,7 +28,7 @@
     self.checkString = @"";
 
     NSNumber *enterType = [[NSUserDefaults standardUserDefaults] valueForKey:MMApplicationFirstEnter];
-    self.enterType = enterType.boolValue;
+    self.enterType = enterType.boolValue?MMEnterTypeRegister:MMEnterTypeLogin;
     
 }
 
