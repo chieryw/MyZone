@@ -11,8 +11,14 @@
 #import "MMTableViewCellProtocol.h"
 #import "MMAddImageTableViewCell.h"
 #import "MMPersonMessageTVC.h"
+#import <MobileCoreServices/UTCoreTypes.h>
 
-@interface MMPersonVC ()<UITableViewDataSource,UITableViewDelegate>
+typedef NS_ENUM(NSInteger, MMActionSheetType) {
+    MMActionSheetTypeSexy,
+    MMActionSheetTypePhoto,
+};
+
+@interface MMPersonVC ()<UITableViewDataSource,UITableViewDelegate,MMAddImageCellDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) MMPersonTableViewModel *tableViewModel;
 @property (nonatomic, strong) NSArray *tableDataSource;
@@ -37,10 +43,45 @@
     [self configTableView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - 事件处理函数
+- (void)editUserName {
+    
 }
+
+- (void)chooseSexy {
+    [UIActionSheet showActionSheet:nil
+                          delegate:self
+                 cancelButtonTitle:@"取消"
+            destructiveButtonTitle:nil
+                               tag:MMActionSheetTypeSexy
+                        showInView:self.view
+                 otherButtonTitles:@[@"男",@"女"]];
+}
+
+- (void)chooseBirthday {
+    
+}
+
+- (void)editSign {
+
+}
+
+- (void)takePhoto {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = YES;
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void)choosePhoto {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = YES;
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
 
 #pragma mark - 辅助函数
 - (void)configTableView {
@@ -57,6 +98,10 @@
          forCellReuseIdentifier:@"MMAddImageTableViewCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"MMPersonMessageTVC" bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:@"MMPersonMessageTVC"];
+}
+
+- (void)savaImage:(UIImage *)image {
+    
 }
 
 #pragma mark - init
@@ -118,8 +163,99 @@
     
     UITableViewCell<MMTableViewCellProtocol> *cell = [tableView dequeueReusableCellWithIdentifier:identifierCell];
     [cell configCellWithData:self.tableDataSource[indexPath.row]];
+    
+    // 添加代理
+    if ([cell isKindOfClass:[MMAddImageTableViewCell class]]) {
+        [(MMAddImageTableViewCell *)cell setDelegate:self];
+    }
+    
     return cell;
     
+}
+
+#pragma mark - UITableViewDataSource
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row == 0) {
+        // 不做处理
+    }
+    else if (indexPath.row == 1) {
+        [self editUserName];
+    }
+    else if (indexPath.row == 2) {
+        [self chooseSexy];
+    }
+    else if (indexPath.row == 3) {
+        [self chooseBirthday];
+    }
+    else if (indexPath.row == 4) {
+        [self editSign];
+    }
+    else if (indexPath.row == 5) {
+        // 不做处理
+    }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - MMAddImageCellDelegate
+- (void)addImage:(UIImageView *)imageView {
+    [UIActionSheet showActionSheet:nil
+                          delegate:self
+                 cancelButtonTitle:@"取消"
+            destructiveButtonTitle:nil
+                               tag:MMActionSheetTypePhoto
+                        showInView:self.view
+                 otherButtonTitles:@[@"拍照",@"从相册中选取"]];
+}
+
+#pragma mark - UIActionSheetDelegate 
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    switch (actionSheet.tag) {
+        case MMActionSheetTypeSexy:
+        {
+            if (buttonIndex == 1) {
+                self.tableViewModel.userSexyCellModel.subTitle = @"男";
+            }
+            else if (buttonIndex == 2) {
+                self.tableViewModel.userSexyCellModel.subTitle = @"女";
+            }
+            
+        }
+            break;
+        case MMActionSheetTypePhoto:
+        {
+            if (buttonIndex == 1) {
+                [self takePhoto];
+            }
+            else if (buttonIndex == 2) {
+                [self choosePhoto];
+            }
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    [self.tableView reloadData];
+}
+
+#pragma mark - UIImagePickerController Delegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    if ([[info objectForKey:UIImagePickerControllerMediaType] isEqualToString:(__bridge NSString *)kUTTypeImage]) {
+        UIImage *img = [info objectForKey:UIImagePickerControllerEditedImage];
+        [self performSelector:@selector(savaImage:)  withObject:img afterDelay:0.5];
+    }
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    //    [picker dismissModalViewControllerAnimated:YES];
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Navigation

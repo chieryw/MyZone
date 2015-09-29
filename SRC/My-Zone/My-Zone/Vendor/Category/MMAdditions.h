@@ -14,5 +14,7 @@
 #import "NSUserDefaults+Addition.h"
 #import "CALayer+Addition.h"
 #import "UIAlertView+Addition.h"
+#import "NSMutableAttributedString+Addition.h"
+#import "UIActionSheet+Addition.h"
 
 #endif

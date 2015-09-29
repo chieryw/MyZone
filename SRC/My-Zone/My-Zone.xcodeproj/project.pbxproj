@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		290ACA071BB020100017D2D4 /* UIAlertView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 290ACA061BB020100017D2D4 /* UIAlertView+Addition.m */; settings = {ASSET_TAGS = (); }; };
+		29152CD01BBAB5A900A626BB /* UIActionSheet+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 29152CCF1BBAB5A900A626BB /* UIActionSheet+Addition.m */; settings = {ASSET_TAGS = (); }; };
+		29152CD21BBABFB700A626BB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29152CD11BBABFB700A626BB /* MobileCoreServices.framework */; };
 		291FC0011BB8EA6F00F55BAA /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 291FC0001BB8EA6F00F55BAA /* MBProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
 		291FC0071BB8F33300F55BAA /* MMEnterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 291FC0061BB8F33300F55BAA /* MMEnterVC.m */; settings = {ASSET_TAGS = (); }; };
 		298D01851BA3B87B00F5EDE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 298D01841BA3B87B00F5EDE7 /* main.m */; };
@@ -159,6 +161,9 @@
 /* Begin PBXFileReference section */
 		290ACA051BB020100017D2D4 /* UIAlertView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Addition.h"; sourceTree = "<group>"; };
 		290ACA061BB020100017D2D4 /* UIAlertView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Addition.m"; sourceTree = "<group>"; };
+		29152CCE1BBAB5A900A626BB /* UIActionSheet+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Addition.h"; sourceTree = "<group>"; };
+		29152CCF1BBAB5A900A626BB /* UIActionSheet+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Addition.m"; sourceTree = "<group>"; };
+		29152CD11BBABFB700A626BB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		291FBFFF1BB8EA6F00F55BAA /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		291FC0001BB8EA6F00F55BAA /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		291FC0051BB8F33300F55BAA /* MMEnterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMEnterVC.h; sourceTree = "<group>"; };
@@ -450,6 +455,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29152CD21BBABFB700A626BB /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,6 +469,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		29152CD31BBABFC200A626BB /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				29152CD11BBABFB700A626BB /* MobileCoreServices.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
 		291FBFFE1BB8EA6F00F55BAA /* MBProcessHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,6 +489,7 @@
 		298D01761BA3B87B00F5EDE7 = {
 			isa = PBXGroup;
 			children = (
+				29152CD31BBABFC200A626BB /* Framework */,
 				298D01811BA3B87B00F5EDE7 /* My-Zone */,
 				298D019B1BA3B87B00F5EDE7 /* My-ZoneTests */,
 				298D01801BA3B87B00F5EDE7 /* Products */,
@@ -949,6 +964,8 @@
 				290ACA061BB020100017D2D4 /* UIAlertView+Addition.m */,
 				29A5C5EE1BB917CC00DA7286 /* NSMutableAttributedString+Addition.h */,
 				29A5C5EF1BB917CC00DA7286 /* NSMutableAttributedString+Addition.m */,
+				29152CCE1BBAB5A900A626BB /* UIActionSheet+Addition.h */,
+				29152CCF1BBAB5A900A626BB /* UIActionSheet+Addition.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1192,6 +1209,7 @@
 				298D02D71BA3CB2800F5EDE7 /* RACSequence.m in Sources */,
 				298D02AA1BA3CB2800F5EDE7 /* NSObject+RACDeallocating.m in Sources */,
 				298D02BF1BA3CB2800F5EDE7 /* RACDelegateProxy.m in Sources */,
+				29152CD01BBAB5A900A626BB /* UIActionSheet+Addition.m in Sources */,
 				298D03211BA51C0900F5EDE7 /* MMIntroView.m in Sources */,
 				298D02DA1BA3CB2800F5EDE7 /* RACSignal.m in Sources */,
 				298D02C31BA3CB2800F5EDE7 /* RACDynamicSignal.m in Sources */,

@@ -9,7 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "MMTableViewCellProtocol.h"
 
+@protocol MMAddImageCellDelegate <NSObject>
+
+- (void)addImage:(UIImageView *)imageView;
+
+@end
+
 @interface MMAddImageTableViewCell : UITableViewCell<MMTableViewCellProtocol>
 
+@property (nonatomic, weak) id<MMAddImageCellDelegate> delegate;
 
 @end

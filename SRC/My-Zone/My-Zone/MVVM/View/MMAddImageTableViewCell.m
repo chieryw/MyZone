@@ -46,7 +46,9 @@
 
     UIImageView *imageView = (UIImageView *)geture.view;
     
-    NSLog(@"%ld",(long)imageView.tag);
+    if ([self.delegate respondsToSelector:@selector(addImage:)]) {
+        [self.delegate addImage:imageView];
+    }
     
 }
 
