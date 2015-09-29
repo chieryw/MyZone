@@ -11,6 +11,7 @@
 @interface MMIntroView ()<UIScrollViewDelegate>
 
 @property (nonatomic,strong) UIScrollView *scrollView;
+@property (nonatomic,strong) UIPageControl *pageControl;
 
 @end
 
@@ -29,9 +30,23 @@
         self.backgroundColor = [UIColor whiteColor];
         // 初始化首页介绍视图
         [self initScrollView:frame];
+        // 加上对应的Control
+        [self addSubview:self.pageControl];
     }
     return self;
 }
+
+- (instancetype)init
+{
+    return [[MMIntroView alloc] initWithFrame:kFullScreenRect];
+}
+
+- (void)setModel:(MMIntroViewModel *)model {
+    _model = model;
+    self.pageControl.numberOfPages = model.images.count;
+}
+
+#pragma mark - 初始化视图
 
 - (void)initScrollView:(CGRect)frame {
 
@@ -48,10 +63,22 @@
     [self addSubview:_scrollView];
 }
 
-- (instancetype)init
-{
-    return [[MMIntroView alloc] initWithFrame:kFullScreenRect];
+- (UIPageControl *)pageControl {
+    if (!_pageControl) {
+        _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(100,
+                                                                       kScreenHeight - 100,
+                                                                       kScreenWidth - 200,
+                                                                       30)];
+        _pageControl.backgroundColor = [UIColor clearColor];
+        _pageControl.currentPage = 0;
+        _pageControl.numberOfPages = 0;
+        _pageControl.pageIndicatorTintColor = [UIColor whiteColor];
+        _pageControl.currentPageIndicatorTintColor = [UIColor MMBlueColor];
+    }
+    return _pageControl;
 }
+
+
 
 - (void)layoutSubviews {
 
@@ -112,6 +139,15 @@
 
                          }
                      }];
+    
+}
+
+
+#pragma mark - UIScrollView Delegate
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    
+    CGPoint contentOffSet = scrollView.contentOffset;
+    self.pageControl.currentPage = contentOffSet.x/kScreenWidth;
     
 }
 

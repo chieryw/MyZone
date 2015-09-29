@@ -18,6 +18,7 @@
 #import "ReactiveCocoa.h"
 #import "ReactiveViewModel.h"
 #import "MMAdditions.h"
+#import "MBProgressHUD.h"
 
 
 #endif

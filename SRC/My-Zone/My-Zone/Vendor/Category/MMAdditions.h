@@ -13,5 +13,6 @@
 #import "UIFont+Addition.h"
 #import "NSUserDefaults+Addition.h"
 #import "CALayer+Addition.h"
+#import "UIAlertView+Addition.h"
 
 #endif

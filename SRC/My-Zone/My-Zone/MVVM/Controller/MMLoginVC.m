@@ -8,8 +8,9 @@
 
 #import "MMLoginVC.h"
 #import "MMLoginVM.h"
+#import "MMEnterVC.h"
 
-@interface MMLoginVC ()
+@interface MMLoginVC ()<UITextFieldDelegate>
 
 @property (nonatomic, strong) MMLoginVM *model;
 @property (weak, nonatomic) IBOutlet UITextField *userNameTF;
@@ -24,25 +25,48 @@
 
 @implementation MMLoginVC
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
-    // 为UI配置统一的元素
-    [self configUI];
-    
-    // 绑定界面
-    [self bindModel];
+- (void)dealloc {
+
+    self.userNameTF.delegate = nil;
+    self.passwordTF.delegate = nil;
+    self.checkTF.delegate = nil;
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    [self configSelf];
+
+}
+
+- (void)configSelf {
+    // 为UI配置统一的元素
+    [self configUI];
+    
+    // 添加对应元素的代理
+    [self addDelegate];
+    
+    // 观测信号源
+    [self setupARCSignal];
 }
 
 #pragma mark - 事件处理函数
 - (IBAction)goNext:(id)sender {
+//    
+//    if ([self checkUserNameAndPassword]) {
+//        
+//        if (self.model.enterType == MMEnterTypeLogin) {
+//            
+//            
+//        }
+//        else {
+            UIStoryboard *PersonMessage = [UIStoryboard storyboardWithName:@"PersonMessage" bundle:nil];
+            MMEnterVC *enterVC = [PersonMessage instantiateViewControllerWithIdentifier:@"MMEnterVC"];
+            [self.navigationController pushViewController:enterVC animated:YES];
+//        }
+    
+//    }
     
 }
 
@@ -62,6 +86,9 @@
     else {
         self.model.enterType = MMEnterTypeLogin;
     }
+    
+    // 切换Type时 重置数据
+    [self reloadData];
 }
 
 #pragma mark - 微调UI元素
@@ -76,6 +103,14 @@
     
 }
 
+- (void)addDelegate {
+
+    self.userNameTF.delegate = self;
+    self.passwordTF.delegate = self;
+    self.checkTF.delegate = self;
+    
+}
+
 #pragma mark - 初始化配置
 - (MMLoginVM *)model {
 
@@ -84,17 +119,27 @@
     }
     
     return _model;
+}
+
+- (void)reloadData {
+
+    self.userNameTF.text = @"";
+    self.passwordTF.text = @"";
+    self.checkTF.text = @"";
+    self.model.userName = @"";
+    self.model.password = @"";
+    self.model.checkString = @"";
+    self.checkButton.selected = NO;
     
 }
 
 #pragma mark - 绑定数据
-- (void)bindModel {
+- (void)setupARCSignal {
 
     RAC(self.model, userName) = self.userNameTF.rac_textSignal;
-    
     RAC(self.model, password) = self.passwordTF.rac_textSignal;
-    
     RAC(self.model, checkString) = self.checkTF.rac_textSignal;
+    
     
     RAC(self.model, checkSelected) = RACObserve(self.checkButton, selected);
     
@@ -119,6 +164,40 @@
         }
     }];
     
+}
+
+#pragma mark - 辅助函数
+- (BOOL)checkUserNameAndPassword {
+
+    if (self.model.userName.length != 11) {
+        [UIAlertView tipTitle:@"手机号码不足11位" buttonName:@"确定"];
+        return NO;
+    }
+    
+    if (self.model.password.length != 4) {
+        [UIAlertView tipTitle:@"用户密码不足4位" buttonName:@"确定"];
+        return NO;
+    }
+    
+    return YES;
+    
+}
+
+#pragma mark - UITextField Delegate
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if ([textField isEqual:self.userNameTF]) {
+        if (textField.text.length + string.length >11) {
+            return NO;
+        }
+    }
+    
+    if ([textField isEqual:self.passwordTF]) {
+        if (textField.text.length + string.length > 4) {
+            return NO;
+        }
+    }
+    
+    return YES;
 }
 
 @end
