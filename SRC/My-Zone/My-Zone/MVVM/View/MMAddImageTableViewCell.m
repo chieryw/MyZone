@@ -7,9 +7,10 @@
 //
 
 #import "MMAddImageTableViewCell.h"
+#import "MMPersonTableViewModel.h"
 
 @interface MMAddImageTableViewCell ()
-@property (weak, nonatomic) IBOutletCollection(UIImageView) NSArray *imageViews;
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *imageViews;
 
 @end
 
@@ -27,10 +28,17 @@
 }
 
 - (void)configCellWithData:(id)data {
-    
+    if ([data isKindOfClass:[MMAddImageCellModel class]]) {
+        MMAddImageCellModel *model = (MMAddImageCellModel *)data;
+        
+        for (NSInteger i = 0; i < model.images.count; i ++) {
+            UIImageView *imageView = self.imageViews[i];
+            imageView.image = [UIImage imageNamed:model.images[i]];
+        }
+    }
 }
 
-- (CGFloat)cellHeightWithData:(id)cellData {
++ (CGFloat)cellHeightWithData:(id)cellData {
     return kScreenWidth;
 }
 
@@ -39,6 +47,15 @@
     UIImageView *imageView = (UIImageView *)geture.view;
     
     NSLog(@"%ld",(long)imageView.tag);
+    
+}
+
++ (instancetype)create {
+
+    MMAddImageTableViewCell *addImageCell = [[[NSBundle mainBundle] loadNibNamed:@"MMAddImageTableViewCell"
+                                                                           owner:self
+                                                                         options:nil] firstObject];
+    return addImageCell;
     
 }
 

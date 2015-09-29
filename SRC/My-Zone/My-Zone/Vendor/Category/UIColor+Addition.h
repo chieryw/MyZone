@@ -86,4 +86,11 @@
  */
 + (UIColor *)MMBlueColor;
 
+/**
+ *  浅灰色背景色
+ *
+ *  @return 浅灰色背景色
+ */
++ (UIColor *)MMGrayBackgroundColor;
+
 @end

@@ -198,4 +198,8 @@ static const char *colorNameDB = ","
     return RGB(20, 140, 226);
 }
 
++ (UIColor *)MMGrayBackgroundColor {
+    return RGB(225, 225, 225);
+}
+
 @end

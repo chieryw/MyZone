@@ -75,7 +75,6 @@
                                                            NSForegroundColorAttributeName:[UIColor whiteColor]
                                                            }
                                                 forState:UIControlStateNormal];
-    
 }
 
 - (void)initWindow {

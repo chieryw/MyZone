@@ -8,13 +8,7 @@
 
 #import "MMPersonTableViewModel.h"
 
-@interface MMPersonTableViewModel ()
-
-@property (nonatomic, strong) NSMutableArray *cellConfigArray;
-
-@end
-
-@implementation MMPersonTableViewModel
+@implementation MMAddImageCellModel
 
 - (instancetype)init
 {
@@ -26,33 +20,86 @@
 }
 
 - (void)initSelf {
-    
     self.images = [@[
-                     @"",
-                     @"",
-                     @"",
-                     @"",
-                     @"",
-                     @"",] mutableCopy];
-    self.userBirthday = @"未填写";
-    self.userName = @"未填写";
-    self.userSexy = @"为选择";
-    self.userGrade = @"普通";
-    self.userSign = @"未填写";
-    
+                     @"EmptPhoto",
+                     @"AddPhoto",
+                     @"AddPhoto",
+                     @"AddPhoto",
+                     @"AddPhoto",
+                     @"AddPhoto"
+                     ] mutableCopy];
 }
 
-- (NSArray *)cellConfigDict {
-    
-    return @[
-             @{
-                 @"icon":@"",
-                 @"title":@"",
-                 @"subTitle":@""
-                 }
-             
-             ];
-    
+@end
+
+@implementation MMPersonMessageCellModel
+
+
+@end
+
+@interface MMPersonTableViewModel ()
+
+@property (nonatomic, strong) NSMutableArray *cellConfigArray;
+
+@end
+
+@implementation MMPersonTableViewModel
+
+- (MMAddImageCellModel *)addImageCellModel {
+    if (!_addImageCellModel) {
+        _addImageCellModel = [[MMAddImageCellModel alloc] init];
+    }
+    return _addImageCellModel;
+}
+
+- (MMPersonMessageCellModel *)userNameCellModel {
+    if (!_userNameCellModel) {
+        _userNameCellModel = [[MMPersonMessageCellModel alloc] init];
+        _userNameCellModel.icon = @"Name";
+        _userNameCellModel.title = @"姓名";
+        _userNameCellModel.subTitle = @"请输入您的姓名";
+    }
+    return _userNameCellModel;
+}
+
+- (MMPersonMessageCellModel *)userSexyCellModel {
+    if (!_userSexyCellModel) {
+        _userSexyCellModel = [[MMPersonMessageCellModel alloc] init];
+        _userSexyCellModel.icon = @"Sexy";
+        _userSexyCellModel.title = @"性别";
+        _userSexyCellModel.subTitle = @"请选择您的性别";
+    }
+    return _userSexyCellModel;
+}
+
+- (MMPersonMessageCellModel *)userBirthdayCellModel {
+    if (!_userBirthdayCellModel) {
+        _userBirthdayCellModel = [[MMPersonMessageCellModel alloc] init];
+        _userBirthdayCellModel.icon = @"Birthday";
+        _userBirthdayCellModel.title = @"出生日期";
+        _userBirthdayCellModel.subTitle = @"请选择您的出生日期";
+    }
+    return _userBirthdayCellModel;
+}
+
+- (MMPersonMessageCellModel *)userSignCellModel {
+    if (!_userSignCellModel) {
+        _userSignCellModel = [[MMPersonMessageCellModel alloc] init];
+        _userSignCellModel.icon = @"Sign";
+        _userSignCellModel.title = @"签名";
+        _userSignCellModel.subTitle = @"请输入您的签名";
+    }
+    return _userSignCellModel;
+}
+
+- (MMPersonMessageCellModel *)userGradeCellModel {
+    if (!_userGradeCellModel) {
+        _userGradeCellModel = [[MMPersonMessageCellModel alloc] init];
+        _userGradeCellModel.icon = @"Rank";
+        _userGradeCellModel.title = @"身份";
+        _userGradeCellModel.subTitle = @"普通";
+    }
+    return _userGradeCellModel;
 }
 
 @end

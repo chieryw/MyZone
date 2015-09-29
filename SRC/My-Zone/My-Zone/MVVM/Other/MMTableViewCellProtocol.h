@@ -13,6 +13,8 @@
 - (void) configCellWithData:(id) data;
 
 @optional
-- (CGFloat) cellHeightWithData:(id) cellData;
++ (CGFloat) cellHeightWithData:(id) cellData;
+
++ (id)create;
 
 @end

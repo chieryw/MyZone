@@ -8,13 +8,27 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MMPersonTableViewModel : NSObject
+@interface MMAddImageCellModel : NSObject
 
 @property (nonatomic, strong) NSMutableArray *images;
-@property (nonatomic, strong) NSString *userName;
-@property (nonatomic, strong) NSString *userBirthday;
-@property (nonatomic, strong) NSString *userSexy;
-@property (nonatomic, strong) NSString *userSign;
-@property (nonatomic, strong) NSString *userGrade;
+
+@end
+
+@interface MMPersonMessageCellModel : NSObject
+
+@property (nonatomic, strong) NSString *icon;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *subTitle;
+
+@end
+
+@interface MMPersonTableViewModel : NSObject
+
+@property (nonatomic, strong) MMAddImageCellModel *addImageCellModel;
+@property (nonatomic, strong) MMPersonMessageCellModel *userNameCellModel;
+@property (nonatomic, strong) MMPersonMessageCellModel *userBirthdayCellModel;
+@property (nonatomic, strong) MMPersonMessageCellModel *userSexyCellModel;
+@property (nonatomic, strong) MMPersonMessageCellModel *userSignCellModel;
+@property (nonatomic, strong) MMPersonMessageCellModel *userGradeCellModel;
 
 @end

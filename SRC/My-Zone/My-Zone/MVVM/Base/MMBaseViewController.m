@@ -21,6 +21,22 @@
     // 设置所有的view布局和bar不冲突
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
+    [self initSelf];
+    
+}
+
+- (void)initSelf {
+
+    if (self.navigationController.viewControllers.count > 1) {
+        UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"NavigationBackImage"]
+                                                                     style:UIBarButtonItemStyleDone
+                                                                    target:self.navigationController
+                                                                    action:@selector(popViewControllerAnimated:)];
+        
+        self.navigationItem.leftBarButtonItem = backItem;
+        self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

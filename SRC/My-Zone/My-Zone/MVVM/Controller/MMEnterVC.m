@@ -17,9 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     self.navigationController.navigationBarHidden = YES;
-    
+
 }
 
 
@@ -28,10 +27,9 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)guideEnter:(id)sender {
-}
-
-- (IBAction)visitorEnter:(id)sender {
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSLog(@"%@",sender);
+    NSLog(@"%@",segue);
 }
 
 @end

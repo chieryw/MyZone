@@ -181,10 +181,10 @@ Cg
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="guideEnter:" destination="p3J-5I-qaE" eventType="touchUpInside" id="iiw-1X-n15"/>
+                                    <segue destination="aoa-tW-hFA" kind="push" id="3LO-OQ-aHi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dOK-df-LVs">
+                            <button opaque="NO" alpha="0.20000000000000001" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dOK-df-LVs">
                                 <rect key="frame" x="400" y="300" width="120" height="120"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -343,7 +343,7 @@ Cg
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="visitorEnter:" destination="p3J-5I-qaE" eventType="touchUpInside" id="MGe-93-alb"/>
+                                    <segue destination="aoa-tW-hFA" kind="push" id="y2O-Po-R0U"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -377,9 +377,26 @@ Cg
                     <view key="view" contentMode="scaleToFill" id="TPt-ZE-M1d">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lR1-KT-NZV">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lR1-KT-NZV" firstAttribute="top" secondItem="TPt-ZE-M1d" secondAttribute="topMargin" id="H3f-Tm-Id6"/>
+                            <constraint firstItem="S70-oZ-2Dn" firstAttribute="top" secondItem="lR1-KT-NZV" secondAttribute="bottom" id="MeU-ZV-eJA"/>
+                            <constraint firstItem="lR1-KT-NZV" firstAttribute="leading" secondItem="TPt-ZE-M1d" secondAttribute="leadingMargin" constant="-20" id="OZx-zB-PZp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lR1-KT-NZV" secondAttribute="trailing" constant="-20" id="iIK-Od-roU"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="NpS-3L-tWD"/>
+                    <connections>
+                        <outlet property="tableView" destination="lR1-KT-NZV" id="z9L-6t-gyo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEG-kX-j6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -389,4 +406,7 @@ Cg
     <resources>
         <image name="BackImage1" width="540" height="960"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="y2O-Po-R0U"/>
+    </inferredMetricsTieBreakers>
 </document>

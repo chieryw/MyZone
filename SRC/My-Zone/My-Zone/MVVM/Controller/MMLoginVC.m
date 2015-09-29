@@ -99,7 +99,7 @@
     
     // 设置是否需要验证码的按钮的风格
     [self.checkButton setImage:nil forState:UIControlStateNormal];
-    [self.checkButton setImage:[UIImage imageNamed:@"BackImage1"] forState:UIControlStateSelected];
+    [self.checkButton setImage:[UIImage imageNamed:@"Validate"] forState:UIControlStateSelected];
     
 }
 
