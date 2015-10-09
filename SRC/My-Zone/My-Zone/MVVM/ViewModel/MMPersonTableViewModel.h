@@ -31,4 +31,11 @@
 @property (nonatomic, strong) MMPersonMessageCellModel *userSignCellModel;
 @property (nonatomic, strong) MMPersonMessageCellModel *userGradeCellModel;
 
+/**
+ *  对外的接口  用于操作对应的接口
+ *
+ *  @param image 图像数据
+ */
+- (void)saveImage:(UIImage *)image;
+
 @end

@@ -45,25 +45,25 @@ typedef NS_ENUM(NSInteger, MMActionSheetType) {
 
 #pragma mark - 事件处理函数
 - (void)editUserName {
-    
+    [self performSegueWithIdentifier:@"editUserNameSegue" sender:nil];
 }
 
 - (void)chooseSexy {
-    [UIActionSheet showActionSheet:nil
-                          delegate:self
-                 cancelButtonTitle:@"取消"
-            destructiveButtonTitle:nil
-                               tag:MMActionSheetTypeSexy
-                        showInView:self.view
-                 otherButtonTitles:@[@"男",@"女"]];
+    [UIActionSheet showInView:self.view
+                        title:nil
+                     delegate:self
+            cancelButtonTitle:@"取消"
+       destructiveButtonTitle:nil
+                          tag:MMActionSheetTypeSexy
+            otherButtonTitles:@[@"男",@"女"]];
 }
 
 - (void)chooseBirthday {
-    
+    [self performSegueWithIdentifier:@"chooseBirthSegue" sender:nil];
 }
 
 - (void)editSign {
-
+    [self performSegueWithIdentifier:@"editSignSegue" sender:nil];
 }
 
 - (void)takePhoto {
@@ -82,7 +82,6 @@ typedef NS_ENUM(NSInteger, MMActionSheetType) {
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
-
 #pragma mark - 辅助函数
 - (void)configTableView {
     _tableView.delegate = self;
@@ -98,10 +97,6 @@ typedef NS_ENUM(NSInteger, MMActionSheetType) {
          forCellReuseIdentifier:@"MMAddImageTableViewCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"MMPersonMessageTVC" bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:@"MMPersonMessageTVC"];
-}
-
-- (void)savaImage:(UIImage *)image {
-    
 }
 
 #pragma mark - init
@@ -192,21 +187,21 @@ typedef NS_ENUM(NSInteger, MMActionSheetType) {
         [self editSign];
     }
     else if (indexPath.row == 5) {
-        // 不做处理
+        [UIAlertView tipTitle:@"该功能暂不支持！" buttonName:@"确定"];
     }
     
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 #pragma mark - MMAddImageCellDelegate
 - (void)addImage:(UIImageView *)imageView {
-    [UIActionSheet showActionSheet:nil
-                          delegate:self
-                 cancelButtonTitle:@"取消"
-            destructiveButtonTitle:nil
-                               tag:MMActionSheetTypePhoto
-                        showInView:self.view
-                 otherButtonTitles:@[@"拍照",@"从相册中选取"]];
+    
+    [UIActionSheet showInView:self.view
+                        title:nil
+                     delegate:self
+            cancelButtonTitle:@"取消"
+       destructiveButtonTitle:nil
+                          tag:MMActionSheetTypePhoto
+            otherButtonTitles:@[@"拍照",@"从相册中选择"]];
 }
 
 #pragma mark - UIActionSheetDelegate 
@@ -247,7 +242,8 @@ typedef NS_ENUM(NSInteger, MMActionSheetType) {
 {
     if ([[info objectForKey:UIImagePickerControllerMediaType] isEqualToString:(__bridge NSString *)kUTTypeImage]) {
         UIImage *img = [info objectForKey:UIImagePickerControllerEditedImage];
-        [self performSelector:@selector(savaImage:)  withObject:img afterDelay:0.5];
+        // 这里的操作交个Model
+        [self.tableViewModel performSelector:@selector(saveImage:)  withObject:img afterDelay:0.5];
     }
     [picker dismissViewControllerAnimated:YES completion:nil];
 }

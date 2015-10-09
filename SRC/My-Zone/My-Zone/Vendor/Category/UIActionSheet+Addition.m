@@ -10,13 +10,13 @@
 
 @implementation UIActionSheet (Addition)
 
-+ (nullable instancetype)showActionSheet:(NSString *)title
-                                delegate:(id<UIActionSheetDelegate>)delegate
-                       cancelButtonTitle:(NSString *)cancelButtonTitle
-                  destructiveButtonTitle:(NSString *)destructiveButtonTitle
-                                     tag:(NSInteger)tag
-                              showInView:(UIView *)view
-                       otherButtonTitles:(NSArray *)otherButtonTitles {
++ (nullable instancetype)showInView:(UIView *)view
+                              title:(NSString *)title
+                           delegate:(id<UIActionSheetDelegate>)delegate
+                  cancelButtonTitle:(NSString *)cancelButtonTitle
+             destructiveButtonTitle:(NSString *)destructiveButtonTitle
+                                tag:(NSInteger)tag
+                  otherButtonTitles:(NSArray *)otherButtonTitles {
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:title
                                                              delegate:delegate
                                                     cancelButtonTitle:cancelButtonTitle

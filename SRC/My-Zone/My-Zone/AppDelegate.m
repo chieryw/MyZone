@@ -30,14 +30,14 @@
     // 相关配置
     [[MMAppSetting getInstance] configureIntroView];
     
-    // 初始化window
-    [self initWindow];
-    
-    // 初始化RootView
-    [self initRootViewController];
-    
-    // 初始化IntroView
-    [self addIntroView];
+//    // 初始化window
+//    [self initWindow];
+//    
+//    // 初始化RootView
+//    [self initRootViewController];
+//    
+//    // 初始化IntroView
+//    [self addIntroView];
     
     return YES;
 }

@@ -45,6 +45,13 @@
 
 @implementation MMPersonTableViewModel
 
+- (void)saveImage:(UIImage *)image {
+    
+    // 添加相应的图片到对应的文件夹中
+    
+    
+}
+
 - (MMAddImageCellModel *)addImageCellModel {
     if (!_addImageCellModel) {
         _addImageCellModel = [[MMAddImageCellModel alloc] init];

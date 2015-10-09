@@ -48,36 +48,30 @@
     [self addDelegate];
     
     // 观测信号源
-    [self setupARCSignal];
+    [self setupRACSignal];
 }
 
 #pragma mark - 事件处理函数
 - (IBAction)goNext:(id)sender {
-//    
-//    if ([self checkUserNameAndPassword]) {
-//        
-//        if (self.model.enterType == MMEnterTypeLogin) {
-//            
-//            
-//        }
-//        else {
-            UIStoryboard *PersonMessage = [UIStoryboard storyboardWithName:@"PersonMessage" bundle:nil];
-            MMEnterVC *enterVC = [PersonMessage instantiateViewControllerWithIdentifier:@"MMEnterVC"];
-            [self.navigationController pushViewController:enterVC animated:YES];
-//        }
     
-//    }
+    if ([self checkUserNameAndPassword]) {
+        
+        if (self.model.enterType == MMEnterTypeLogin) {
+            
+            // 现在不做处理
+        }
+        else {
+            [self performSegueWithIdentifier:@"nextSegue" sender:sender];
+        }
+    
+    }
     
 }
 
-- (IBAction)checkAction:(UIButton *)sender {
-    if (sender.selected) {
-        sender.selected = NO;
-    }
-    else {
-        sender.selected = YES;
-    }
+- (IBAction)valideAction:(UIButton *)sender {
+    sender.selected = !sender.selected;
 }
+
 
 - (IBAction)changeEnterType:(id)sender {
     if (self.model.enterType == MMEnterTypeLogin) {
@@ -96,11 +90,6 @@
 
     // 统一颜色设置
     self.confirmButton.backgroundColor = [UIColor MMBlueColor];
-    
-    // 设置是否需要验证码的按钮的风格
-    [self.checkButton setImage:nil forState:UIControlStateNormal];
-    [self.checkButton setImage:[UIImage imageNamed:@"Validate"] forState:UIControlStateSelected];
-    
 }
 
 - (void)addDelegate {
@@ -129,12 +118,11 @@
     self.model.userName = @"";
     self.model.password = @"";
     self.model.checkString = @"";
-    self.checkButton.selected = NO;
     
 }
 
 #pragma mark - 绑定数据
-- (void)setupARCSignal {
+- (void)setupRACSignal {
 
     RAC(self.model, userName) = self.userNameTF.rac_textSignal;
     RAC(self.model, password) = self.passwordTF.rac_textSignal;

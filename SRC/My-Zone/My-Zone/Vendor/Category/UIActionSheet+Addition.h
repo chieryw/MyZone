@@ -10,12 +10,12 @@
 
 @interface UIActionSheet (Addition)
 
-+ (nullable instancetype)showActionSheet:(nullable NSString *)title
-                                delegate:(nullable id<UIActionSheetDelegate>)delegate
-                       cancelButtonTitle:(nullable NSString *)cancelButtonTitle
-                  destructiveButtonTitle:(nullable NSString *)destructiveButtonTitle
-                                     tag:(NSInteger)tag
-                              showInView:(nullable UIView *)view
-                       otherButtonTitles:(nullable NSArray *)otherButtonTitles;
++ (nullable instancetype)showInView:(nullable UIView *)view
+                              title:(nullable NSString *)title
+                           delegate:(nullable id<UIActionSheetDelegate>)delegate
+                  cancelButtonTitle:(nullable NSString *)cancelButtonTitle
+             destructiveButtonTitle:(nullable NSString *)destructiveButtonTitle
+                                tag:(NSInteger)tag
+                  otherButtonTitles:(nullable NSArray *)otherButtonTitles;
 
 @end
