@@ -10,21 +10,32 @@
 
 @interface MMBaseNavigationController ()
 
+@property (nonatomic, assign) BOOL pop;
+
 @end
 
 @implementation MMBaseNavigationController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.navigationBar setBarStyle:UIBarStyleBlack];
-    [self.navigationBar setTranslucent:NO];
+    
+//    self.delegate = self;
+    
+    [self configureSelf];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)configureSelf {
+    self.navigationBar.tintColor =[ UIColor whiteColor];
+}
+
+
 
 /*
 #pragma mark - Navigation

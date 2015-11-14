@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--登录-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" customClass="MMLoginVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入你的手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q9F-7q-68f">
+                                <rect key="frame" x="30" y="45" width="540" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9pm-RL-5Ff"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入你的密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xx0-56-lK2">
+                                <rect key="frame" x="30" y="95" width="540" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="wM1-E8-cbW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBq-i2-SwC">
+                                <rect key="frame" x="30" y="155" width="20" height="20"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="0Gy-ij-eYN"/>
+                                    <constraint firstAttribute="height" constant="20" id="iOR-dQ-jA8"/>
+                                </constraints>
+                                <color key="tintColor" red="0.090676886030000001" green="0.57102053419999999" blue="0.93797348479999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="selected" image="Validate"/>
+                                <state key="highlighted" image="Validate"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.xibColor">
+                                        <color key="value" red="0.80494397095959591" green="0.80494397095959591" blue="0.80494397095959591" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="valideAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ODv-tp-WfO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我有邀请码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCI-tr-XuA">
+                                <rect key="frame" x="60" y="155" width="90" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="3b1-0a-lnM"/>
+                                    <constraint firstAttribute="height" constant="21" id="ewR-QW-dYP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入邀请码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fVb-OV-mLr">
+                                <rect key="frame" x="30" y="180" width="450" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PE0-n7-MzE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adB-xx-BND">
+                                <rect key="frame" x="180" y="240" width="240" height="34"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.11343763751945235" green="0.6532174700144624" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="5TL-lO-8ym"/>
+                                    <constraint firstAttribute="height" constant="34" id="dRE-Ak-UqH"/>
+                                </constraints>
+                                <state key="normal" title="确认">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="goNext:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ZNo-Xz-UBi"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fVb-OV-mLr" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="09y-gY-FKL"/>
+                            <constraint firstItem="fVb-OV-mLr" firstAttribute="top" secondItem="vCI-tr-XuA" secondAttribute="bottom" constant="4" id="9UM-68-b69"/>
+                            <constraint firstItem="Q9F-7q-68f" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="DjE-oe-fa1"/>
+                            <constraint firstItem="Q9F-7q-68f" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="45" id="FcR-uy-CFv"/>
+                            <constraint firstItem="vCI-tr-XuA" firstAttribute="top" secondItem="xx0-56-lK2" secondAttribute="bottom" constant="30" id="Fe4-vX-En6"/>
+                            <constraint firstItem="xBq-i2-SwC" firstAttribute="top" secondItem="xx0-56-lK2" secondAttribute="bottom" constant="30" id="GI9-nr-z2p"/>
+                            <constraint firstItem="adB-xx-BND" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Huu-nl-abg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xx0-56-lK2" secondAttribute="trailing" constant="10" id="JuU-8c-10L"/>
+                            <constraint firstItem="xBq-i2-SwC" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="LGi-mR-w6m"/>
+                            <constraint firstItem="xx0-56-lK2" firstAttribute="top" secondItem="Q9F-7q-68f" secondAttribute="bottom" constant="20" id="P2h-de-eCx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fVb-OV-mLr" secondAttribute="trailing" constant="100" id="TmS-vZ-scE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Q9F-7q-68f" secondAttribute="trailing" constant="10" id="io9-jJ-0F0"/>
+                            <constraint firstItem="xx0-56-lK2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="jWF-9F-QfW"/>
+                            <constraint firstItem="vCI-tr-XuA" firstAttribute="leading" secondItem="xBq-i2-SwC" secondAttribute="trailing" constant="10" id="mE4-Qi-Hi7"/>
+                            <constraint firstItem="adB-xx-BND" firstAttribute="top" secondItem="fVb-OV-mLr" secondAttribute="bottom" constant="30" id="rdG-DI-KYX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="登录" id="z5x-CP-pZD">
+                        <barButtonItem key="rightBarButtonItem" title="我没账号" id="agX-Lm-aSx">
+                            <connections>
+                                <action selector="changeEnterType:" destination="vXZ-lx-hvc" id="4zw-kC-V0w"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="checkButton" destination="xBq-i2-SwC" id="GyH-gB-bu9"/>
+                        <outlet property="checkLabel" destination="vCI-tr-XuA" id="rUE-Nh-Qew"/>
+                        <outlet property="checkTF" destination="fVb-OV-mLr" id="4PP-lA-Ilm"/>
+                        <outlet property="confirmButton" destination="adB-xx-BND" id="24L-qU-rtl"/>
+                        <outlet property="enterBarButtonItem" destination="agX-Lm-aSx" id="7Rg-Dh-UIr"/>
+                        <outlet property="passwordTF" destination="xx0-56-lK2" id="VX5-Ut-YKT"/>
+                        <outlet property="userNameTF" destination="Q9F-7q-68f" id="Mgp-Hh-Bgm"/>
+                        <segue destination="wXy-Hh-HJT" kind="show" identifier="nextSegue" id="Q9c-cm-69e"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1140" y="1035"/>
+        </scene>
+        <!--Base Navigation Controller-->
+        <scene sceneID="aVI-m1-9RF">
+            <objects>
+                <navigationController storyboardIdentifier="UINavigationController-a1A-n9-O2O" automaticallyAdjustsScrollViewInsets="NO" id="a1A-n9-O2O" customClass="MMBaseNavigationController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="0Hu-86-qfB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="jQK-fu-Jdd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WRT-y3-sRG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="453" y="1035"/>
+        </scene>
+        <!--EnterVC-->
+        <scene sceneID="U2Z-Zi-sKE">
+            <objects>
+                <viewController storyboardIdentifier="MMEnterVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wXy-Hh-HJT" customClass="MMEnterVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cgW-n0-tXR"/>
+                        <viewControllerLayoutGuide type="bottom" id="E5h-Mf-kWK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I5T-Wz-vmv">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackImage1" translatesAutoresizingMaskIntoConstraints="NO" id="AiB-GG-HEK">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <animations/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eON-nu-yKw">
+                                <rect key="frame" x="80" y="180" width="116" height="116"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="116" id="GWF-5y-DiX"/>
+                                    <constraint firstAttribute="width" constant="116" id="ffQ-h8-8y5"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="ChooseIdentityBackgroundImage">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="我是导游">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <font key="NSFont" size="15" name="PingFangSC-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="28.299999237060547">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="56.650001525878906">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="85">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="113.34999847412109">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="141.69999694824219">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="170.05000305175781">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="198.39999389648438">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="226.75">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="255.10000610351562">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="283.45001220703125">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="311.79998779296875">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="340.14999389648438">
+                                                            <options/>
+                                                        </textTab>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <font key="NSFont" size="13" name="PingFangSC-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="28.299999237060547">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="56.650001525878906">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="85">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="113.34999847412109">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="141.69999694824219">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="170.05000305175781">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="198.39999389648438">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="226.75">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="255.10000610351562">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="283.45001220703125">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="311.79998779296875">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="340.14999389648438">
+                                                            <options/>
+                                                        </textTab>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="陪别人去旅行">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <font key="NSFont" size="12" name="PingFangSC-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="28.299999237060547">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="56.650001525878906">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="85">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="113.34999847412109">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="141.69999694824219">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="170.05000305175781">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="198.39999389648438">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="226.75">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="255.10000610351562">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="283.45001220703125">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="311.79998779296875">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="340.14999389648438">
+                                                            <options/>
+                                                        </textTab>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <state key="selected" backgroundImage="ChooseIdentityBackgroundImageSelected"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="58"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="A71-nh-aJK" kind="show" id="znH-mU-rjS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xoc-1H-ukF">
+                                <rect key="frame" x="404" y="240" width="116" height="116"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="116" id="NWh-cV-Iyt"/>
+                                    <constraint firstAttribute="height" constant="116" id="hrf-A4-8ZY"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="ChooseIdentityBackgroundImage">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="我是游客">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <font key="NSFont" size="15" name="PingFangSC-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="28.299999237060547">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="56.650001525878906">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="85">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="113.34999847412109">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="141.69999694824219">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="170.05000305175781">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="198.39999389648438">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="226.75">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="255.10000610351562">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="283.45001220703125">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="311.79998779296875">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="340.14999389648438">
+                                                            <options/>
+                                                        </textTab>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment>
+                                            <string key="content" base64-UTF8="YES">
+Cg
+</string>
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <font key="NSFont" size="13" name="PingFangSC-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="28.299999237060547">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="56.650001525878906">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="85">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="113.34999847412109">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="141.69999694824219">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="170.05000305175781">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="198.39999389648438">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="226.75">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="255.10000610351562">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="283.45001220703125">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="311.79998779296875">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="340.14999389648438">
+                                                            <options/>
+                                                        </textTab>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="找人陪我去旅行">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <font key="NSFont" size="12" name="PingFangSC-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                    <tabStops>
+                                                        <textTab alignment="left" location="28.299999237060547">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="56.650001525878906">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="85">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="113.34999847412109">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="141.69999694824219">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="170.05000305175781">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="198.39999389648438">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="226.75">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="255.10000610351562">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="283.45001220703125">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="311.79998779296875">
+                                                            <options/>
+                                                        </textTab>
+                                                        <textTab alignment="left" location="340.14999389648438">
+                                                            <options/>
+                                                        </textTab>
+                                                    </tabStops>
+                                                </paragraphStyle>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <state key="selected" backgroundImage="ChooseIdentityBackgroundImageSelected"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="58"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="A71-nh-aJK" kind="show" id="LD3-xJ-zw1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="AiB-GG-HEK" secondAttribute="trailing" constant="-20" id="0b9-Yb-fut"/>
+                            <constraint firstItem="E5h-Mf-kWK" firstAttribute="top" secondItem="AiB-GG-HEK" secondAttribute="bottom" id="CrN-TW-xb0"/>
+                            <constraint firstItem="E5h-Mf-kWK" firstAttribute="top" secondItem="xoc-1H-ukF" secondAttribute="bottom" constant="180" id="CwI-AN-7tj"/>
+                            <constraint firstItem="AiB-GG-HEK" firstAttribute="top" secondItem="I5T-Wz-vmv" secondAttribute="topMargin" id="RMy-N5-onv"/>
+                            <constraint firstItem="eON-nu-yKw" firstAttribute="leading" secondItem="I5T-Wz-vmv" secondAttribute="leadingMargin" constant="60" id="Thb-c4-Y4k"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xoc-1H-ukF" secondAttribute="trailing" constant="60" id="hUR-dJ-8Lm"/>
+                            <constraint firstItem="AiB-GG-HEK" firstAttribute="leading" secondItem="I5T-Wz-vmv" secondAttribute="leadingMargin" constant="-20" id="qJD-qQ-inw"/>
+                            <constraint firstItem="eON-nu-yKw" firstAttribute="top" secondItem="cgW-n0-tXR" secondAttribute="bottom" constant="180" id="szF-70-7P9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BfI-lP-LcI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QWK-J6-9qb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1804" y="1035"/>
+        </scene>
+        <!--PersonVC-->
+        <scene sceneID="jKd-er-pDf">
+            <objects>
+                <viewController id="A71-nh-aJK" customClass="MMPersonVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="veU-iP-aP3"/>
+                        <viewControllerLayoutGuide type="bottom" id="jiO-jV-gqC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="utb-fa-YS9">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Re8-ZD-j2e">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Re8-ZD-j2e" firstAttribute="top" secondItem="utb-fa-YS9" secondAttribute="topMargin" id="0mP-6s-1RB"/>
+                            <constraint firstItem="Re8-ZD-j2e" firstAttribute="leading" secondItem="utb-fa-YS9" secondAttribute="leadingMargin" constant="-20" id="EU2-Bk-C8X"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Re8-ZD-j2e" secondAttribute="trailing" constant="-20" id="LqK-AE-SGN"/>
+                            <constraint firstItem="jiO-jV-gqC" firstAttribute="top" secondItem="Re8-ZD-j2e" secondAttribute="bottom" id="PxQ-4U-GjZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BVF-G9-JGC"/>
+                    <connections>
+                        <outlet property="tableView" destination="Re8-ZD-j2e" id="bNI-ze-Ic2"/>
+                        <segue destination="Hus-Yw-ncc" kind="show" identifier="editUserNameSegue" id="skD-hF-lPb"/>
+                        <segue destination="J72-OP-YBh" kind="show" identifier="chooseBirthSegue" id="w64-Sm-CaF"/>
+                        <segue destination="rkb-8X-K1A" kind="show" identifier="editSignSegue" id="edC-Qq-xqS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cYD-Nr-B5F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2532" y="1030"/>
+        </scene>
+        <!--姓名-->
+        <scene sceneID="Rs4-Zd-1ic">
+            <objects>
+                <viewController id="Hus-Yw-ncc" customClass="MMEditUserNameVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rd9-qN-AiM"/>
+                        <viewControllerLayoutGuide type="bottom" id="hd8-FL-Sd5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3js-dh-1BR">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的姓名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="14g-6a-y5e">
+                                <rect key="frame" x="20" y="15" width="560" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="nzQ-vs-9NG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.xibColor">
+                                        <color key="value" red="0.74585700757575757" green="0.74585700757575757" blue="0.74585700757575757" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="editDone:" destination="Hus-Yw-ncc" eventType="editingDidEnd" id="YoY-v0-tS7"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="14g-6a-y5e" firstAttribute="top" secondItem="Rd9-qN-AiM" secondAttribute="bottom" constant="15" id="03e-Bp-lE7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="14g-6a-y5e" secondAttribute="trailing" id="Y9e-1B-fR0"/>
+                            <constraint firstItem="14g-6a-y5e" firstAttribute="leading" secondItem="3js-dh-1BR" secondAttribute="leadingMargin" id="ncJ-nH-GF0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="姓名" id="eaE-Sr-wgj"/>
+                    <connections>
+                        <outlet property="userNameTF" destination="14g-6a-y5e" id="La5-WH-Jfa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UFY-pJ-HAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3331" y="380"/>
+        </scene>
+        <!--出生日期-->
+        <scene sceneID="MrY-Ef-VCA">
+            <objects>
+                <viewController id="J72-OP-YBh" customClass="MMChooseBirthVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tTH-09-Yzq"/>
+                        <viewControllerLayoutGuide type="bottom" id="E3E-ux-eVM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="v0H-BY-rq3">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    请选择您的出生日期" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzR-Fa-CXb">
+                                <rect key="frame" x="20" y="15" width="560" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="9QU-QN-OcG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".PingFangSC-Regular" family=".PingFang SC" pointSize="17"/>
+                                <color key="textColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.xibColor">
+                                        <color key="value" red="0.76304056186868685" green="0.76304056186868685" blue="0.76304056186868685" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="30" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0z-1C-czm">
+                                <rect key="frame" x="0.0" y="320" width="600" height="216"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="eGc-ri-Dc6"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="-322750252.05563903">
+                                    <!--1990-10-10 11:09:07 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-2240571600">
+                                    <!--1930-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="1072868400">
+                                    <!--2034-12-31 11:00:00 +0000-->
+                                </date>
+                                <locale key="locale" localeIdentifier="zh_CN"/>
+                                <connections>
+                                    <action selector="dateChanged:" destination="J72-OP-YBh" eventType="valueChanged" id="mk2-hv-xtg"/>
+                                </connections>
+                            </datePicker>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qia-s2-K7h">
+                                <rect key="frame" x="0.0" y="275" width="600" height="1"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.82769097222222221" green="0.82769097222222221" blue="0.82769097222222221" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="mE2-F9-r9N"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZR-fo-lqK">
+                                <rect key="frame" x="20" y="276" width="44" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="ANh-v3-Qd4"/>
+                                </constraints>
+                                <state key="normal" title="取消">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgd-Ya-Flh">
+                                <rect key="frame" x="536" y="276" width="44" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="g6u-jD-YPB"/>
+                                </constraints>
+                                <state key="normal" title="确定">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sureDate:" destination="J72-OP-YBh" eventType="touchUpInside" id="zMR-Go-klQ"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCx-87-DXz">
+                                <rect key="frame" x="0.0" y="319" width="600" height="1"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.82769097219999999" green="0.82769097219999999" blue="0.82769097219999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="L6C-6H-kNo"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="c0z-1C-czm" firstAttribute="top" secondItem="YCx-87-DXz" secondAttribute="bottom" id="6xh-in-vrc"/>
+                            <constraint firstItem="E3E-ux-eVM" firstAttribute="top" secondItem="c0z-1C-czm" secondAttribute="bottom" id="DV6-63-q9F"/>
+                            <constraint firstItem="c0z-1C-czm" firstAttribute="leading" secondItem="v0H-BY-rq3" secondAttribute="leadingMargin" constant="-20" id="HFt-hi-uUh"/>
+                            <constraint firstItem="AzR-Fa-CXb" firstAttribute="top" secondItem="tTH-09-Yzq" secondAttribute="bottom" constant="15" id="ILJ-nS-ZtP"/>
+                            <constraint firstItem="c0z-1C-czm" firstAttribute="top" secondItem="qia-s2-K7h" secondAttribute="bottom" constant="44" id="Ihe-SX-DVb"/>
+                            <constraint firstItem="kZR-fo-lqK" firstAttribute="top" secondItem="qia-s2-K7h" secondAttribute="bottom" id="SE0-da-DVu"/>
+                            <constraint firstItem="lgd-Ya-Flh" firstAttribute="trailing" secondItem="v0H-BY-rq3" secondAttribute="trailingMargin" id="Tn1-aW-0mb"/>
+                            <constraint firstItem="AzR-Fa-CXb" firstAttribute="leading" secondItem="v0H-BY-rq3" secondAttribute="leadingMargin" id="Ttq-bW-h4H"/>
+                            <constraint firstItem="qia-s2-K7h" firstAttribute="leading" secondItem="v0H-BY-rq3" secondAttribute="leadingMargin" constant="-20" id="ZEu-4W-eIc"/>
+                            <constraint firstItem="c0z-1C-czm" firstAttribute="top" secondItem="kZR-fo-lqK" secondAttribute="bottom" id="bNx-64-jwS"/>
+                            <constraint firstItem="YCx-87-DXz" firstAttribute="leading" secondItem="v0H-BY-rq3" secondAttribute="leadingMargin" constant="-20" id="kUU-zq-1ND"/>
+                            <constraint firstItem="lgd-Ya-Flh" firstAttribute="leading" secondItem="YCx-87-DXz" secondAttribute="trailing" constant="-20" id="ntT-Zh-BVw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AzR-Fa-CXb" secondAttribute="trailing" id="ovi-Jd-769"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YCx-87-DXz" secondAttribute="trailing" constant="-20" id="pBc-cz-G8r"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="c0z-1C-czm" secondAttribute="trailing" constant="-20" id="pYc-kb-PDy"/>
+                            <constraint firstItem="kZR-fo-lqK" firstAttribute="leading" secondItem="v0H-BY-rq3" secondAttribute="leadingMargin" id="qMU-ov-PCD"/>
+                            <constraint firstItem="c0z-1C-czm" firstAttribute="top" secondItem="lgd-Ya-Flh" secondAttribute="bottom" id="sVl-XB-k1A"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qia-s2-K7h" secondAttribute="trailing" constant="-20" id="tdM-hA-DkL"/>
+                            <constraint firstItem="lgd-Ya-Flh" firstAttribute="top" secondItem="qia-s2-K7h" secondAttribute="bottom" id="yDH-Gx-VEl"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ntT-Zh-BVw"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="出生日期" id="M4C-DY-jkK"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="AzR-Fa-CXb" id="ED0-vn-FX0"/>
+                        <outlet property="datePickerView" destination="c0z-1C-czm" id="0pj-wB-FyJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bch-HY-JnM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3331" y="1035"/>
+        </scene>
+        <!--签名-->
+        <scene sceneID="Qo1-Zd-DZO">
+            <objects>
+                <viewController id="rkb-8X-K1A" customClass="MMEditUserSignVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K58-Fw-VPi"/>
+                        <viewControllerLayoutGuide type="bottom" id="OYT-JT-waC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4C5-nD-beg">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的签名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fX6-Sn-lfu">
+                                <rect key="frame" x="20" y="15" width="560" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="zfD-U2-0NV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.xibColor">
+                                        <color key="value" red="0.76071259469696972" green="0.76071259469696972" blue="0.76071259469696972" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="editDone:" destination="rkb-8X-K1A" eventType="editingDidEnd" id="F4n-WT-tJ9"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fX6-Sn-lfu" firstAttribute="leading" secondItem="4C5-nD-beg" secondAttribute="leadingMargin" id="Rqb-Ks-hRj"/>
+                            <constraint firstItem="fX6-Sn-lfu" firstAttribute="top" secondItem="K58-Fw-VPi" secondAttribute="bottom" constant="15" id="abN-6Y-J5c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fX6-Sn-lfu" secondAttribute="trailing" id="ajP-gQ-cqM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="签名" id="sBc-YM-HX3"/>
+                    <connections>
+                        <outlet property="signTF" destination="fX6-Sn-lfu" id="K1Q-xk-qBZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wav-N9-KCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3331" y="1701"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BackImage1" width="540" height="960"/>
+        <image name="ChooseIdentityBackgroundImage" width="116" height="116"/>
+        <image name="ChooseIdentityBackgroundImageSelected" width="116" height="116"/>
+        <image name="Validate" width="21" height="21"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="LD3-xJ-zw1"/>
+    </inferredMetricsTieBreakers>
+</document>

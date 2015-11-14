@@ -7,14 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "MMAppSetting.h"
-#import "MMIntroView.h"
-#import "MMBaseNavigationController.h"
-#import "MMIntroViewModel.h"
 
 @interface AppDelegate ()
-
-@property (nonatomic, strong) MMIntroView *introView;
 
 @end
 
@@ -26,18 +20,6 @@
     
     // 配置对应的UI显示
     [self configureApplication:application];
-    
-    // 相关配置
-    [[MMAppSetting getInstance] configureIntroView];
-    
-//    // 初始化window
-//    [self initWindow];
-//    
-//    // 初始化RootView
-//    [self initRootViewController];
-//    
-//    // 初始化IntroView
-//    [self addIntroView];
     
     return YES;
 }
@@ -69,61 +51,21 @@
 #pragma mark - 辅助函数
 // 做一些UI上的预设置
 - (void)configureApplication:(UIApplication *)application {
-
-    [[UIBarButtonItem appearance] setTitleTextAttributes:@{
-                                                           NSFontAttributeName:[UIFont MMTextFont12],
-                                                           NSForegroundColorAttributeName:[UIColor whiteColor]
-                                                           }
-                                                forState:UIControlStateNormal];
-}
-
-- (void)initWindow {
-
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
     
-}
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
+     setTitleTextAttributes:@{
+                              NSFontAttributeName:[UIFont MMTextFont12],
+                              NSForegroundColorAttributeName:[UIColor whiteColor]
+                              }
+     forState:UIControlStateNormal];
 
-- (void)addIntroView {
-
-    NSNumber *isfirstEnter = [[NSUserDefaults standardUserDefaults] valueForKey:MMApplicationFirstEnter];
-    if (isfirstEnter && isfirstEnter.boolValue) {
-       
-        [self.window addSubview:self.introView];
-    }
     
-}
-
-- (MMIntroView *)introView {
-
-    if (!_introView) {
-        
-        _introView = [[MMIntroView alloc] init];
-        
-        MMIntroViewModel *model = [[MMIntroViewModel alloc] init];
-        _introView.model = model;
-        
-        [[_introView.enterButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-            // 将首次进入的标志删除
-            [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:NO] forKey:MMApplicationFirstEnter];
-        }];
-    }
-    
-    return _introView;
-    
-}
-
-- (void)initRootViewController {
-
-    if (YES) {
-        UIStoryboard *loginStoryBoard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
-        
-        MMBaseNavigationController *loginNavigation = [loginStoryBoard instantiateViewControllerWithIdentifier:@"LoginNavigationC"];
-        [self.window setRootViewController:loginNavigation];
-    }
-    
-    
+    [[UITabBarItem appearanceWhenContainedIn:[UITabBar class], nil]
+     setTitleTextAttributes:@{
+                              NSForegroundColorAttributeName:[UIColor whiteColor],
+                              NSFontAttributeName:[UIFont MMTextFont12]
+                              }
+     forState:UIControlStateSelected];
 }
 
 @end

@@ -44,7 +44,7 @@
         
         self.iconImageView.image = [UIImage imageNamed:model.icon];
         self.titleLabel.text = model.title;
-        self.subTitleLabel.text = model.subTitle;
+        self.subTitleLabel.text = ((model.subTitle.length>0)?model.subTitle:model.defaultSubTitle);
     }
     
 }

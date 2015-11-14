@@ -16,5 +16,6 @@
 #import "UIAlertView+Addition.h"
 #import "NSMutableAttributedString+Addition.h"
 #import "UIActionSheet+Addition.h"
+#import "NSString+Addtion.h"
 
 #endif

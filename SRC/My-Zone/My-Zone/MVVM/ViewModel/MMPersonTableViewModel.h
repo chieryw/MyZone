@@ -18,7 +18,8 @@
 
 @property (nonatomic, strong) NSString *icon;
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *subTitle;
+@property (nonatomic, strong) NSString *defaultSubTitle;       // 默认的subTitle
+@property (nonatomic, strong) NSString *subTitle;           // 真实的subTitle
 
 @end
 

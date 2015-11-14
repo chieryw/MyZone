@@ -64,7 +64,7 @@
         _userNameCellModel = [[MMPersonMessageCellModel alloc] init];
         _userNameCellModel.icon = @"Name";
         _userNameCellModel.title = @"姓名";
-        _userNameCellModel.subTitle = @"请输入您的姓名";
+        _userNameCellModel.defaultSubTitle = @"请输入您的姓名";
     }
     return _userNameCellModel;
 }
@@ -74,7 +74,7 @@
         _userSexyCellModel = [[MMPersonMessageCellModel alloc] init];
         _userSexyCellModel.icon = @"Sexy";
         _userSexyCellModel.title = @"性别";
-        _userSexyCellModel.subTitle = @"请选择您的性别";
+        _userSexyCellModel.defaultSubTitle = @"请选择您的性别";
     }
     return _userSexyCellModel;
 }
@@ -84,7 +84,7 @@
         _userBirthdayCellModel = [[MMPersonMessageCellModel alloc] init];
         _userBirthdayCellModel.icon = @"Birthday";
         _userBirthdayCellModel.title = @"出生日期";
-        _userBirthdayCellModel.subTitle = @"请选择您的出生日期";
+        _userBirthdayCellModel.defaultSubTitle = @"请选择您的出生日期";
     }
     return _userBirthdayCellModel;
 }
@@ -94,7 +94,7 @@
         _userSignCellModel = [[MMPersonMessageCellModel alloc] init];
         _userSignCellModel.icon = @"Sign";
         _userSignCellModel.title = @"签名";
-        _userSignCellModel.subTitle = @"请输入您的签名";
+        _userSignCellModel.defaultSubTitle = @"请输入您的签名";
     }
     return _userSignCellModel;
 }
@@ -104,7 +104,7 @@
         _userGradeCellModel = [[MMPersonMessageCellModel alloc] init];
         _userGradeCellModel.icon = @"Rank";
         _userGradeCellModel.title = @"身份";
-        _userGradeCellModel.subTitle = @"普通";
+        _userGradeCellModel.defaultSubTitle = @"普通";
     }
     return _userGradeCellModel;
 }

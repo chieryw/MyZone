@@ -12,6 +12,9 @@
 #import "MMAddImageTableViewCell.h"
 #import "MMPersonMessageTVC.h"
 #import <MobileCoreServices/UTCoreTypes.h>
+#import "MMEditUserNameVC.h"
+#import "MMEditUserSignVC.h"
+#import "MMChooseBirthVC.h"
 
 typedef NS_ENUM(NSInteger, MMActionSheetType) {
     MMActionSheetTypeSexy,
@@ -41,11 +44,21 @@ typedef NS_ENUM(NSInteger, MMActionSheetType) {
     self.navigationController.navigationBarHidden = NO;
     
     [self configTableView];
+    
+    // 将对应的返回事件  转变到dismissNavigationController事件
+    [self overrideBack];
+}
+
+#pragma mark - UIViewController LifeStyle
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.tableView reloadData];
 }
 
 #pragma mark - 事件处理函数
 - (void)editUserName {
-    [self performSegueWithIdentifier:@"editUserNameSegue" sender:nil];
+    [self performSegueWithIdentifier:@"editUserNameSegue" sender:@"editName"];
 }
 
 - (void)chooseSexy {
@@ -59,29 +72,24 @@ typedef NS_ENUM(NSInteger, MMActionSheetType) {
 }
 
 - (void)chooseBirthday {
-    [self performSegueWithIdentifier:@"chooseBirthSegue" sender:nil];
+    [self performSegueWithIdentifier:@"chooseBirthSegue" sender:@"chooseBirth"];
 }
 
 - (void)editSign {
-    [self performSegueWithIdentifier:@"editSignSegue" sender:nil];
+    [self performSegueWithIdentifier:@"editSignSegue" sender:@"editSign"];
 }
 
 - (void)takePhoto {
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    imagePicker.delegate = self;
-    imagePicker.allowsEditing = YES;
-    imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    [self presentViewController:imagePicker animated:YES completion:nil];
+    [self pickerControllerWithType:UIImagePickerControllerSourceTypeCamera];
 }
 
 - (void)choosePhoto {
-    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
-    imagePicker.delegate = self;
-    imagePicker.allowsEditing = YES;
-    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    [self presentViewController:imagePicker animated:YES completion:nil];
+    [self pickerControllerWithType:UIImagePickerControllerSourceTypePhotoLibrary];
 }
 
+- (void)dismissNavigationController:(UIBarButtonItem *)item {
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
 #pragma mark - 辅助函数
 - (void)configTableView {
     _tableView.delegate = self;
@@ -97,6 +105,24 @@ typedef NS_ENUM(NSInteger, MMActionSheetType) {
          forCellReuseIdentifier:@"MMAddImageTableViewCell"];
     [self.tableView registerNib:[UINib nibWithNibName:@"MMPersonMessageTVC" bundle:[NSBundle mainBundle]]
          forCellReuseIdentifier:@"MMPersonMessageTVC"];
+}
+
+- (void)overrideBack {
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"NavigationBackImage"]
+                                                                 style:UIBarButtonItemStyleDone
+                                                                target:self
+                                                                action:@selector(dismissNavigationController:)];
+    
+    self.navigationItem.leftBarButtonItem = backItem;
+    
+}
+
+- (void)pickerControllerWithType:(UIImagePickerControllerSourceType)type {
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = YES;
+    imagePicker.sourceType = type;
+    [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
 #pragma mark - init
@@ -260,6 +286,21 @@ typedef NS_ENUM(NSInteger, MMActionSheetType) {
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    NSString *tag = (NSString *)sender;
+    if ([tag isEqualToString:@"editSign"]) {
+        MMEditUserSignVC *vc = (MMEditUserSignVC *)segue.destinationViewController;
+        vc.userSignModel= self.tableViewModel.userSignCellModel;
+    }
+    else if ([tag isEqualToString:@"editName"]) {
+        MMEditUserNameVC *vc = (MMEditUserNameVC *)segue.destinationViewController;
+        vc.userName = self.tableViewModel.userNameCellModel;
+    }
+    else if ([tag isEqualToString:@"chooseBirth"]) {
+        MMChooseBirthVC *vc = (MMChooseBirthVC *)segue.destinationViewController;
+        vc.userBirth = self.tableViewModel.userBirthdayCellModel;
+    }
+    
 }
 
 
