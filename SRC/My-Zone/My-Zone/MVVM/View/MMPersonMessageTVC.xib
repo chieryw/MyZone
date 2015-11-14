@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MMPersonMessageTVC" id="KGk-i7-Jjw" customClass="MMPersonMessageTVC">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDk-FF-amJ">
+                        <rect key="frame" x="15" y="3" width="290" height="63.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rank" translatesAutoresizingMaskIntoConstraints="NO" id="cb7-HD-2Ps">
+                                <rect key="frame" x="8" y="23" width="17" height="17"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="17" id="HWv-sl-vxf"/>
+                                    <constraint firstAttribute="width" constant="17" id="qYD-uA-bH9"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGz-dk-nXz">
+                                <rect key="frame" x="45" y="21" width="30" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="2uN-h7-PTp"/>
+                                    <constraint firstAttribute="height" constant="21" id="trh-W8-3WR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入你的姓名" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ar2-ow-pHO">
+                                <rect key="frame" x="177" y="23" width="105" height="17"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="140" id="E6y-Gz-sQV"/>
+                                    <constraint firstAttribute="height" constant="17" id="Etb-mR-HAs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lGz-dk-nXz" firstAttribute="leading" secondItem="cb7-HD-2Ps" secondAttribute="trailing" constant="20" id="2bg-3J-nwO"/>
+                            <constraint firstAttribute="trailing" secondItem="Ar2-ow-pHO" secondAttribute="trailing" constant="8" id="JGM-Bd-fLh"/>
+                            <constraint firstItem="cb7-HD-2Ps" firstAttribute="leading" secondItem="IDk-FF-amJ" secondAttribute="leading" constant="8" id="Q0A-oD-Vhr"/>
+                            <constraint firstItem="lGz-dk-nXz" firstAttribute="centerY" secondItem="IDk-FF-amJ" secondAttribute="centerY" id="aDw-aM-dwF"/>
+                            <constraint firstItem="Ar2-ow-pHO" firstAttribute="centerY" secondItem="IDk-FF-amJ" secondAttribute="centerY" id="ry2-Uk-T3J"/>
+                            <constraint firstItem="cb7-HD-2Ps" firstAttribute="centerY" secondItem="IDk-FF-amJ" secondAttribute="centerY" id="tdZ-TK-yX5"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <real key="value" value="0.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.xibColor">
+                                <color key="value" red="0.81601167929292928" green="0.81601167929292928" blue="0.81601167929292928" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstAttribute="trailingMargin" secondItem="IDk-FF-amJ" secondAttribute="trailing" constant="7" id="FKq-bh-zFo"/>
+                    <constraint firstItem="IDk-FF-amJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-5" id="FQv-o3-1hY"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="IDk-FF-amJ" secondAttribute="bottom" constant="-5" id="I3o-Al-N8M"/>
+                    <constraint firstItem="IDk-FF-amJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="RSZ-HH-JjC"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="backgroundMaskView" destination="IDk-FF-amJ" id="UY0-61-VPw"/>
+                <outlet property="iconImageView" destination="cb7-HD-2Ps" id="2wN-EZ-Dfm"/>
+                <outlet property="subTitleLabel" destination="Ar2-ow-pHO" id="YoS-aT-t0L"/>
+                <outlet property="titleLabel" destination="lGz-dk-nXz" id="Po1-su-MoU"/>
+            </connections>
+            <point key="canvasLocation" x="537" y="318"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Rank" width="17" height="17"/>
+    </resources>
+</document>
