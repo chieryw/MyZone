@@ -18,26 +18,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    // 相关配置
-    [self selfSetting];
+    // 配置对应的UI显示
+    [self configureApplication:application];
     
     return YES;
 }
 
-- (void)selfSetting {
-
-    NSNumber *isFirstDownload = [NSUserDefaults valueForKey:MMApplicationFirstDownload];
-    NSNumber *isFirstEnter = [NSUserDefaults valueForKey:MMApplicationFirstEnter];
-    
-    if (!isFirstDownload) {
-        [NSUserDefaults setValue:[NSNumber numberWithBool:YES] forKey:MMApplicationFirstDownload];
-    }
-    
-    if (!isFirstEnter) {
-        [NSUserDefaults setValue:[NSNumber numberWithBool:YES] forKey:MMApplicationFirstEnter];
-    }
-    
-}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -60,6 +46,26 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     
+}
+
+#pragma mark - 辅助函数
+// 做一些UI上的预设置
+- (void)configureApplication:(UIApplication *)application {
+    
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
+     setTitleTextAttributes:@{
+                              NSFontAttributeName:[UIFont MMTextFont12],
+                              NSForegroundColorAttributeName:[UIColor whiteColor]
+                              }
+     forState:UIControlStateNormal];
+
+    
+    [[UITabBarItem appearanceWhenContainedIn:[UITabBar class], nil]
+     setTitleTextAttributes:@{
+                              NSForegroundColorAttributeName:[UIColor whiteColor],
+                              NSFontAttributeName:[UIFont MMTextFont12]
+                              }
+     forState:UIControlStateSelected];
 }
 
 @end

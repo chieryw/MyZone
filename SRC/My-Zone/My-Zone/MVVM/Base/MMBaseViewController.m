@@ -21,9 +21,22 @@
     // 设置所有的view布局和bar不冲突
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
+    // 初始化对应的NavigationBackBar的返回图
+    [self initSelf];
     
-    self.navigationItem.leftItemsSupplementBackButton = YES;
-    
+}
+
+- (void)initSelf {
+
+    if (self.navigationController.viewControllers.count > 1) {
+        UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"NavigationBackImage"]
+                                                                     style:UIBarButtonItemStyleDone
+                                                                    target:self.navigationController
+                                                                    action:@selector(popViewControllerAnimated:)];
+        
+        self.navigationItem.leftBarButtonItem = backItem;
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,7 +44,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -39,6 +52,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end
