@@ -1471,6 +1471,7 @@
 				TargetAttributes = {
 					298D017E1BA3B87B00F5EDE7 = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = MN863V35DU;
 					};
 					298D01971BA3B87B00F5EDE7 = {
 						CreatedOnToolsVersion = 6.4;
@@ -1891,6 +1892,7 @@
 			baseConfigurationReference = D0504BA6214AD67850A9F208 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1917,6 +1919,7 @@
 			baseConfigurationReference = 86519068C37DAB9C71B964FA /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
