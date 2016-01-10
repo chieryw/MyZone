@@ -16,7 +16,6 @@ NSString *const TLSwipeForOptionsCellShouldHideMenuNotification = @"TLSwipeForOp
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIView       *scrollViewContentView;//The cell content (like the label) goes in this view.
 @property (nonatomic, strong) UIView       *scrollViewButtonView;//Contains our two buttons
-@property (nonatomic, strong) UILabel      *scrollViewLabel;
 @property (nonatomic, strong) UIImageView  *headerImageView;
 @property (nonatomic, strong) UILabel      *titleLabel;
 @property (nonatomic, strong) UILabel      *subTitleLabel;
@@ -27,14 +26,6 @@ NSString *const TLSwipeForOptionsCellShouldHideMenuNotification = @"TLSwipeForOp
 
 @implementation TLSwipeForOptionsCell
 
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-    [self initSubview];
-    [self setupSubview];
-    
-}
-
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
 	self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
 	if (self) {
@@ -43,8 +34,6 @@ NSString *const TLSwipeForOptionsCellShouldHideMenuNotification = @"TLSwipeForOp
 	}
 	return self;
 }
-
-
 
 - (void)initSubview {
     [self addSubview:self.scrollView];
@@ -62,7 +51,14 @@ NSString *const TLSwipeForOptionsCellShouldHideMenuNotification = @"TLSwipeForOp
 }
 
 - (void)hideMenuOptions {
-	[self.scrollView setContentOffset:CGPointZero animated:YES];
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         [self.scrollView setContentOffset:CGPointZero];
+                     } completion:^(BOOL finished) {
+                         [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+                     }];
+	
 }
 
 + (CGFloat)cellHeightWithData:(id)cellData {
@@ -77,11 +73,15 @@ NSString *const TLSwipeForOptionsCellShouldHideMenuNotification = @"TLSwipeForOp
 
 - (void)userPressedDeleteButton:(id)sender {
 	[self.delegate cellDidSelectDelete:self];
-	[self.scrollView setContentOffset:CGPointZero animated:YES];
+    [[NSNotificationCenter defaultCenter] postNotificationName:TLSwipeForOptionsCellShouldHideMenuNotification object:nil];
 }
 
 - (void)userPressedMoreButton:(id)sender {
 	[self.delegate cellDidSelectTop:self];
+}
+
+- (void)selectedSelf {
+    [self.delegate cellDidSelectSelf:self];
 }
 
 #pragma mark - Overridden Methods
@@ -92,21 +92,6 @@ NSString *const TLSwipeForOptionsCellShouldHideMenuNotification = @"TLSwipeForOp
 	self.scrollView.frame = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.bounds), 65);
 	self.scrollViewButtonView.frame = CGRectMake(CGRectGetWidth(self.bounds) - kCatchWidth, 0.0f, kCatchWidth, 65);
 	self.scrollViewContentView.frame = CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.bounds), 65);
-}
-
-- (void)prepareForReuse {
-	[super prepareForReuse];
-	[self.scrollView setContentOffset:CGPointZero animated:NO];
-}
-
-- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
-	[super setEditing:editing animated:animated];
-	self.scrollView.scrollEnabled = !self.editing;
-    self.scrollViewButtonView.hidden = editing;
-}
-
-- (UILabel *)textLabel {
-	return self.scrollViewLabel;
 }
 
 #pragma mark - UIScrollViewDelegate Methods
@@ -159,6 +144,9 @@ NSString *const TLSwipeForOptionsCellShouldHideMenuNotification = @"TLSwipeForOp
     if (!_scrollViewContentView) {
         _scrollViewContentView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, CGRectGetWidth(self.bounds), 65)];
         _scrollViewContentView.backgroundColor = [UIColor whiteColor];
+        _scrollViewContentView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectedSelf)];
+        [_scrollViewContentView addGestureRecognizer:tapGesture];
     }
     return _scrollViewContentView;
 }

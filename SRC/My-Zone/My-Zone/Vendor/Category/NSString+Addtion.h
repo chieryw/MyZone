@@ -10,6 +10,13 @@
 
 @interface NSString (Addition)
 
+// URLEncoding
+- (NSString *)URLEncodedString;
+- (NSString *)URLDecodedString;
+
+//! 将侧当前string是否存在 是否有长度
+- (BOOL)isStringSafe;
+
 /**
  *  单行对应的字符串的size
  *

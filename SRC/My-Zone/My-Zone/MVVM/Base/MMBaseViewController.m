@@ -17,10 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    // 设置所有的view布局和bar不冲突
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    
     // 初始化对应的NavigationBackBar的返回图
     [self initSelf];
     

@@ -41,6 +41,8 @@
  */
 - (void)cellDidSelectTop:(TLSwipeForOptionsCell *)cell;
 
+- (void)cellDidSelectSelf:(id)mode;
+
 @end
 
 /**
