@@ -10,6 +10,32 @@
 
 @implementation NSString (Addtion)
 
+- (NSString *)URLEncodedString
+{
+    NSString *result = (__bridge_transfer NSString *)
+    CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,
+                                            (CFStringRef)self,
+                                            NULL,
+                                            CFSTR("!*'();:@&;=+$,/?%#[] "),
+                                            kCFStringEncodingUTF8);
+    return result;
+}
+
+- (NSString*)URLDecodedString
+{
+    NSString *result = (__bridge_transfer NSString *)
+    CFURLCreateStringByReplacingPercentEscapesUsingEncoding(kCFAllocatorDefault,
+                                                            (CFStringRef)self,
+                                                            CFSTR(""),
+                                                            kCFStringEncodingUTF8);
+    return result;
+}
+
+- (BOOL)isStringSafe
+{
+    return (self && ([self length] > 0));
+}
+
 #pragma mark 适配函数
 - (CGSize)sizeWithFontCompatible:(UIFont *)font
 {
