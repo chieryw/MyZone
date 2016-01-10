@@ -17,5 +17,7 @@
 #import "NSMutableAttributedString+Addition.h"
 #import "UIActionSheet+Addition.h"
 #import "NSString+Addtion.h"
+#import "NSData+Addition.h"
+#import "NSMutableDictionary+Addition.h"
 
 #endif

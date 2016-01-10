@@ -9,6 +9,7 @@
 #import "MMMainMessageVC.h"
 #import "TLOverlayView.h"
 #import "TLSwipeForOptionsCell.h"
+#import "ChatViewController.h"
 
 @interface MMMainMessageVC ()<UITableViewDataSource,UITableViewDelegate,TLSwipeForOptionsCellDelegate,TLOverlayViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -60,6 +61,22 @@
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    ChatViewController *chatC;
+    if (indexPath.row %2 == 0) {
+        chatC =[[ChatViewController alloc] initWithChatType:XMMessageChatGroup];
+    }else{
+        chatC = [[ChatViewController alloc] init];
+    }
+    chatC.chatterName = @"小新";
+    chatC.chatterThumb = @"http://d.hiphotos.baidu.com/image/h%3D300/sign=5ea0f2a2a186c91717035439f93c70c6/a50f4bfbfbedab64c8255b9af136afc379311e10.jpg";
+    chatC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:chatC animated:YES];
+    chatC.hidesBottomBarWhenPushed = NO;
+}
+
 #pragma UIScrollViewDelegate Methods
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [[NSNotificationCenter defaultCenter] postNotificationName:TLSwipeForOptionsCellShouldHideMenuNotification object:scrollView];
@@ -82,6 +99,7 @@
 #pragma mark - TLSwipeForOptionsCellDelegate Methods
 
 - (void)cell:(TLSwipeForOptionsCell *)cell didShowMenu:(BOOL)isShowingMenu {
+    self.cellDisplayingMenuOptions = cell;
     [self.tableView setScrollEnabled:!isShowingMenu];
     if (isShowingMenu) {
         if (!self.overlayView) {
@@ -107,10 +125,25 @@
 }
 
 - (void)cellDidSelectDelete:(TLSwipeForOptionsCell *)cell {
-    
+    NSLog(@"delete");
 }
 
 - (void)cellDidSelectTop:(TLSwipeForOptionsCell *)cell {
+    NSLog(@"Top");
+}
+
+- (void)cellDidSelectSelf:(id)mode {
+    ChatViewController *chatC =[[ChatViewController alloc] init];
+//    if (indexPath.row %2 == 0) {
+//        chatC =[[ChatViewController alloc] initWithChatType:XMMessageChatGroup];
+//    }else{
+//        chatC =
+//    }
+    chatC.chatterName = @"小新";
+    chatC.chatterThumb = @"http://d.hiphotos.baidu.com/image/h%3D300/sign=5ea0f2a2a186c91717035439f93c70c6/a50f4bfbfbedab64c8255b9af136afc379311e10.jpg";
+    chatC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:chatC animated:YES];
+    chatC.hidesBottomBarWhenPushed = NO;
 }
 
 /*
