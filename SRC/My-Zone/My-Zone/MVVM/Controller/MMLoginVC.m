@@ -9,8 +9,11 @@
 #import "MMLoginVC.h"
 #import "MMLoginVM.h"
 #import "MMEnterVC.h"
+#import "MMNetworkTask.h"
+#import "MMNetworkDelgt.h"
+#import "MMSearchNetDelgt.h"
 
-@interface MMLoginVC ()<UITextFieldDelegate>
+@interface MMLoginVC ()<UITextFieldDelegate,MMNetworkPtc>
 
 @property (nonatomic, strong) MMLoginVM *model;
 @property (weak, nonatomic) IBOutlet UITextField *userNameTF;
@@ -61,7 +64,26 @@
             // 现在不做处理
         }
         else {
-            [self performSegueWithIdentifier:@"nextSegue" sender:sender];
+            NSDictionary *tempDict = @{
+            @"mobileNum":@"1881111888",
+            @"password":@"342343423"
+            };
+            
+            NSData *data = [NSJSONSerialization dataWithJSONObject:tempDict
+                                                           options:NSJSONWritingPrettyPrinted
+                                                             error:nil];
+            
+            NSString *tempString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            
+            MMSearchNetDelgt *delegate = [[MMSearchNetDelgt alloc] init];
+            [delegate setDelegate:self];
+            
+            BOOL network = [MMNetworkTask postSearch:@"/tour/logon.htm"
+                                            forParam:tempString
+                                              forRes:YES
+                                           withDelgt:delegate];
+            
+//            [self performSegueWithIdentifier:@"nextSegue" sender:sender];
         }
     
     }
@@ -99,6 +121,13 @@
     self.checkTF.delegate = self;
     
 }
+
+#pragma mark - networkBack
+- (void)getFetchNetBack:(NSDictionary *)jsonDictionary forInfo:(id)customInfo {
+    
+}
+
+- (void)getSearchNetBack:(id)searchResult forInfo:(id)customInfo {}
 
 #pragma mark - 初始化配置
 - (MMLoginVM *)model {
