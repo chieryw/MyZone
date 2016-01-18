@@ -22,12 +22,10 @@
 // 解析所有数据
 - (void)parseAllNetResult:(NSDictionary *)jsonDictionary
 {
-    // 业务数据
-    NSDictionary *dictionaryData = jsonDictionary[@"data"];
     if(jsonDictionary != nil)
     {
         // 解析简单数据
-        [self parseNetResult:dictionaryData];
+        [self parseNetResult:jsonDictionary];
     }
 }
 

@@ -46,6 +46,19 @@
         NSDictionary *tempDictionary = [NSJSONSerialization JSONObjectWithData:resultData
                                                                        options:NSJSONReadingMutableContainers
                                                                          error:&error];
+        
+        tempDictionary = @{
+                           @"resultInfo":@{
+                               @"success":@"true",
+                               @"message":@"登录成功",
+                               @"humanID":@"100"},
+                           @"testArray":@[@{@"success":@"true",
+                                              @"message":@"登录成功",
+                                              @"humanID":@"100"},@{
+                                              @"success":@"true",
+                                              @"message":@"登录成功",
+                                              @"humanID":@"100"}]
+                           };
         if (!error && tempDictionary) {
             if(searchNetResult != nil)
             {

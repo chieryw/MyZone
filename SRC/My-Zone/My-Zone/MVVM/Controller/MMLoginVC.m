@@ -12,6 +12,7 @@
 #import "MMNetworkTask.h"
 #import "MMNetworkDelgt.h"
 #import "MMSearchNetDelgt.h"
+#import "MMLoginResult.h"
 
 @interface MMLoginVC ()<UITextFieldDelegate,MMNetworkPtc>
 
@@ -76,6 +77,7 @@
             NSString *tempString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
             
             MMSearchNetDelgt *delegate = [[MMSearchNetDelgt alloc] init];
+            [delegate setSearchResult:[MMLoginResult new]];
             [delegate setDelegate:self];
             
             BOOL network = [MMNetworkTask postSearch:@"/tour/logon.htm"
@@ -124,10 +126,12 @@
 
 #pragma mark - networkBack
 - (void)getFetchNetBack:(NSDictionary *)jsonDictionary forInfo:(id)customInfo {
-    
+    NSLog(@"%@",jsonDictionary);
 }
 
-- (void)getSearchNetBack:(id)searchResult forInfo:(id)customInfo {}
+- (void)getSearchNetBack:(MMLoginResult *)searchResult forInfo:(id)customInfo {
+    NSLog(@"%@",searchResult);
+}
 
 #pragma mark - 初始化配置
 - (MMLoginVM *)model {

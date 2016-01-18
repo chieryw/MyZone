@@ -11,6 +11,7 @@
 		29152CD01BBAB5A900A626BB /* UIActionSheet+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 29152CCF1BBAB5A900A626BB /* UIActionSheet+Addition.m */; };
 		29152CD21BBABFB700A626BB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29152CD11BBABFB700A626BB /* MobileCoreServices.framework */; };
 		2917368E1BD3B1890050658E /* MMBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2917368D1BD3B1890050658E /* MMBaseTabBarController.m */; };
+		291768231C4D355C002AC1E9 /* MMLoginResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 291768221C4D355C002AC1E9 /* MMLoginResult.m */; };
 		291FC0011BB8EA6F00F55BAA /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 291FC0001BB8EA6F00F55BAA /* MBProgressHUD.m */; };
 		291FC0071BB8F33300F55BAA /* MMEnterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 291FC0061BB8F33300F55BAA /* MMEnterVC.m */; };
 		2926574C1BCA2687001490A3 /* MMDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2926574B1BCA2687001490A3 /* MMDate.m */; };
@@ -249,6 +250,8 @@
 		29152CD11BBABFB700A626BB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		2917368C1BD3B1890050658E /* MMBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseTabBarController.h; sourceTree = "<group>"; };
 		2917368D1BD3B1890050658E /* MMBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBaseTabBarController.m; sourceTree = "<group>"; };
+		291768211C4D355C002AC1E9 /* MMLoginResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLoginResult.h; sourceTree = "<group>"; };
+		291768221C4D355C002AC1E9 /* MMLoginResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLoginResult.m; sourceTree = "<group>"; };
 		291FBFFF1BB8EA6F00F55BAA /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		291FC0001BB8EA6F00F55BAA /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		291FC0051BB8F33300F55BAA /* MMEnterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMEnterVC.h; sourceTree = "<group>"; };
@@ -717,6 +720,15 @@
 			name = Framework;
 			sourceTree = "<group>";
 		};
+		291768201C4D34F0002AC1E9 /* DataStruct */ = {
+			isa = PBXGroup;
+			children = (
+				291768211C4D355C002AC1E9 /* MMLoginResult.h */,
+				291768221C4D355C002AC1E9 /* MMLoginResult.m */,
+			);
+			path = DataStruct;
+			sourceTree = "<group>";
+		};
 		291FBFFE1BB8EA6F00F55BAA /* MBProcessHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -962,6 +974,7 @@
 		298D01AE1BA3BAC500F5EDE7 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				291768201C4D34F0002AC1E9 /* DataStruct */,
 				29CB31C31BB9562F0037F80B /* Other */,
 				298D031B1BA514D800F5EDE7 /* Base */,
 				298D01AF1BA3BAC500F5EDE7 /* Controller */,
@@ -1681,6 +1694,7 @@
 				298D02E71BA3CB2800F5EDE7 /* RACUnarySequence.m in Sources */,
 				29AD87051BF0D4CA00BDC882 /* MMPasswordCell.m in Sources */,
 				29DC47481BEF8093003A1769 /* MMUserCenterVC.m in Sources */,
+				291768231C4D355C002AC1E9 /* MMLoginResult.m in Sources */,
 				29BC76471BA6CB3000518755 /* SDWebImagePrefetcher.m in Sources */,
 				298D02F91BA3CB2800F5EDE7 /* UITableViewCell+RACSignalSupport.m in Sources */,
 				29E5E9371BDCDB070016DCFC /* MMDetailImageCellModel.m in Sources */,

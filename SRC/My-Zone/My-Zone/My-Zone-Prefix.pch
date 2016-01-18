@@ -23,7 +23,7 @@
 #import "MBProgressHUD.h"
 
 #import "MMDate.h"
-#import <YYKit/YYKit.h>
+#import "YYKit.h"
 
 
 #endif
