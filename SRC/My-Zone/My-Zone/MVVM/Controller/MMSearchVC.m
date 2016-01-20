@@ -8,6 +8,7 @@
 
 #import "MMSearchVC.h"
 #import "MMPageScrollView.h"
+#import "MJRefresh.h"
 
 @interface MMSearchVC ()<MMPageScrollViewDataSource,MMPageScrollViewDelegate>
 @property (nonatomic, strong) NSArray *array;
@@ -34,6 +35,7 @@
     self.pageScrollView.dataSource = self;
     [self.pageScrollView setPadding:20];
     [self.pageScrollView reloadData];
+    
     [self.view addSubview:self.pageScrollView];
 }
 

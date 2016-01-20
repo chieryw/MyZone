@@ -1,2 +1,8 @@
+platform :ios, '8.0'
+
+target "My-Zone" do
+
 pod 'Masonry'
-pod 'YYKit'
+pod 'MJRefresh'
+
+end
