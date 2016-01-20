@@ -169,6 +169,7 @@
 		29AD870A1BF0D60D00BDC882 /* MMRemoveCacheCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD87081BF0D60D00BDC882 /* MMRemoveCacheCell.m */; };
 		29AD870B1BF0D60D00BDC882 /* MMRemoveCacheCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29AD87091BF0D60D00BDC882 /* MMRemoveCacheCell.xib */; };
 		29AD870E1BF0DC3F00BDC882 /* MMResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AD870D1BF0DC3F00BDC882 /* MMResetPasswordVC.m */; };
+		29AE67B31C4FDBDC00A572D3 /* MMPageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AE67B21C4FDBDC00A572D3 /* MMPageScrollView.m */; };
 		29AEA4B41BF4D1E900582F62 /* MMFriendsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AEA4B21BF4D1E900582F62 /* MMFriendsCell.m */; };
 		29AEA4B51BF4D1E900582F62 /* MMFriendsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29AEA4B31BF4D1E900582F62 /* MMFriendsCell.xib */; };
 		29AEA4B81BF4D4A200582F62 /* MMFriendsZoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AEA4B71BF4D4A200582F62 /* MMFriendsZoneVC.m */; };
@@ -568,6 +569,8 @@
 		29AD87091BF0D60D00BDC882 /* MMRemoveCacheCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMRemoveCacheCell.xib; sourceTree = "<group>"; };
 		29AD870C1BF0DC3F00BDC882 /* MMResetPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMResetPasswordVC.h; sourceTree = "<group>"; };
 		29AD870D1BF0DC3F00BDC882 /* MMResetPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMResetPasswordVC.m; sourceTree = "<group>"; };
+		29AE67B11C4FDBDC00A572D3 /* MMPageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPageScrollView.h; sourceTree = "<group>"; };
+		29AE67B21C4FDBDC00A572D3 /* MMPageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPageScrollView.m; sourceTree = "<group>"; };
 		29AEA4B11BF4D1E900582F62 /* MMFriendsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFriendsCell.h; sourceTree = "<group>"; };
 		29AEA4B21BF4D1E900582F62 /* MMFriendsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFriendsCell.m; sourceTree = "<group>"; };
 		29AEA4B31BF4D1E900582F62 /* MMFriendsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMFriendsCell.xib; sourceTree = "<group>"; };
@@ -1022,6 +1025,7 @@
 		298D01B01BA3BAC500F5EDE7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				29AE67B01C4FDBDC00A572D3 /* MMScrollView */,
 				298D031F1BA51C0900F5EDE7 /* MMIntroView.h */,
 				298D03201BA51C0900F5EDE7 /* MMIntroView.m */,
 				29CB31C51BB95CDB0037F80B /* MMAddImageTableViewCell.h */,
@@ -1340,6 +1344,15 @@
 				29CD74D41C4230520087065F /* NetworkTask */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		29AE67B01C4FDBDC00A572D3 /* MMScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				29AE67B11C4FDBDC00A572D3 /* MMPageScrollView.h */,
+				29AE67B21C4FDBDC00A572D3 /* MMPageScrollView.m */,
+			);
+			path = MMScrollView;
 			sourceTree = "<group>";
 		};
 		29B5701A1BF37AB500F1F0E2 /* TLSwipeForOptionsCell */ = {
@@ -1874,6 +1887,7 @@
 				298D02C31BA3CB2800F5EDE7 /* RACDynamicSignal.m in Sources */,
 				298D02C81BA3CB2800F5EDE7 /* RACEvent.m in Sources */,
 				29CD74ED1C4230520087065F /* MMSearchNetResult.m in Sources */,
+				29AE67B31C4FDBDC00A572D3 /* MMPageScrollView.m in Sources */,
 				298D02B21BA3CB2800F5EDE7 /* NSString+RACKeyPathUtilities.m in Sources */,
 				298D02E81BA3CB2800F5EDE7 /* RACUnit.m in Sources */,
 				29CB31C81BB95CDB0037F80B /* MMAddImageTableViewCell.m in Sources */,

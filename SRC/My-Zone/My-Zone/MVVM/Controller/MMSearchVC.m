@@ -7,25 +7,34 @@
 //
 
 #import "MMSearchVC.h"
-#import "MMHotZoneCell.h"
+#import "MMPageScrollView.h"
 
-@interface MMSearchVC ()<UITableViewDataSource,UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@interface MMSearchVC ()<MMPageScrollViewDataSource,MMPageScrollViewDelegate>
+@property (nonatomic, strong) NSArray *array;
+@property (nonatomic, strong) MMPageScrollView *pageScrollView;
 @end
 
 @implementation MMSearchVC
 
-- (void)dealloc {
-    self.tableView.delegate = nil;
-    self.tableView.dataSource = nil;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self setupTableView];
+    self.array = @[
+                   [UIColor redColor],
+                   [UIColor orangeColor],
+                   [UIColor blueColor],
+                   [UIColor purpleColor],
+                   [UIColor yellowColor]
+                   ];
+    
+    self.pageScrollView = [[MMPageScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - kStatusBarHeight - kNavigationBarHeight - kTabBarHeight)];
+    self.pageScrollView.delegate = self;
+    self.pageScrollView.dataSource = self;
+    [self.pageScrollView setPadding:20];
+    [self.pageScrollView reloadData];
+    [self.view addSubview:self.pageScrollView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,34 +42,21 @@
     
 }
 
-#pragma mark - 辅助函数
-- (void)setupTableView {
+#pragma mark -
 
-    // 自动计算对应的Cell高度
-    self.tableView.estimatedRowHeight = 44;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    
-    // 注册对应的cell class
-    [self.tableView registerNib:[UINib nibWithNibName:@"MMHotZoneCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"MMHotZoneCell"];
+- (NSInteger)numberOfPageInPageScrollView:(MMPageScrollView*)pageScrollView
+{
+    return self.array.count;
 }
 
-#pragma mark UITableViewDelegate 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+- (UIColor *)pageScrollView:(MMPageScrollView*)pageScrollView dataForRowAtIndex:(NSInteger)index
+{
+    return self.array[index];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MMHotZoneCell"];
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self performSegueWithIdentifier:@"PushToUserDetailVC" sender:nil];
-}
-
-#pragma mark - UITableViewDataSource
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [MMHotZoneCell cellHeightWithData:nil];
+- (void)pageScrollView:(MMPageScrollView*)pageScrollView didScrollToPageAtIndex:(NSInteger)index
+{
+    NSLog(@"%ld",(long)index);
 }
 
 #pragma mark - Navigation
