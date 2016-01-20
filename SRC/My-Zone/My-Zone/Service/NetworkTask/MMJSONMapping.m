@@ -99,6 +99,8 @@ NSString *const QWJSONMAPPING_IGNORE = @"QWJSONMAPPING_IGNORE";
             }
             break;
         }
+        
+        free(properties);
         // 遍历父类
         if (!pType) {
             objClass = [objClass superclass];

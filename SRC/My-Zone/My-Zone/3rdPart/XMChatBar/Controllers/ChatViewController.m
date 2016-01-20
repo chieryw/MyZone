@@ -38,7 +38,7 @@
 @implementation ChatViewController
 
 - (instancetype)initWithChatType:(XMMessageChatType)messageChatType{
-    if ([super init]) {
+    if (self = [super init]) {
         self.messageChatType = messageChatType;
     }
     return self;
