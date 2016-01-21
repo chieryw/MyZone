@@ -214,8 +214,6 @@
         _scrollView.multipleTouchEnabled = NO;
         _scrollView.delegate = self;
         [self addSubview:_scrollView];
-        
-        
     }
     return _scrollView;
 }
