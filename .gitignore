@@ -1,3 +1,7 @@
+
+# 所有的在这里的文件都将被git管理库忽略
+
 *~
 .DS_Store
 *.xcuserstate
+xcuserdata/
