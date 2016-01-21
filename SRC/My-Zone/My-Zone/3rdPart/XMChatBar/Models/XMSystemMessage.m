@@ -11,7 +11,7 @@
 @implementation XMSystemMessage
 
 - (instancetype)init{
-    if ([super init]) {
+    if (self = [super init]) {
         self.messageType = XMMessageTypeSystem;
     }
     return self;
