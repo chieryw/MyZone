@@ -213,10 +213,9 @@
         _scrollView.showsVerticalScrollIndicator = NO;
         _scrollView.multipleTouchEnabled = NO;
         _scrollView.delegate = self;
-//        _scrollView.mj_footer = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-//            // 进入刷新状态后会自动调用这个block
-//        }];
         [self addSubview:_scrollView];
+        
+        
     }
     return _scrollView;
 }
