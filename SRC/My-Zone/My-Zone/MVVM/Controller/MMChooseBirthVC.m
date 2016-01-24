@@ -8,8 +8,9 @@
 
 #import "MMChooseBirthVC.h"
 #import "MMPersonTableViewModel.h"
+#import "MMEditPersonResult.h"
 
-@interface MMChooseBirthVC ()
+@interface MMChooseBirthVC ()<MMNetworkPtc>
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePickerView;
 
@@ -26,6 +27,9 @@
     if (self.userBirth.subTitle > 0) {
         [self setupBirthDate:self.userBirth.subTitle];
     }
+    
+    NSString *chooseDate = [MMDateFormatter yyMMddString:[NSDate date]];
+    _tempDate = chooseDate;
     
 }
 
@@ -62,16 +66,48 @@
     
 }
 - (IBAction)dateChanged:(id)sender {
-    
     UIDatePicker *control = (UIDatePicker *)sender;
     NSDate *tempDate = control.date;
     NSString *chooseDate = [MMDateFormatter yyMMddString:tempDate];
     _tempDate = chooseDate;
 }
 - (IBAction)sureDate:(id)sender {
-    [self setupBirthDate:_tempDate];
-    self.userBirth.subTitle = _tempDate;
-
+    if ([_tempDate isStringSafe]) {
+        [self setupBirthDate:_tempDate];
+        self.userBirth.subTitle = _tempDate;
+    }
 }
+
+- (IBAction)commitBirth:(id)sender {
+    if ([self.tempDate isStringSafe]) {
+        NSString *humanDI = [[NSUserDefaults standardUserDefaults] objectForKey:MMUserID];
+        
+        NSMutableDictionary *paraDict = [NSMutableDictionary new];
+        [paraDict setObjectSafe:humanDI forKey:@"humanID"];
+        [paraDict setObjectSafe:self.tempDate forKey:@"brithday"];
+        
+        BOOL networkState = [MMNetServies postUrl:@"/sys/humaninfo.htm?action=brithday"
+                                  resultContainer:[MMEditPersonResult new]
+                                         paraDict:[paraDict copy]
+                                         delegate:self customInfo:nil];
+        if (networkState) [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        else [UIAlertView networkError];
+    }
+    else {
+        [UIAlertView tipMessage:@"还没有选择出生日期"];
+    }
+}
+
+- (void)getSearchNetBack:(MMEditPersonResult *)searchResult forInfo:(id)customInfo {
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
+    NSString *networkState = searchResult.resultInfo.success;
+    if ([networkState isEqualToString:@"true"]) {
+        self.userBirth.subTitle = self.tempDate;
+    }
+    [UIAlertView tipMessage:searchResult.resultInfo.message];
+    
+}
+
 
 @end

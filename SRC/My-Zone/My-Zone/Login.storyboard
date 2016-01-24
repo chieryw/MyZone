@@ -580,9 +580,6 @@ Cg
                                         <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="editDone:" destination="Hus-Yw-ncc" eventType="editingDidEnd" id="YoY-v0-tS7"/>
-                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -722,7 +719,13 @@ Cg
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="出生日期" id="M4C-DY-jkK"/>
+                    <navigationItem key="navigationItem" title="出生日期" id="M4C-DY-jkK">
+                        <barButtonItem key="rightBarButtonItem" title="确定" id="DoE-s1-Aer">
+                            <connections>
+                                <action selector="commitBirth:" destination="J72-OP-YBh" id="5CX-Vj-Hpb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="AzR-Fa-CXb" id="ED0-vn-FX0"/>
                         <outlet property="datePickerView" destination="c0z-1C-czm" id="0pj-wB-FyJ"/>
@@ -762,9 +765,6 @@ Cg
                                         <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="editDone:" destination="rkb-8X-K1A" eventType="editingDidEnd" id="F4n-WT-tJ9"/>
-                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -774,7 +774,13 @@ Cg
                             <constraint firstAttribute="trailingMargin" secondItem="fX6-Sn-lfu" secondAttribute="trailing" id="ajP-gQ-cqM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="签名" id="sBc-YM-HX3"/>
+                    <navigationItem key="navigationItem" title="签名" id="sBc-YM-HX3">
+                        <barButtonItem key="rightBarButtonItem" title="确定" id="V9a-n3-DQZ">
+                            <connections>
+                                <action selector="commitSign:" destination="rkb-8X-K1A" id="UIp-hc-wks"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="signTF" destination="fX6-Sn-lfu" id="K1Q-xk-qBZ"/>
                     </connections>

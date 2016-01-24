@@ -29,12 +29,7 @@
     [super didReceiveMemoryWarning];
     
 }
-- (IBAction)editDone:(id)sender {
-    
-//    UITextField *tf = (UITextField *)sender;
-//    self.userName.subTitle = tf.text;
-    
-}
+
 - (IBAction)commitUserName:(id)sender {
     if ([self.userNameTF.text isStringSafe]) {
         NSString *humanDI = [[NSUserDefaults standardUserDefaults] objectForKey:MMUserID];
