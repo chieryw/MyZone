@@ -19,5 +19,5 @@
 
 @interface MMLoginResult : MMSearchNetResult
 @property (nonatomic, strong) MMLoginResultDetail *resultInfo;
-@property (nonatomic, strong, setter = setTestArray:,getter=getTestArray) NSArray <MMLoginResultDetail> *testArray;
+@property (nonatomic, strong) NSArray <MMLoginResultDetail> *testArray;
 @end
