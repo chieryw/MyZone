@@ -11,5 +11,6 @@
 
 #define MMApplicationFirstDownload      @"ApplicationFirstDownload"
 #define MMApplicationFirstEnter         @"ApplicationFirstEnter"
+#define MMUsetHasLogin                  @"ApplicationUserHasLogin"
 
 #endif

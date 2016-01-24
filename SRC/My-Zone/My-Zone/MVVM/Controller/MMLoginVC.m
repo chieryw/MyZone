@@ -59,33 +59,30 @@
 - (IBAction)goNext:(id)sender {
     
     if ([self checkUserNameAndPassword]) {
-        
         if (self.model.enterType == MMEnterTypeLogin) {
+            NSMutableDictionary *paraDict = [NSMutableDictionary new];
+            [paraDict setObjectSafe:self.model.userName forKey:@"mobileNum"];
+            [paraDict setObjectSafe:self.model.password forKey:@"password"];
             
-            // 现在不做处理
+            BOOL networkState = [MMNetServies postUrl:@"sys/logon.htm"
+                                      resultContainer:[MMLoginResult new]
+                                             paraDict:[paraDict copy]
+                                             delegate:self customInfo:nil];
+            if (networkState) [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            else [UIAlertView networkError];
         }
         else {
-            NSDictionary *tempDict = @{
-            @"mobileNum":@"1881111888",
-            @"password":@"342343423"
-            };
+            NSMutableDictionary *paraDict = [NSMutableDictionary new];
+            [paraDict setObjectSafe:self.model.userName forKey:@"mobileNum"];
+            [paraDict setObjectSafe:self.model.password forKey:@"password"];
+            [paraDict setObjectSafe:self.model.checkString forKey:@"invitationCode"];
             
-            NSData *data = [NSJSONSerialization dataWithJSONObject:tempDict
-                                                           options:NSJSONWritingPrettyPrinted
-                                                             error:nil];
-            
-            NSString *tempString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            
-            MMSearchNetDelgt *delegate = [[MMSearchNetDelgt alloc] init];
-            [delegate setSearchResult:[MMLoginResult new]];
-            [delegate setDelegate:self];
-            
-            BOOL network = [MMNetworkTask postSearch:@"/tour/logon.htm"
-                                            forParam:tempString
-                                              forRes:YES
-                                           withDelgt:delegate];
-            
-//            [self performSegueWithIdentifier:@"nextSegue" sender:sender];
+            BOOL networkState = [MMNetServies postUrl:@"/sys/register.htm"
+                                      resultContainer:[MMLoginResult new]
+                                             paraDict:[paraDict copy]
+                                             delegate:self customInfo:nil];
+            if (networkState) [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            else [UIAlertView networkError];
         }
     
     }
@@ -125,12 +122,20 @@
 }
 
 #pragma mark - networkBack
-- (void)getFetchNetBack:(NSDictionary *)jsonDictionary forInfo:(id)customInfo {
-    NSLog(@"%@",jsonDictionary);
-}
-
 - (void)getSearchNetBack:(MMLoginResult *)searchResult forInfo:(id)customInfo {
-    NSLog(@"%@",searchResult);
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
+    NSString *networkState = searchResult.resultInfo.success;
+    if ([networkState isEqualToString:@"true"]) {
+        [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:MMUsetHasLogin];
+        
+        if (self.model.enterType == MMEnterTypeLogin) [self dismissViewControllerAnimated:YES completion:nil];
+        else [self performSegueWithIdentifier:@"nextSegue" sender:nil];
+    }
+    
+    NSString *netMessage = searchResult.resultInfo.message;
+    if ([netMessage isStringSafe]) [UIAlertView tipMessage:netMessage];
+    else [UIAlertView networkError];
 }
 
 #pragma mark - 初始化配置
@@ -184,7 +189,6 @@
             [self.confirmButton setTitle:@"下一步" forState:UIControlStateNormal];
         }
     }];
-    
 }
 
 #pragma mark - 辅助函数
