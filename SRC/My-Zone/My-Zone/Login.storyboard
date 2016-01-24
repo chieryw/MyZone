@@ -568,7 +568,7 @@ Cg
                                     <constraint firstAttribute="height" constant="44" id="nzQ-vs-9NG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="5"/>
@@ -592,7 +592,13 @@ Cg
                             <constraint firstItem="14g-6a-y5e" firstAttribute="leading" secondItem="3js-dh-1BR" secondAttribute="leadingMargin" id="ncJ-nH-GF0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="姓名" id="eaE-Sr-wgj"/>
+                    <navigationItem key="navigationItem" title="姓名" id="eaE-Sr-wgj">
+                        <barButtonItem key="rightBarButtonItem" title="确定" id="VjV-dX-0La">
+                            <connections>
+                                <action selector="commitUserName:" destination="Hus-Yw-ncc" id="fas-0O-iu9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="userNameTF" destination="14g-6a-y5e" id="La5-WH-Jfa"/>
                     </connections>

@@ -82,7 +82,7 @@
 - (MMPersonMessageCellModel *)userBirthdayCellModel {
     if (!_userBirthdayCellModel) {
         _userBirthdayCellModel = [[MMPersonMessageCellModel alloc] init];
-        _userBirthdayCellModel.icon = @"Birthday";
+        _userBirthdayCellModel.icon = @"BirthDay";
         _userBirthdayCellModel.title = @"出生日期";
         _userBirthdayCellModel.defaultSubTitle = @"请选择您的出生日期";
     }

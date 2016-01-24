@@ -21,7 +21,7 @@
 // 超时
 #define kNetworkTaskTimeOut					60
 
-NSString *const networkTaskServer       =   @"http://210.51.190.83:9080";
+NSString *const networkTaskServer       =   @"http://210.51.190.83:8090";
 NSString *const BackgroundNetworkTaskID =   @"com.qunar.backgroundNetworkTaskGeneral";
 
 @implementation MMNetworkTask

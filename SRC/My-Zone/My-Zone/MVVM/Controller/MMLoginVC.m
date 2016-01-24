@@ -60,16 +60,19 @@
     
     if ([self checkUserNameAndPassword]) {
         if (self.model.enterType == MMEnterTypeLogin) {
-            NSMutableDictionary *paraDict = [NSMutableDictionary new];
-            [paraDict setObjectSafe:self.model.userName forKey:@"mobileNum"];
-            [paraDict setObjectSafe:self.model.password forKey:@"password"];
             
-            BOOL networkState = [MMNetServies postUrl:@"sys/logon.htm"
-                                      resultContainer:[MMLoginResult new]
-                                             paraDict:[paraDict copy]
-                                             delegate:self customInfo:nil];
-            if (networkState) [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            else [UIAlertView networkError];
+            [self performSegueWithIdentifier:@"nextSegue" sender:nil];
+            
+//            NSMutableDictionary *paraDict = [NSMutableDictionary new];
+//            [paraDict setObjectSafe:self.model.userName forKey:@"mobileNum"];
+//            [paraDict setObjectSafe:self.model.password forKey:@"password"];
+//            
+//            BOOL networkState = [MMNetServies postUrl:@"sys/logon.htm"
+//                                      resultContainer:[MMLoginResult new]
+//                                             paraDict:[paraDict copy]
+//                                             delegate:self customInfo:nil];
+//            if (networkState) [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//            else [UIAlertView networkError];
         }
         else {
             NSMutableDictionary *paraDict = [NSMutableDictionary new];
@@ -127,10 +130,15 @@
     
     NSString *networkState = searchResult.resultInfo.success;
     if ([networkState isEqualToString:@"true"]) {
-        [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:MMUsetHasLogin];
+        [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:MMUserHasLogin];
+        [[NSUserDefaults standardUserDefaults] setObject:searchResult.resultInfo.humanID forKey:MMUserID];
         
         if (self.model.enterType == MMEnterTypeLogin) [self dismissViewControllerAnimated:YES completion:nil];
         else [self performSegueWithIdentifier:@"nextSegue" sender:nil];
+    }
+    else {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:MMUserHasLogin];
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:MMUserID];
     }
     
     NSString *netMessage = searchResult.resultInfo.message;

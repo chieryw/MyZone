@@ -15,5 +15,5 @@
 @end
 
 @interface MMEditPersonResult : MMSearchNetResult
-@property (nonatomic, strong) NSDictionary *resultInfo;
+@property (nonatomic, strong) MMEditPerson2Result *resultInfo;
 @end

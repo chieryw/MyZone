@@ -8,8 +8,9 @@
 
 #import "MMEditUserNameVC.h"
 #import "MMPersonTableViewModel.h"
+#import "MMEditPersonResult.h"
 
-@interface MMEditUserNameVC ()
+@interface MMEditUserNameVC ()<MMNetworkPtc>
 @property (weak, nonatomic) IBOutlet UITextField *userNameTF;
 
 @end
@@ -30,8 +31,38 @@
 }
 - (IBAction)editDone:(id)sender {
     
-    UITextField *tf = (UITextField *)sender;
-    self.userName.subTitle = tf.text;
+//    UITextField *tf = (UITextField *)sender;
+//    self.userName.subTitle = tf.text;
+    
+}
+- (IBAction)commitUserName:(id)sender {
+    if ([self.userNameTF.text isStringSafe]) {
+        NSString *humanDI = [[NSUserDefaults standardUserDefaults] objectForKey:MMUserID];
+        
+        NSMutableDictionary *paraDict = [NSMutableDictionary new];
+        [paraDict setObjectSafe:humanDI forKey:@"humanID"];
+        [paraDict setObjectSafe:self.userNameTF.text forKey:@"humanName"];
+        
+        BOOL networkState = [MMNetServies postUrl:@"sys/humaninfo.htm?action=humanName"
+                                  resultContainer:[MMEditPersonResult new]
+                                         paraDict:[paraDict copy]
+                                         delegate:self customInfo:nil];
+        if (networkState) [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        else [UIAlertView networkError];
+    }
+    else {
+        [UIAlertView tipMessage:@"用户名不能为空"];
+    }
+}
+
+- (void)getSearchNetBack:(MMEditPersonResult *)searchResult forInfo:(id)customInfo {
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
+    NSString *networkState = searchResult.resultInfo.success;
+    if ([networkState isEqualToString:@"true"]) {
+        self.userName.subTitle = self.userNameTF.text;
+    }
+    [UIAlertView tipMessage:searchResult.resultInfo.message];
     
 }
 
