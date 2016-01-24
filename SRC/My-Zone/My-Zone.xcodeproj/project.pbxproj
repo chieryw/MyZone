@@ -53,6 +53,8 @@
 		29616B2C1BC923AC000F66CE /* MMEditUserNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29616B2B1BC923AC000F66CE /* MMEditUserNameVC.m */; };
 		29616B2F1BC923BE000F66CE /* MMEditUserSignVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29616B2E1BC923BE000F66CE /* MMEditUserSignVC.m */; };
 		29616B321BC923CD000F66CE /* MMChooseBirthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29616B311BC923CD000F66CE /* MMChooseBirthVC.m */; };
+		296BAB131C549FF000E585F6 /* MMPersonCenterResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BAB121C549FF000E585F6 /* MMPersonCenterResult.m */; };
+		296BAB161C54A19100E585F6 /* MMEditPersonResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BAB151C54A19100E585F6 /* MMEditPersonResult.m */; };
 		298D01851BA3B87B00F5EDE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 298D01841BA3B87B00F5EDE7 /* main.m */; };
 		298D01881BA3B87B00F5EDE7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 298D01871BA3B87B00F5EDE7 /* AppDelegate.m */; };
 		298D01901BA3B87B00F5EDE7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298D018F1BA3B87B00F5EDE7 /* Images.xcassets */; };
@@ -331,6 +333,10 @@
 		29616B2E1BC923BE000F66CE /* MMEditUserSignVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMEditUserSignVC.m; sourceTree = "<group>"; };
 		29616B301BC923CD000F66CE /* MMChooseBirthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMChooseBirthVC.h; sourceTree = "<group>"; };
 		29616B311BC923CD000F66CE /* MMChooseBirthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMChooseBirthVC.m; sourceTree = "<group>"; };
+		296BAB111C549FF000E585F6 /* MMPersonCenterResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPersonCenterResult.h; sourceTree = "<group>"; };
+		296BAB121C549FF000E585F6 /* MMPersonCenterResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPersonCenterResult.m; sourceTree = "<group>"; };
+		296BAB141C54A19100E585F6 /* MMEditPersonResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMEditPersonResult.h; sourceTree = "<group>"; };
+		296BAB151C54A19100E585F6 /* MMEditPersonResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMEditPersonResult.m; sourceTree = "<group>"; };
 		298D017F1BA3B87B00F5EDE7 /* My-Zone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My-Zone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		298D01831BA3B87B00F5EDE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		298D01841BA3B87B00F5EDE7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -728,6 +734,10 @@
 			children = (
 				291768211C4D355C002AC1E9 /* MMLoginResult.h */,
 				291768221C4D355C002AC1E9 /* MMLoginResult.m */,
+				296BAB111C549FF000E585F6 /* MMPersonCenterResult.h */,
+				296BAB121C549FF000E585F6 /* MMPersonCenterResult.m */,
+				296BAB141C54A19100E585F6 /* MMEditPersonResult.h */,
+				296BAB151C54A19100E585F6 /* MMEditPersonResult.m */,
 			);
 			path = DataStruct;
 			sourceTree = "<group>";
@@ -1769,6 +1779,7 @@
 				29BC76411BA6CB3000518755 /* SDImageCache.m in Sources */,
 				298D02B71BA3CB2800F5EDE7 /* NSUserDefaults+RACSupport.m in Sources */,
 				2941E9B51BF717E900F9F29F /* XMLocationManager.m in Sources */,
+				296BAB131C549FF000E585F6 /* MMPersonCenterResult.m in Sources */,
 				298D02A71BA3CB2800F5EDE7 /* NSInvocation+RACTypeParsing.m in Sources */,
 				298D02C51BA3CB2800F5EDE7 /* RACEmptySequence.m in Sources */,
 				298D02F01BA3CB2800F5EDE7 /* UIControl+RACSignalSupportPrivate.m in Sources */,
@@ -1891,6 +1902,7 @@
 				298D02B21BA3CB2800F5EDE7 /* NSString+RACKeyPathUtilities.m in Sources */,
 				298D02E81BA3CB2800F5EDE7 /* RACUnit.m in Sources */,
 				29CB31C81BB95CDB0037F80B /* MMAddImageTableViewCell.m in Sources */,
+				296BAB161C54A19100E585F6 /* MMEditPersonResult.m in Sources */,
 				298D02E11BA3CB2800F5EDE7 /* RACSubscriptingAssignmentTrampoline.m in Sources */,
 				29E5E92C1BDCC2210016DCFC /* MMUserDetailVC.m in Sources */,
 				298D02ED1BA3CB2800F5EDE7 /* UIButton+RACCommandSupport.m in Sources */,
