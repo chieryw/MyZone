@@ -11,5 +11,8 @@
 
 #define MMApplicationFirstDownload      @"ApplicationFirstDownload"
 #define MMApplicationFirstEnter         @"ApplicationFirstEnter"
+#define MMUserHasLogin                  @"ApplicationUserHasLogin" 
+#define MMUserID                        @"MM************temp"       // UserId这是一个障眼法
+
 
 #endif

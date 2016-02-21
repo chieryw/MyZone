@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -20,7 +20,6 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入你的手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q9F-7q-68f">
                                 <rect key="frame" x="30" y="45" width="540" height="30"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9pm-RL-5Ff"/>
                                 </constraints>
@@ -29,7 +28,6 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入你的密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xx0-56-lK2">
                                 <rect key="frame" x="30" y="95" width="540" height="30"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="wM1-E8-cbW"/>
                                 </constraints>
@@ -38,7 +36,6 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBq-i2-SwC">
                                 <rect key="frame" x="30" y="155" width="20" height="20"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="0Gy-ij-eYN"/>
                                     <constraint firstAttribute="height" constant="20" id="iOR-dQ-jA8"/>
@@ -63,7 +60,6 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我有邀请码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCI-tr-XuA">
                                 <rect key="frame" x="60" y="155" width="90" height="21"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="3b1-0a-lnM"/>
                                     <constraint firstAttribute="height" constant="21" id="ewR-QW-dYP"/>
@@ -74,7 +70,6 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入邀请码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fVb-OV-mLr">
                                 <rect key="frame" x="30" y="180" width="450" height="30"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="PE0-n7-MzE"/>
                                 </constraints>
@@ -83,7 +78,6 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adB-xx-BND">
                                 <rect key="frame" x="180" y="240" width="240" height="34"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.11343763751945235" green="0.6532174700144624" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="5TL-lO-8ym"/>
@@ -102,7 +96,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fVb-OV-mLr" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="10" id="09y-gY-FKL"/>
@@ -152,7 +145,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="0Hu-86-qfB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -177,11 +169,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackImage1" translatesAutoresizingMaskIntoConstraints="NO" id="AiB-GG-HEK">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
-                                <animations/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eON-nu-yKw">
                                 <rect key="frame" x="80" y="180" width="116" height="116"/>
-                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="116" id="GWF-5y-DiX"/>
@@ -344,7 +334,6 @@ Cg
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xoc-1H-ukF">
                                 <rect key="frame" x="404" y="240" width="116" height="116"/>
-                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="116" id="NWh-cV-Iyt"/>
@@ -506,7 +495,6 @@ Cg
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="AiB-GG-HEK" secondAttribute="trailing" constant="-20" id="0b9-Yb-fut"/>
@@ -539,11 +527,9 @@ Cg
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Re8-ZD-j2e">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Re8-ZD-j2e" firstAttribute="top" secondItem="utb-fa-YS9" secondAttribute="topMargin" id="0mP-6s-1RB"/>
@@ -578,12 +564,11 @@ Cg
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的姓名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="14g-6a-y5e">
                                 <rect key="frame" x="20" y="15" width="560" height="44"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="nzQ-vs-9NG"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="5"/>
@@ -595,12 +580,8 @@ Cg
                                         <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="editDone:" destination="Hus-Yw-ncc" eventType="editingDidEnd" id="YoY-v0-tS7"/>
-                                </connections>
                             </textField>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="14g-6a-y5e" firstAttribute="top" secondItem="Rd9-qN-AiM" secondAttribute="bottom" constant="15" id="03e-Bp-lE7"/>
@@ -608,7 +589,13 @@ Cg
                             <constraint firstItem="14g-6a-y5e" firstAttribute="leading" secondItem="3js-dh-1BR" secondAttribute="leadingMargin" id="ncJ-nH-GF0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="姓名" id="eaE-Sr-wgj"/>
+                    <navigationItem key="navigationItem" title="姓名" id="eaE-Sr-wgj">
+                        <barButtonItem key="rightBarButtonItem" title="确定" id="VjV-dX-0La">
+                            <connections>
+                                <action selector="commitUserName:" destination="Hus-Yw-ncc" id="fas-0O-iu9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="userNameTF" destination="14g-6a-y5e" id="La5-WH-Jfa"/>
                     </connections>
@@ -631,7 +618,6 @@ Cg
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    请选择您的出生日期" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzR-Fa-CXb">
                                 <rect key="frame" x="20" y="15" width="560" height="44"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="9QU-QN-OcG"/>
                                 </constraints>
@@ -652,7 +638,6 @@ Cg
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="30" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0z-1C-czm">
                                 <rect key="frame" x="0.0" y="320" width="600" height="216"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="216" id="eGc-ri-Dc6"/>
                                 </constraints>
@@ -672,7 +657,6 @@ Cg
                             </datePicker>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qia-s2-K7h">
                                 <rect key="frame" x="0.0" y="275" width="600" height="1"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.82769097222222221" green="0.82769097222222221" blue="0.82769097222222221" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="mE2-F9-r9N"/>
@@ -680,7 +664,6 @@ Cg
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZR-fo-lqK">
                                 <rect key="frame" x="20" y="276" width="44" height="44"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="ANh-v3-Qd4"/>
                                 </constraints>
@@ -690,7 +673,6 @@ Cg
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgd-Ya-Flh">
                                 <rect key="frame" x="536" y="276" width="44" height="44"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="g6u-jD-YPB"/>
                                 </constraints>
@@ -703,14 +685,12 @@ Cg
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCx-87-DXz">
                                 <rect key="frame" x="0.0" y="319" width="600" height="1"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.82769097219999999" green="0.82769097219999999" blue="0.82769097219999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="L6C-6H-kNo"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="c0z-1C-czm" firstAttribute="top" secondItem="YCx-87-DXz" secondAttribute="bottom" id="6xh-in-vrc"/>
@@ -739,7 +719,13 @@ Cg
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="出生日期" id="M4C-DY-jkK"/>
+                    <navigationItem key="navigationItem" title="出生日期" id="M4C-DY-jkK">
+                        <barButtonItem key="rightBarButtonItem" title="确定" id="DoE-s1-Aer">
+                            <connections>
+                                <action selector="commitBirth:" destination="J72-OP-YBh" id="5CX-Vj-Hpb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="AzR-Fa-CXb" id="ED0-vn-FX0"/>
                         <outlet property="datePickerView" destination="c0z-1C-czm" id="0pj-wB-FyJ"/>
@@ -763,7 +749,6 @@ Cg
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入您的签名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fX6-Sn-lfu">
                                 <rect key="frame" x="20" y="15" width="560" height="44"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="zfD-U2-0NV"/>
                                 </constraints>
@@ -780,12 +765,8 @@ Cg
                                         <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="editDone:" destination="rkb-8X-K1A" eventType="editingDidEnd" id="F4n-WT-tJ9"/>
-                                </connections>
                             </textField>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="fX6-Sn-lfu" firstAttribute="leading" secondItem="4C5-nD-beg" secondAttribute="leadingMargin" id="Rqb-Ks-hRj"/>
@@ -793,14 +774,20 @@ Cg
                             <constraint firstAttribute="trailingMargin" secondItem="fX6-Sn-lfu" secondAttribute="trailing" id="ajP-gQ-cqM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="签名" id="sBc-YM-HX3"/>
+                    <navigationItem key="navigationItem" title="签名" id="sBc-YM-HX3">
+                        <barButtonItem key="rightBarButtonItem" title="确定" id="V9a-n3-DQZ">
+                            <connections>
+                                <action selector="commitSign:" destination="rkb-8X-K1A" id="UIp-hc-wks"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="signTF" destination="fX6-Sn-lfu" id="K1Q-xk-qBZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wav-N9-KCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3331" y="1701"/>
+            <point key="canvasLocation" x="3331" y="1937"/>
         </scene>
     </scenes>
     <resources>

@@ -15,6 +15,7 @@
 #import "MMEditUserNameVC.h"
 #import "MMEditUserSignVC.h"
 #import "MMChooseBirthVC.h"
+#import "MMRequestPostUploadImage.h"
 
 typedef NS_ENUM(NSInteger, MMActionSheetType) {
     MMActionSheetTypeSexy,

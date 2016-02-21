@@ -31,11 +31,9 @@
     // 相关配置
     [[MMAppSetting getInstance] configureIntroView];
     
-    // introView
-    [self addIntroView];
-    
-    // 登录状态检测
-    [self checkUserLogin];
+    NSNumber *isfirstEnter = [[NSUserDefaults standardUserDefaults] valueForKey:MMApplicationFirstEnter];
+    if (isfirstEnter && isfirstEnter.boolValue) [self addIntroView];
+    else [self checkUserLogin];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,18 +48,19 @@
 }
 
 - (void)checkUserLogin {
-    
+//    NSNumber *loginState = [[NSUserDefaults standardUserDefaults] valueForKey:MMUserHasLogin];
+//    if (!loginState || (loginState && loginState.boolValue == NO)) {
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [self performSegueWithIdentifier:@"NeedUserInfo" sender:nil];
+//        });
+//    }
 }
 
 #pragma mark - introView
 - (void)addIntroView {
     
     NSNumber *isfirstEnter = [[NSUserDefaults standardUserDefaults] valueForKey:MMApplicationFirstEnter];
-    if (isfirstEnter && isfirstEnter.boolValue) {
-        
-        [self.view addSubview:self.introView];
-    }
-    
+    if (isfirstEnter && isfirstEnter.boolValue) [self.view addSubview:self.introView];
 }
 
 - (MMIntroView *)introView {
@@ -73,7 +72,7 @@
         MMIntroViewModel *model = [[MMIntroViewModel alloc] init];
         _introView.model = model;
         
-        __weak typeof(self) weakSelf = self;
+        __weak typeof (self) weakSelf = self;
         [[_introView.enterButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
             // 将首次进入的标志删除
             [[NSUserDefaults standardUserDefaults] setValue:[NSNumber numberWithBool:NO] forKey:MMApplicationFirstEnter];

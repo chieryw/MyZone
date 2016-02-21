@@ -8,8 +8,9 @@
 
 #import "MMEditUserSignVC.h"
 #import "MMPersonTableViewModel.h"
+#import "MMEditPersonResult.h"
 
-@interface MMEditUserSignVC ()
+@interface MMEditUserSignVC ()<MMNetworkPtc>
 @property (weak, nonatomic) IBOutlet UITextField *signTF;
 
 @end
@@ -30,10 +31,34 @@
     
 }
 
-- (IBAction)editDone:(id)sender {
+- (IBAction)commitSign:(id)sender {
+    if ([self.signTF.text isStringSafe]) {
+        NSString *humanDI = [[NSUserDefaults standardUserDefaults] objectForKey:MMUserID];
+        
+        NSMutableDictionary *paraDict = [NSMutableDictionary new];
+        [paraDict setObjectSafe:humanDI forKey:@"humanID"];
+        [paraDict setObjectSafe:self.signTF.text forKey:@"signName"];
+        
+        BOOL networkState = [MMNetServies postUrl:@"/sys/humaninfo.htm?action=signName"
+                                  resultContainer:[MMEditPersonResult new]
+                                         paraDict:[paraDict copy]
+                                         delegate:self customInfo:nil];
+        if (networkState) [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        else [UIAlertView networkError];
+    }
+    else {
+        [UIAlertView tipMessage:@"签名不能为空"];
+    }
+}
+
+- (void)getSearchNetBack:(MMEditPersonResult *)searchResult forInfo:(id)customInfo {
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
     
-    UITextField *tf = (UITextField *)sender;
-    self.userSignModel.subTitle = tf.text;
+    NSString *networkState = searchResult.resultInfo.success;
+    if ([networkState isEqualToString:@"true"]) {
+        self.userSignModel.subTitle = self.signTF.text;
+    }
+    [UIAlertView tipMessage:searchResult.resultInfo.message];
     
 }
 

@@ -53,6 +53,9 @@
 		29616B2C1BC923AC000F66CE /* MMEditUserNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29616B2B1BC923AC000F66CE /* MMEditUserNameVC.m */; };
 		29616B2F1BC923BE000F66CE /* MMEditUserSignVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29616B2E1BC923BE000F66CE /* MMEditUserSignVC.m */; };
 		29616B321BC923CD000F66CE /* MMChooseBirthVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29616B311BC923CD000F66CE /* MMChooseBirthVC.m */; };
+		296BAB131C549FF000E585F6 /* MMPersonCenterResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BAB121C549FF000E585F6 /* MMPersonCenterResult.m */; };
+		296BAB161C54A19100E585F6 /* MMEditPersonResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BAB151C54A19100E585F6 /* MMEditPersonResult.m */; };
+		296BAB1A1C54A59500E585F6 /* MMNetServies.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BAB191C54A59500E585F6 /* MMNetServies.m */; };
 		298D01851BA3B87B00F5EDE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 298D01841BA3B87B00F5EDE7 /* main.m */; };
 		298D01881BA3B87B00F5EDE7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 298D01871BA3B87B00F5EDE7 /* AppDelegate.m */; };
 		298D01901BA3B87B00F5EDE7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298D018F1BA3B87B00F5EDE7 /* Images.xcassets */; };
@@ -175,6 +178,7 @@
 		29AEA4B81BF4D4A200582F62 /* MMFriendsZoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AEA4B71BF4D4A200582F62 /* MMFriendsZoneVC.m */; };
 		29B0A3EF1BAEBA410016879F /* MMBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B0A3EE1BAEBA410016879F /* MMBaseNavigationController.m */; };
 		29B0A3F11BAEC1040016879F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B0A3F01BAEC1040016879F /* Main.storyboard */; };
+		29B3434E1C77ED4700EF75EE /* MMRequestPostUploadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B3434D1C77ED4700EF75EE /* MMRequestPostUploadImage.m */; };
 		29B570191BF3786D00F1F0E2 /* MMMainMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B570181BF3786D00F1F0E2 /* MMMainMessageVC.m */; };
 		29B570201BF37AB500F1F0E2 /* TLSwipeForOptionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B5701E1BF37AB500F1F0E2 /* TLSwipeForOptionsCell.m */; };
 		29BC763F1BA6CB3000518755 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 29BC761F1BA6CB3000518755 /* MKAnnotationView+WebCache.m */; };
@@ -331,6 +335,12 @@
 		29616B2E1BC923BE000F66CE /* MMEditUserSignVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMEditUserSignVC.m; sourceTree = "<group>"; };
 		29616B301BC923CD000F66CE /* MMChooseBirthVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMChooseBirthVC.h; sourceTree = "<group>"; };
 		29616B311BC923CD000F66CE /* MMChooseBirthVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMChooseBirthVC.m; sourceTree = "<group>"; };
+		296BAB111C549FF000E585F6 /* MMPersonCenterResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPersonCenterResult.h; sourceTree = "<group>"; };
+		296BAB121C549FF000E585F6 /* MMPersonCenterResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPersonCenterResult.m; sourceTree = "<group>"; };
+		296BAB141C54A19100E585F6 /* MMEditPersonResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMEditPersonResult.h; sourceTree = "<group>"; };
+		296BAB151C54A19100E585F6 /* MMEditPersonResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMEditPersonResult.m; sourceTree = "<group>"; };
+		296BAB181C54A59500E585F6 /* MMNetServies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNetServies.h; sourceTree = "<group>"; };
+		296BAB191C54A59500E585F6 /* MMNetServies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNetServies.m; sourceTree = "<group>"; };
 		298D017F1BA3B87B00F5EDE7 /* My-Zone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My-Zone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		298D01831BA3B87B00F5EDE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		298D01841BA3B87B00F5EDE7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -580,6 +590,8 @@
 		29B0A3ED1BAEBA410016879F /* MMBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseNavigationController.h; sourceTree = "<group>"; };
 		29B0A3EE1BAEBA410016879F /* MMBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBaseNavigationController.m; sourceTree = "<group>"; };
 		29B0A3F01BAEC1040016879F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../Main.storyboard; sourceTree = "<group>"; };
+		29B3434C1C77ED4700EF75EE /* MMRequestPostUploadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRequestPostUploadImage.h; sourceTree = "<group>"; };
+		29B3434D1C77ED4700EF75EE /* MMRequestPostUploadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRequestPostUploadImage.m; sourceTree = "<group>"; };
 		29B570171BF3786D00F1F0E2 /* MMMainMessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMainMessageVC.h; sourceTree = "<group>"; };
 		29B570181BF3786D00F1F0E2 /* MMMainMessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMainMessageVC.m; sourceTree = "<group>"; };
 		29B5701D1BF37AB500F1F0E2 /* TLSwipeForOptionsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSwipeForOptionsCell.h; sourceTree = "<group>"; };
@@ -728,6 +740,10 @@
 			children = (
 				291768211C4D355C002AC1E9 /* MMLoginResult.h */,
 				291768221C4D355C002AC1E9 /* MMLoginResult.m */,
+				296BAB111C549FF000E585F6 /* MMPersonCenterResult.h */,
+				296BAB121C549FF000E585F6 /* MMPersonCenterResult.m */,
+				296BAB141C54A19100E585F6 /* MMEditPersonResult.h */,
+				296BAB151C54A19100E585F6 /* MMEditPersonResult.m */,
 			);
 			path = DataStruct;
 			sourceTree = "<group>";
@@ -1341,6 +1357,7 @@
 		29A96CDD1C2FE45C0048A2F4 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				29B3434B1C77ED0800EF75EE /* ImageTask */,
 				29CD74D41C4230520087065F /* NetworkTask */,
 			);
 			path = Service;
@@ -1353,6 +1370,15 @@
 				29AE67B21C4FDBDC00A572D3 /* MMPageScrollView.m */,
 			);
 			path = MMScrollView;
+			sourceTree = "<group>";
+		};
+		29B3434B1C77ED0800EF75EE /* ImageTask */ = {
+			isa = PBXGroup;
+			children = (
+				29B3434C1C77ED4700EF75EE /* MMRequestPostUploadImage.h */,
+				29B3434D1C77ED4700EF75EE /* MMRequestPostUploadImage.m */,
+			);
+			path = ImageTask;
 			sourceTree = "<group>";
 		};
 		29B5701A1BF37AB500F1F0E2 /* TLSwipeForOptionsCell */ = {
@@ -1445,6 +1471,8 @@
 				29CD74E31C4230520087065F /* MMSearchNetResult.h */,
 				29CD74E41C4230520087065F /* MMSearchNetResult.m */,
 				29CD74E51C4230520087065F /* MMNetworkPtc.h */,
+				296BAB181C54A59500E585F6 /* MMNetServies.h */,
+				296BAB191C54A59500E585F6 /* MMNetServies.m */,
 			);
 			path = NetworkTask;
 			sourceTree = "<group>";
@@ -1769,6 +1797,7 @@
 				29BC76411BA6CB3000518755 /* SDImageCache.m in Sources */,
 				298D02B71BA3CB2800F5EDE7 /* NSUserDefaults+RACSupport.m in Sources */,
 				2941E9B51BF717E900F9F29F /* XMLocationManager.m in Sources */,
+				296BAB131C549FF000E585F6 /* MMPersonCenterResult.m in Sources */,
 				298D02A71BA3CB2800F5EDE7 /* NSInvocation+RACTypeParsing.m in Sources */,
 				298D02C51BA3CB2800F5EDE7 /* RACEmptySequence.m in Sources */,
 				298D02F01BA3CB2800F5EDE7 /* UIControl+RACSignalSupportPrivate.m in Sources */,
@@ -1785,6 +1814,7 @@
 				29AD54CE1BD7DAA100087A14 /* NSString+Addtion.m in Sources */,
 				298D02D31BA3CB2800F5EDE7 /* RACReplaySubject.m in Sources */,
 				29BC76491BA6CB3000518755 /* UIImage+GIF.m in Sources */,
+				296BAB1A1C54A59500E585F6 /* MMNetServies.m in Sources */,
 				29AEA4B81BF4D4A200582F62 /* MMFriendsZoneVC.m in Sources */,
 				29E7FE971BAD095200673A7D /* UIColor+Addition.m in Sources */,
 				29AEA4B41BF4D1E900582F62 /* MMFriendsCell.m in Sources */,
@@ -1818,6 +1848,7 @@
 				29BC76441BA6CB3000518755 /* SDWebImageDownloader.m in Sources */,
 				2941E9AF1BF717E900F9F29F /* XMMessage.m in Sources */,
 				298D02AF1BA3CB2800F5EDE7 /* NSObject+RACSelectorSignal.m in Sources */,
+				29B3434E1C77ED4700EF75EE /* MMRequestPostUploadImage.m in Sources */,
 				29CD74E91C4230520087065F /* MMNetworkController.m in Sources */,
 				298D02F61BA3CB2800F5EDE7 /* UISlider+RACSignalSupport.m in Sources */,
 				298D02DE1BA3CB2800F5EDE7 /* RACStringSequence.m in Sources */,
@@ -1891,6 +1922,7 @@
 				298D02B21BA3CB2800F5EDE7 /* NSString+RACKeyPathUtilities.m in Sources */,
 				298D02E81BA3CB2800F5EDE7 /* RACUnit.m in Sources */,
 				29CB31C81BB95CDB0037F80B /* MMAddImageTableViewCell.m in Sources */,
+				296BAB161C54A19100E585F6 /* MMEditPersonResult.m in Sources */,
 				298D02E11BA3CB2800F5EDE7 /* RACSubscriptingAssignmentTrampoline.m in Sources */,
 				29E5E92C1BDCC2210016DCFC /* MMUserDetailVC.m in Sources */,
 				298D02ED1BA3CB2800F5EDE7 /* UIButton+RACCommandSupport.m in Sources */,
