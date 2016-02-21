@@ -41,8 +41,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="一日游" id="lfT-2e-Te0"/>
+                    <navigationItem key="navigationItem" title="一日游" id="lfT-2e-Te0">
+                        <barButtonItem key="rightBarButtonItem" title="随机" id="Uce-8G-Ycx">
+                            <connections>
+                                <action selector="editSortType:" destination="OgZ-OX-J8V" id="J6G-wZ-P6z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="editSortBarButton" destination="Uce-8G-Ycx" id="amn-xA-qVe"/>
                         <segue destination="1vC-aP-33e" kind="show" identifier="PushToUserDetailVC" id="op8-hX-PEq"/>
                     </connections>
                 </viewController>
