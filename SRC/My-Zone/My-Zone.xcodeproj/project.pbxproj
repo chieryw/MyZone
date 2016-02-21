@@ -178,6 +178,7 @@
 		29AEA4B81BF4D4A200582F62 /* MMFriendsZoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AEA4B71BF4D4A200582F62 /* MMFriendsZoneVC.m */; };
 		29B0A3EF1BAEBA410016879F /* MMBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B0A3EE1BAEBA410016879F /* MMBaseNavigationController.m */; };
 		29B0A3F11BAEC1040016879F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B0A3F01BAEC1040016879F /* Main.storyboard */; };
+		29B3434E1C77ED4700EF75EE /* MMRequestPostUploadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B3434D1C77ED4700EF75EE /* MMRequestPostUploadImage.m */; };
 		29B570191BF3786D00F1F0E2 /* MMMainMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B570181BF3786D00F1F0E2 /* MMMainMessageVC.m */; };
 		29B570201BF37AB500F1F0E2 /* TLSwipeForOptionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B5701E1BF37AB500F1F0E2 /* TLSwipeForOptionsCell.m */; };
 		29BC763F1BA6CB3000518755 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 29BC761F1BA6CB3000518755 /* MKAnnotationView+WebCache.m */; };
@@ -589,6 +590,8 @@
 		29B0A3ED1BAEBA410016879F /* MMBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseNavigationController.h; sourceTree = "<group>"; };
 		29B0A3EE1BAEBA410016879F /* MMBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBaseNavigationController.m; sourceTree = "<group>"; };
 		29B0A3F01BAEC1040016879F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../Main.storyboard; sourceTree = "<group>"; };
+		29B3434C1C77ED4700EF75EE /* MMRequestPostUploadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRequestPostUploadImage.h; sourceTree = "<group>"; };
+		29B3434D1C77ED4700EF75EE /* MMRequestPostUploadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRequestPostUploadImage.m; sourceTree = "<group>"; };
 		29B570171BF3786D00F1F0E2 /* MMMainMessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMainMessageVC.h; sourceTree = "<group>"; };
 		29B570181BF3786D00F1F0E2 /* MMMainMessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMainMessageVC.m; sourceTree = "<group>"; };
 		29B5701D1BF37AB500F1F0E2 /* TLSwipeForOptionsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLSwipeForOptionsCell.h; sourceTree = "<group>"; };
@@ -1354,6 +1357,7 @@
 		29A96CDD1C2FE45C0048A2F4 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				29B3434B1C77ED0800EF75EE /* ImageTask */,
 				29CD74D41C4230520087065F /* NetworkTask */,
 			);
 			path = Service;
@@ -1366,6 +1370,15 @@
 				29AE67B21C4FDBDC00A572D3 /* MMPageScrollView.m */,
 			);
 			path = MMScrollView;
+			sourceTree = "<group>";
+		};
+		29B3434B1C77ED0800EF75EE /* ImageTask */ = {
+			isa = PBXGroup;
+			children = (
+				29B3434C1C77ED4700EF75EE /* MMRequestPostUploadImage.h */,
+				29B3434D1C77ED4700EF75EE /* MMRequestPostUploadImage.m */,
+			);
+			path = ImageTask;
 			sourceTree = "<group>";
 		};
 		29B5701A1BF37AB500F1F0E2 /* TLSwipeForOptionsCell */ = {
@@ -1835,6 +1848,7 @@
 				29BC76441BA6CB3000518755 /* SDWebImageDownloader.m in Sources */,
 				2941E9AF1BF717E900F9F29F /* XMMessage.m in Sources */,
 				298D02AF1BA3CB2800F5EDE7 /* NSObject+RACSelectorSignal.m in Sources */,
+				29B3434E1C77ED4700EF75EE /* MMRequestPostUploadImage.m in Sources */,
 				29CD74E91C4230520087065F /* MMNetworkController.m in Sources */,
 				298D02F61BA3CB2800F5EDE7 /* UISlider+RACSignalSupport.m in Sources */,
 				298D02DE1BA3CB2800F5EDE7 /* RACStringSequence.m in Sources */,

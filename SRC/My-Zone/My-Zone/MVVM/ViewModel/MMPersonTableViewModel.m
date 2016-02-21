@@ -7,6 +7,7 @@
 //
 
 #import "MMPersonTableViewModel.h"
+#import "MMRequestPostUploadImage.h"
 
 @implementation MMAddImageCellModel
 
@@ -43,12 +44,62 @@
 
 @end
 
+NSString *TMP_UPLOAD_IMG_PATH=@"";
+
 @implementation MMPersonTableViewModel
 
 - (void)saveImage:(UIImage *)image {
     
     // 添加相应的图片到对应的文件夹中
+    UIImage *newImg=[MMRequestPostUploadImage imageWithImageSimple:image scaledToSize:CGSizeMake(300, 300)];
+    [self saveImage:newImg WithName:[NSString stringWithFormat:@"%@%@",[MMRequestPostUploadImage generateUuidString],@".jpg"]];
+}
+
+- (void)saveImage:(UIImage *)tempImage WithName:(NSString *)imageName
+
+{
+    NSLog(@"===TMP_UPLOAD_IMG_PATH===%@",TMP_UPLOAD_IMG_PATH);
+    NSData* imageData = UIImagePNGRepresentation(tempImage);
     
+    NSArray* paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
+    
+    NSString* documentsDirectory = [paths objectAtIndex:0];
+    
+    // Now we get the full path to the file
+    
+    NSString* fullPathToFile = [documentsDirectory stringByAppendingPathComponent:imageName];
+    
+    // and then we write it out
+    TMP_UPLOAD_IMG_PATH=fullPathToFile;
+    NSArray *nameAry=[TMP_UPLOAD_IMG_PATH componentsSeparatedByString:@"/"];
+    NSLog(@"===new fullPathToFile===%@",fullPathToFile);
+    NSLog(@"===new FileName===%@",[nameAry objectAtIndex:[nameAry count]-1]);
+    
+    [imageData writeToFile:fullPathToFile atomically:NO];
+}
+
+- (IBAction)onPostData:(id)sender {
+    if([TMP_UPLOAD_IMG_PATH isEqualToString:@""]){
+        [MMRequestPostUploadImage postRequestWithURL:@"sys/uploadfile.htm?fileType=headImg" postParems:nil picFilePath:nil picFileName:nil result:^(NSError *error, NSDictionary *resultInfo) {
+            if (resultInfo && !error) {
+                // 成功处理
+            }
+            else {
+                // 出错的处理
+            }
+        }];
+    }else{
+        NSLog(@"有图标上传");
+        NSArray *nameAry=[TMP_UPLOAD_IMG_PATH componentsSeparatedByString:@"/"];
+        [MMRequestPostUploadImage postRequestWithURL:@"sys/uploadfile.htm?fileType=headImg" postParems:nil picFilePath:TMP_UPLOAD_IMG_PATH picFileName:[nameAry objectAtIndex:[nameAry count]-1] result:^(NSError *error, NSDictionary *resultInfo) {
+            if (resultInfo && !error) {
+                // 成功处理
+            }
+            else {
+                // 出错的处理
+            }
+        }];
+    }
     
 }
 
