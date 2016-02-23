@@ -5,6 +5,4 @@ target "My-Zone" do
 pod 'Masonry'
 pod 'MJRefresh'
 
-# 测试
-
 end
