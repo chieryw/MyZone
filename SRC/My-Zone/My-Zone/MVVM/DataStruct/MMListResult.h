@@ -7,20 +7,11 @@
 //
 
 #import "MMSearchNetResult.h"
-
-@protocol MMGuideListResuilt @end
-@interface MMGuideListResuilt : MMSearchNetDelgt
-@property (nonatomic, strong) NSString *humanID;
-@property (nonatomic, strong) NSString *humanName;
-@property (nonatomic, strong) NSString *online;
-@property (nonatomic, strong) NSString *signName;
-@property (nonatomic, strong) NSString *VIP;
-@property (nonatomic, strong) NSString *fileID;
-@end
+#import "MMGuideInfoResult.h"
 
 @interface MMListResult : MMSearchNetResult
 
 @property (nonatomic, strong) NSString *count;  // 当前列表的个数
-@property (nonatomic, strong) NSArray <MMGuideListResuilt> *guideList;
+@property (nonatomic, strong) NSArray <MMGuideInfoResult> *guideList;
 
 @end

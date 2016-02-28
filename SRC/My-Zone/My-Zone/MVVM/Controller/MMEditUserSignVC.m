@@ -8,7 +8,7 @@
 
 #import "MMEditUserSignVC.h"
 #import "MMPersonTableViewModel.h"
-#import "MMEditPersonResult.h"
+#import "MMSimpleResult.h"
 
 @interface MMEditUserSignVC ()<MMNetworkPtc>
 @property (weak, nonatomic) IBOutlet UITextField *signTF;
@@ -40,7 +40,7 @@
         [paraDict setObjectSafe:self.signTF.text forKey:@"signName"];
         
         BOOL networkState = [MMNetServies postUrl:@"/sys/humaninfo.htm?action=signName"
-                                  resultContainer:[MMEditPersonResult new]
+                                  resultContainer:[MMSimpleResult new]
                                          paraDict:[paraDict copy]
                                          delegate:self customInfo:nil];
         if (networkState) [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -51,7 +51,7 @@
     }
 }
 
-- (void)getSearchNetBack:(MMEditPersonResult *)searchResult forInfo:(id)customInfo {
+- (void)getSearchNetBack:(MMSimpleResult *)searchResult forInfo:(id)customInfo {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
     NSString *networkState = searchResult.resultInfo.success;
