@@ -8,7 +8,7 @@
 
 #import "MMChooseBirthVC.h"
 #import "MMPersonTableViewModel.h"
-#import "MMEditPersonResult.h"
+#import "MMSimpleResult.h"
 
 @interface MMChooseBirthVC ()<MMNetworkPtc>
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
@@ -87,7 +87,7 @@
         [paraDict setObjectSafe:self.tempDate forKey:@"brithday"];
         
         BOOL networkState = [MMNetServies postUrl:@"/sys/humaninfo.htm?action=brithday"
-                                  resultContainer:[MMEditPersonResult new]
+                                  resultContainer:[MMSimpleResult new]
                                          paraDict:[paraDict copy]
                                          delegate:self customInfo:nil];
         if (networkState) [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -98,7 +98,7 @@
     }
 }
 
-- (void)getSearchNetBack:(MMEditPersonResult *)searchResult forInfo:(id)customInfo {
+- (void)getSearchNetBack:(MMSimpleResult *)searchResult forInfo:(id)customInfo {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
     NSString *networkState = searchResult.resultInfo.success;

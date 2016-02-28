@@ -6,8 +6,8 @@
 //  Copyright © 2016年 My-Zone. All rights reserved.
 //
 
-#import "MMEditPersonResult.h"
+#import "MMSimpleResult.h"
 
-@implementation MMEditPersonResult
+@implementation MMSimpleResult
 
 @end

@@ -8,12 +8,12 @@
 
 #import "MMSearchNetResult.h"
 
-@protocol MMEditPerson2Result @end
-@interface MMEditPerson2Result : MMSearchNetResult
+@protocol MMSimpleInfo @end
+@interface MMSimpleInfo : MMSearchNetResult
 @property (nonatomic, strong) NSString *success;
 @property (nonatomic, strong) NSString *message;
 @end
 
-@interface MMEditPersonResult : MMSearchNetResult
-@property (nonatomic, strong) MMEditPerson2Result *resultInfo;
+@interface MMSimpleResult : MMSearchNetResult
+@property (nonatomic, strong) MMSimpleInfo *resultInfo;
 @end
