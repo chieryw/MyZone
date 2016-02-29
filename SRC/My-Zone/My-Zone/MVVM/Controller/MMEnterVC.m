@@ -38,7 +38,7 @@
 }
 
 - (void)tip {
-    [UIAlertView showTitle:@"你确定选择该身份吗" message:@"***************" delegate:self cancelButtonTitle:@"重选" otherButtonTitles:@"确定"];
+    [UIAlertView showTitle:@"你确定选择该身份吗" message:@"我是导游，我可以带别人去旅行\n我是游客，我需要别人带我去旅游" delegate:self cancelButtonTitle:@"重选" otherButtonTitles:@"确定"];
 }
 
 #pragma mark - UIAlertViewDelegate

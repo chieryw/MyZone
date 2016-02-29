@@ -9,6 +9,8 @@
 #import "MMSearchVC.h"
 #import "MMPageScrollView.h"
 #import "MMHomeVM.h"
+#import "MMHomeResult.h"
+#import "MMUserDetailVC.h"
 
 @interface MMSearchVC ()<MMPageScrollViewDataSource,MMPageScrollViewDelegate,UIActionSheetDelegate>
 @property (nonatomic, strong) NSArray *array;
@@ -107,7 +109,8 @@
 
 - (void)pageScrollView:(MMPageScrollView*)pageScrollView didScrollToPageAtIndex:(NSInteger)index
 {
-    NSLog(@"%ld",(long)index);
+    MMGuideInfoResult *guideInfo = self.model.homeResult.guideList[index];
+    [self performSegueWithIdentifier:@"PushToUserDetailVC" sender:guideInfo];
 }
 
 #pragma mark - UIActionSheetDelegate
@@ -127,6 +130,9 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    MMUserDetailVC *detailVC = segue.destinationViewController;
+    // 给出数据模型
 }
 
 
