@@ -28,4 +28,15 @@
  */
 + (void)tipMessage:(NSString *)message;
 
+/**
+ *  alertView simple
+ *
+ *  @param title             title
+ *  @param message           message
+ *  @param delegate          delegate
+ *  @param cancelButtonTitle cancelButtonTitle
+ *  @param otherButtonTitles otherButtonTitle
+ */
++ (void)showTitle:(NSString *)title message:(NSString *)message delegate:(id /*<UIAlertViewDelegate>*/)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitle;
+
 @end

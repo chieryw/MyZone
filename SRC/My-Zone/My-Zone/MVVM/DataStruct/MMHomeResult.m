@@ -6,8 +6,8 @@
 //  Copyright © 2016年 My-Zone. All rights reserved.
 //
 
-#import "MMListResult.h"
+#import "MMHomeResult.h"
 
-@implementation MMListResult
+@implementation MMHomeResult
 
 @end

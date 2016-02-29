@@ -13,6 +13,7 @@
 #define MMApplicationFirstEnter         @"ApplicationFirstEnter"
 #define MMUserHasLogin                  @"ApplicationUserHasLogin" 
 #define MMUserID                        @"MM************temp"       // UserId这是一个障眼法
+#define MMUserIDType                    @"MM******++++++IT"         // 用户身份类型
 
 
 #endif

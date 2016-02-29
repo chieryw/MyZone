@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15E27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E39d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -329,7 +329,7 @@ Cg
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="A71-nh-aJK" kind="show" id="znH-mU-rjS"/>
+                                    <action selector="guideEnter:" destination="wXy-Hh-HJT" eventType="touchUpInside" id="CeX-rz-gh3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xoc-1H-ukF">
@@ -491,7 +491,7 @@ Cg
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="A71-nh-aJK" kind="show" id="LD3-xJ-zw1"/>
+                                    <action selector="visitorEnter:" destination="wXy-Hh-HJT" eventType="touchUpInside" id="a6o-V0-t7Z"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -508,6 +508,9 @@ Cg
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BfI-lP-LcI"/>
+                    <connections>
+                        <segue destination="A71-nh-aJK" kind="show" identifier="EnterPersonCenter" action="showDetailViewController:sender:" id="mtd-vq-40M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWK-J6-9qb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -796,7 +799,4 @@ Cg
         <image name="ChooseIdentityBackgroundImageSelected" width="116" height="116"/>
         <image name="Validate" width="21" height="21"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="LD3-xJ-zw1"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -41,7 +41,6 @@
     [super viewDidLoad];
 
     [self configSelf];
-
 }
 
 - (void)configSelf {
@@ -53,6 +52,9 @@
     
     // 观测信号源
     [self setupRACSignal];
+    
+    //  管理键盘
+    [self managerKeyboard];
 }
 
 #pragma mark - 事件处理函数
@@ -60,36 +62,40 @@
     
     if ([self checkUserNameAndPassword]) {
         if (self.model.enterType == MMEnterTypeLogin) {
-            
-            [self performSegueWithIdentifier:@"nextSegue" sender:nil];
-            
-//            NSMutableDictionary *paraDict = [NSMutableDictionary new];
-//            [paraDict setObjectSafe:self.model.userName forKey:@"mobileNum"];
-//            [paraDict setObjectSafe:self.model.password forKey:@"password"];
-//            
-//            BOOL networkState = [MMNetServies postUrl:@"sys/logon.htm"
-//                                      resultContainer:[MMLoginResult new]
-//                                             paraDict:[paraDict copy]
-//                                             delegate:self customInfo:nil];
-//            if (networkState) [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//            else [UIAlertView networkError];
+            [self login];
         }
         else {
-            NSMutableDictionary *paraDict = [NSMutableDictionary new];
-            [paraDict setObjectSafe:self.model.userName forKey:@"mobileNum"];
-            [paraDict setObjectSafe:self.model.password forKey:@"password"];
-            [paraDict setObjectSafe:self.model.checkString forKey:@"invitationCode"];
-            
-            BOOL networkState = [MMNetServies postUrl:@"/sys/register.htm"
-                                      resultContainer:[MMLoginResult new]
-                                             paraDict:[paraDict copy]
-                                             delegate:self customInfo:nil];
-            if (networkState) [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-            else [UIAlertView networkError];
+            [self signUp];
         }
-    
     }
     
+}
+
+- (void)login {
+    NSMutableDictionary *paraDict = [NSMutableDictionary new];
+    [paraDict setObjectSafe:self.model.userName forKey:@"mobileNum"];
+    [paraDict setObjectSafe:self.model.password forKey:@"password"];
+    
+    BOOL networkState = [MMNetServies postUrl:@"sys/logon.htm"
+                              resultContainer:[MMLoginResult new]
+                                     paraDict:[paraDict copy]
+                                     delegate:self customInfo:nil];
+    if (networkState) [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    else [UIAlertView networkError];
+}
+
+- (void)signUp {
+    NSMutableDictionary *paraDict = [NSMutableDictionary new];
+    [paraDict setObjectSafe:self.model.userName forKey:@"mobileNum"];
+    [paraDict setObjectSafe:self.model.password forKey:@"password"];
+    [paraDict setObjectSafe:self.model.checkString forKey:@"invitationCode"];
+    
+    BOOL networkState = [MMNetServies postUrl:@"/sys/register.htm"
+                              resultContainer:[MMLoginResult new]
+                                     paraDict:[paraDict copy]
+                                     delegate:self customInfo:nil];
+    if (networkState) [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    else [UIAlertView networkError];
 }
 
 - (IBAction)valideAction:(UIButton *)sender {
@@ -109,6 +115,13 @@
     [self reloadData];
 }
 
+- (void)currentViewEndEdit:(UITapGestureRecognizer *)gesture {
+    if ([gesture.view isKindOfClass:[UITextField class]]) {
+        return;
+    }
+    [self.view endEditing:YES];
+}
+
 #pragma mark - 微调UI元素
 - (void)configUI {
 
@@ -121,6 +134,14 @@
     self.userNameTF.delegate = self;
     self.passwordTF.delegate = self;
     self.checkTF.delegate = self;
+    
+}
+
+- (void)managerKeyboard {
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(currentViewEndEdit:)];
+    self.view.userInteractionEnabled = YES;
+    [self.view addGestureRecognizer:tapGesture];
     
 }
 
