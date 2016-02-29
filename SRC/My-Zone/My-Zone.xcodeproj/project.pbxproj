@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		290ACA071BB020100017D2D4 /* UIAlertView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 290ACA061BB020100017D2D4 /* UIAlertView+Addition.m */; };
-		2910DA7C1C79B48900607426 /* MMListResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 2910DA7B1C79B48900607426 /* MMListResult.m */; };
+		2910DA7C1C79B48900607426 /* MMHomeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 2910DA7B1C79B48900607426 /* MMHomeResult.m */; };
 		29152CD01BBAB5A900A626BB /* UIActionSheet+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 29152CCF1BBAB5A900A626BB /* UIActionSheet+Addition.m */; };
 		29152CD21BBABFB700A626BB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29152CD11BBABFB700A626BB /* MobileCoreServices.framework */; };
+		291655BB1C846BA9009442DD /* MMHomeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 291655BA1C846BA9009442DD /* MMHomeVM.m */; };
 		2917368E1BD3B1890050658E /* MMBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2917368D1BD3B1890050658E /* MMBaseTabBarController.m */; };
 		291768231C4D355C002AC1E9 /* MMLoginResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 291768221C4D355C002AC1E9 /* MMLoginResult.m */; };
 		291FC0011BB8EA6F00F55BAA /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 291FC0001BB8EA6F00F55BAA /* MBProgressHUD.m */; };
@@ -263,11 +264,13 @@
 		11F26094394066EC735F4610 /* Pods-My-Zone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My-Zone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-My-Zone/Pods-My-Zone.debug.xcconfig"; sourceTree = "<group>"; };
 		290ACA051BB020100017D2D4 /* UIAlertView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Addition.h"; sourceTree = "<group>"; };
 		290ACA061BB020100017D2D4 /* UIAlertView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Addition.m"; sourceTree = "<group>"; };
-		2910DA7A1C79B48900607426 /* MMListResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMListResult.h; sourceTree = "<group>"; };
-		2910DA7B1C79B48900607426 /* MMListResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMListResult.m; sourceTree = "<group>"; };
+		2910DA7A1C79B48900607426 /* MMHomeResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHomeResult.h; sourceTree = "<group>"; };
+		2910DA7B1C79B48900607426 /* MMHomeResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHomeResult.m; sourceTree = "<group>"; };
 		29152CCE1BBAB5A900A626BB /* UIActionSheet+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Addition.h"; sourceTree = "<group>"; };
 		29152CCF1BBAB5A900A626BB /* UIActionSheet+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Addition.m"; sourceTree = "<group>"; };
 		29152CD11BBABFB700A626BB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		291655B91C846BA9009442DD /* MMHomeVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHomeVM.h; sourceTree = "<group>"; };
+		291655BA1C846BA9009442DD /* MMHomeVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHomeVM.m; sourceTree = "<group>"; };
 		2917368C1BD3B1890050658E /* MMBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseTabBarController.h; sourceTree = "<group>"; };
 		2917368D1BD3B1890050658E /* MMBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBaseTabBarController.m; sourceTree = "<group>"; };
 		291768211C4D355C002AC1E9 /* MMLoginResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLoginResult.h; sourceTree = "<group>"; };
@@ -780,8 +783,8 @@
 				296BAB121C549FF000E585F6 /* MMPersonCenterResult.m */,
 				296BAB141C54A19100E585F6 /* MMSimpleResult.h */,
 				296BAB151C54A19100E585F6 /* MMSimpleResult.m */,
-				2910DA7A1C79B48900607426 /* MMListResult.h */,
-				2910DA7B1C79B48900607426 /* MMListResult.m */,
+				2910DA7A1C79B48900607426 /* MMHomeResult.h */,
+				2910DA7B1C79B48900607426 /* MMHomeResult.m */,
 				295FC34E1C82D8A200914633 /* MMFriendsInfoResult.h */,
 				295FC34F1C82D8A200914633 /* MMFriendsInfoResult.m */,
 				295FC3511C82D8DD00914633 /* MMGuideInfoResult.h */,
@@ -1158,6 +1161,8 @@
 				29AD54B31BD7D82B00087A14 /* MMHotZoneCellModel.m */,
 				29E5E9351BDCDB070016DCFC /* MMDetailImageCellModel.h */,
 				29E5E9361BDCDB070016DCFC /* MMDetailImageCellModel.m */,
+				291655B91C846BA9009442DD /* MMHomeVM.h */,
+				291655BA1C846BA9009442DD /* MMHomeVM.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1954,6 +1959,7 @@
 				29616B2F1BC923BE000F66CE /* MMEditUserSignVC.m in Sources */,
 				298D02D41BA3CB2800F5EDE7 /* RACReturnSignal.m in Sources */,
 				29BC764C1BA6CB3000518755 /* UIImageView+HighlightedWebCache.m in Sources */,
+				291655BB1C846BA9009442DD /* MMHomeVM.m in Sources */,
 				298D02A21BA3CB2800F5EDE7 /* NSData+RACSupport.m in Sources */,
 				298D02CF1BA3CB2800F5EDE7 /* RACMulticastConnection.m in Sources */,
 				298D02B81BA3CB2800F5EDE7 /* RACArraySequence.m in Sources */,
@@ -2004,7 +2010,7 @@
 				298D02DC1BA3CB2800F5EDE7 /* RACSignalSequence.m in Sources */,
 				2941E9C01BF717E900F9F29F /* XMVoiceMessageCell.m in Sources */,
 				2941E9B21BF717E900F9F29F /* XMVoiceMessage.m in Sources */,
-				2910DA7C1C79B48900607426 /* MMListResult.m in Sources */,
+				2910DA7C1C79B48900607426 /* MMHomeResult.m in Sources */,
 				29CD74E71C4230520087065F /* MMJSONMapping.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

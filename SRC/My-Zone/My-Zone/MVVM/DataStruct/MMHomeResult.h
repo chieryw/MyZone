@@ -9,7 +9,7 @@
 #import "MMSearchNetResult.h"
 #import "MMGuideInfoResult.h"
 
-@interface MMListResult : MMSearchNetResult
+@interface MMHomeResult : MMSearchNetResult
 
 @property (nonatomic, strong) NSString *count;  // 当前列表的个数
 @property (nonatomic, strong) NSArray <MMGuideInfoResult> *guideList;

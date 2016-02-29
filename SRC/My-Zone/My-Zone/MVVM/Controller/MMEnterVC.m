@@ -8,8 +8,8 @@
 
 #import "MMEnterVC.h"
 
-@interface MMEnterVC ()
-
+@interface MMEnterVC ()<UIAlertViewDelegate>
+@property (nonatomic, assign) BOOL isGuide;   // 是否选中了导游
 @end
 
 @implementation MMEnterVC
@@ -27,9 +27,25 @@
     
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"%@",sender);
-    NSLog(@"%@",segue);
+- (IBAction)guideEnter:(id)sender {
+    self.isGuide = YES;
+    [self tip];
+}
+
+- (IBAction)visitorEnter:(id)sender {
+    self.isGuide = NO;
+    [self tip];
+}
+
+- (void)tip {
+    [UIAlertView showTitle:@"你确定选择该身份吗" message:@"***************" delegate:self cancelButtonTitle:@"重选" otherButtonTitles:@"确定"];
+}
+
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == alertView.firstOtherButtonIndex) {
+        [self performSegueWithIdentifier:@"EnterPersonCenter" sender:nil];
+    }
 }
 
 @end
