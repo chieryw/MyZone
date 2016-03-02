@@ -10,7 +10,7 @@
 
 @interface MMFriendsInfoResult : MMSearchNetResult
 
-@property (nonatomic, strong) NSString *humanID;  // 当前列表的个数
+@property (nonatomic, strong) NSString *humanID;
 @property (nonatomic, strong) NSString *humanName;
 @property (nonatomic, strong) NSString *sex;
 @property (nonatomic, strong) NSString *brithday;

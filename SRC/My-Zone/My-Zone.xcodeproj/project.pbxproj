@@ -18,6 +18,7 @@
 		291FC0011BB8EA6F00F55BAA /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 291FC0001BB8EA6F00F55BAA /* MBProgressHUD.m */; };
 		291FC0071BB8F33300F55BAA /* MMEnterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 291FC0061BB8F33300F55BAA /* MMEnterVC.m */; };
 		2926574C1BCA2687001490A3 /* MMDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2926574B1BCA2687001490A3 /* MMDate.m */; };
+		2934FC131C872321005BE0A4 /* MMUserDetailVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 2934FC121C872321005BE0A4 /* MMUserDetailVM.m */; };
 		2941E95A1BF70EB700F9F29F /* TLOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2941E9591BF70EB700F9F29F /* TLOverlayView.m */; };
 		2941E9A41BF717E900F9F29F /* UIImageView+XMWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2941E9671BF717E900F9F29F /* UIImageView+XMWebImage.m */; };
 		2941E9A51BF717E900F9F29F /* UITableView+FDTemplateLayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2941E9691BF717E900F9F29F /* UITableView+FDTemplateLayoutCell.m */; };
@@ -284,6 +285,8 @@
 		291FC0061BB8F33300F55BAA /* MMEnterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMEnterVC.m; sourceTree = "<group>"; };
 		2926574A1BCA2687001490A3 /* MMDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDate.h; sourceTree = "<group>"; };
 		2926574B1BCA2687001490A3 /* MMDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDate.m; sourceTree = "<group>"; };
+		2934FC111C872321005BE0A4 /* MMUserDetailVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMUserDetailVM.h; sourceTree = "<group>"; };
+		2934FC121C872321005BE0A4 /* MMUserDetailVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMUserDetailVM.m; sourceTree = "<group>"; };
 		2941E9581BF70EB700F9F29F /* TLOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLOverlayView.h; sourceTree = "<group>"; };
 		2941E9591BF70EB700F9F29F /* TLOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLOverlayView.m; sourceTree = "<group>"; };
 		2941E9661BF717E900F9F29F /* UIImageView+XMWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+XMWebImage.h"; sourceTree = "<group>"; };
@@ -1168,6 +1171,8 @@
 				29E5E9361BDCDB070016DCFC /* MMDetailImageCellModel.m */,
 				291655B91C846BA9009442DD /* MMHomeVM.h */,
 				291655BA1C846BA9009442DD /* MMHomeVM.m */,
+				2934FC111C872321005BE0A4 /* MMUserDetailVM.h */,
+				2934FC121C872321005BE0A4 /* MMUserDetailVM.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1925,6 +1930,7 @@
 				29A5C5F01BB917CC00DA7286 /* NSMutableAttributedString+Addition.m in Sources */,
 				29BC76441BA6CB3000518755 /* SDWebImageDownloader.m in Sources */,
 				2941E9AF1BF717E900F9F29F /* XMMessage.m in Sources */,
+				2934FC131C872321005BE0A4 /* MMUserDetailVM.m in Sources */,
 				298D02AF1BA3CB2800F5EDE7 /* NSObject+RACSelectorSignal.m in Sources */,
 				29B3434E1C77ED4700EF75EE /* MMRequestPostUploadImage.m in Sources */,
 				29CD74E91C4230520087065F /* MMNetworkController.m in Sources */,
