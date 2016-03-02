@@ -18,6 +18,7 @@
 #define kContentHeight          (kScreenHeight - kStatusBarHeight - kNavigationBarHeight - kTabBarHeight)
 #define kContentRect            CGRectMake(0, 0, kScreenWidth, kContentHeight)
 #define kFullScreenRect         CGRectMake(0, 0, kScreenWidth, kScreenHeight)
+#define kScaleInApp             1/[[UIScreen mainScreen] scale]
 
 
 #define networkDomain           @"http://210.51.190.83:8080"

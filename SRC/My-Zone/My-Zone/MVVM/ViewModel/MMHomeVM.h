@@ -10,19 +10,21 @@
 #import "MMHomeResult.h"
 
 typedef NS_ENUM(NSInteger, MMFetchDataType) {
-    MMFetchDataTypeNewest,
+    MMFetchDataTypeNewest = 0,
     MMFetchDataTypeBestest,
     MMFetchDataTypeRandom
 };
 
 @interface MMHomeVM : NSObject
+@property (nonatomic, assign) BOOL showErrorView;
 @property (nonatomic, assign) BOOL showLoading;
 @property (nonatomic, assign) BOOL hasMore;             // 用于加载更多
 @property (nonatomic, assign) BOOL reloadData;
+@property (nonatomic, assign) MMFetchDataType fetchDataType;
 @property (nonatomic, strong) MMHomeResult *homeResult;
 
 //! 请求数据
-- (void)fetchData:(MMFetchDataType)type;
+- (void)fetchData;
 
 //! 加载更多
 - (void)loadMore;
