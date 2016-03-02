@@ -29,11 +29,11 @@
 }
 
 #pragma mark - 事件处理函数
-- (void)fetchData:(MMFetchDataType)type {
+- (void)fetchData {
     NSMutableDictionary *paraDict = [NSMutableDictionary new];
     NSString *humanId = [[NSUserDefaults standardUserDefaults] objectForKey:MMUserID];
     [paraDict setObjectSafe:humanId forKey:@"humanID"];
-    [paraDict setObjectSafe:@(type) forKey:@"queryType"];
+    [paraDict setObjectSafe:@(self.fetchDataType) forKey:@"queryType"];
     
     BOOL networkState = [MMNetServies postUrl:@"/sys/queryguide.htm"
                               resultContainer:[MMHomeResult new]
@@ -49,13 +49,21 @@
 
 #pragma mark - 网络回调函数
 - (void)getSearchNetBack:(id)searchResult forInfo:(id)customInfo {
+    
+    // 关闭loading
+    self.showLoading = NO;
+    
+    // 处理网络请求
     if (searchResult) {
         self.homeResult = (MMHomeResult *)searchResult;
+        self.showErrorView = NO;
         self.reloadData = YES;
     }
     else {
         self.homeResult = nil;
+        self.showErrorView = YES;
         self.reloadData = NO;
+        [UIAlertView networkError];
     }
 }
 

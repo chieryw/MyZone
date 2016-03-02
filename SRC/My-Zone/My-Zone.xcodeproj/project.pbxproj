@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2906CB781C85D7EB0055CBA1 /* MMErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2906CB771C85D7EB0055CBA1 /* MMErrorView.m */; };
 		290ACA071BB020100017D2D4 /* UIAlertView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 290ACA061BB020100017D2D4 /* UIAlertView+Addition.m */; };
 		2910DA7C1C79B48900607426 /* MMHomeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 2910DA7B1C79B48900607426 /* MMHomeResult.m */; };
 		29152CD01BBAB5A900A626BB /* UIActionSheet+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 29152CCF1BBAB5A900A626BB /* UIActionSheet+Addition.m */; };
@@ -262,6 +263,8 @@
 
 /* Begin PBXFileReference section */
 		11F26094394066EC735F4610 /* Pods-My-Zone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My-Zone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-My-Zone/Pods-My-Zone.debug.xcconfig"; sourceTree = "<group>"; };
+		2906CB761C85D7EB0055CBA1 /* MMErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMErrorView.h; sourceTree = "<group>"; };
+		2906CB771C85D7EB0055CBA1 /* MMErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMErrorView.m; sourceTree = "<group>"; };
 		290ACA051BB020100017D2D4 /* UIAlertView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Addition.h"; sourceTree = "<group>"; };
 		290ACA061BB020100017D2D4 /* UIAlertView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Addition.m"; sourceTree = "<group>"; };
 		2910DA7A1C79B48900607426 /* MMHomeResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHomeResult.h; sourceTree = "<group>"; };
@@ -1144,6 +1147,8 @@
 				29AEA4B11BF4D1E900582F62 /* MMFriendsCell.h */,
 				29AEA4B21BF4D1E900582F62 /* MMFriendsCell.m */,
 				29AEA4B31BF4D1E900582F62 /* MMFriendsCell.xib */,
+				2906CB761C85D7EB0055CBA1 /* MMErrorView.h */,
+				2906CB771C85D7EB0055CBA1 /* MMErrorView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1910,6 +1915,7 @@
 				2941E9BA1BF717E900F9F29F /* XMImageMessageCell.m in Sources */,
 				29BC764B1BA6CB3000518755 /* UIImage+WebP.m in Sources */,
 				2941E9BC1BF717E900F9F29F /* XMMessageCell.m in Sources */,
+				2906CB781C85D7EB0055CBA1 /* MMErrorView.m in Sources */,
 				290ACA071BB020100017D2D4 /* UIAlertView+Addition.m in Sources */,
 				29AD86FE1BF0CC4100BDC882 /* MMSettingVC.m in Sources */,
 				298D01881BA3B87B00F5EDE7 /* AppDelegate.m in Sources */,

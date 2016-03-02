@@ -11,12 +11,14 @@
 #import "MMHomeVM.h"
 #import "MMHomeResult.h"
 #import "MMUserDetailVC.h"
+#import "MMErrorView.h"
 
-@interface MMSearchVC ()<MMPageScrollViewDataSource,MMPageScrollViewDelegate,UIActionSheetDelegate>
+@interface MMSearchVC ()<MMPageScrollViewDataSource,MMPageScrollViewDelegate,UIActionSheetDelegate,MMErrorViewDelegate>
 @property (nonatomic, strong) NSArray *array;
 @property (nonatomic, strong) MMPageScrollView *pageScrollView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editSortBarButton;
 @property (nonatomic, strong) MMHomeVM *model;
+@property (nonatomic, strong) MMErrorView *errorView;
 @end
 
 @implementation MMSearchVC
@@ -25,8 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    [self initSubview];
     [self initModel];
+    [self.model fetchData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,6 +37,11 @@
 }
 
 #pragma mark -
+- (void)initSubview {
+    [self.view addSubview:self.errorView];
+    self.errorView.hidden = YES;
+}
+
 - (void)initModel {
     [self model];
     [self bindRAC];
@@ -49,6 +57,10 @@
         @strongify(self);
         [self updateScrollView];
     }];
+    [RACObserve(self.model, showErrorView) subscribeNext:^(id x) {
+        @strongify(self);
+        [self updateErrorView];
+    }];
 }
 
 #pragma mark - 更新视图
@@ -63,6 +75,16 @@
 
 - (void)updateScrollView {
     [self.pageScrollView reloadData];
+}
+
+- (void)updateErrorView {
+    if (self.model.showErrorView) {
+        self.errorView.hidden = NO;
+        [self.view bringSubviewToFront:self.errorView];
+    }
+    else {
+        self.errorView.hidden = YES;
+    }
 }
 
 #pragma mark - 事件处理
@@ -95,6 +117,14 @@
     return _model;
 }
 
+- (MMErrorView *)errorView {
+    if (!_errorView) {
+        _errorView = [[MMErrorView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight - kStatusBarHeight - kNavigationBarHeight - kTabBarHeight)];
+        _errorView.delegate = self;
+    }
+    return _errorView;
+}
+
 #pragma mark -
 
 - (NSInteger)numberOfPageInPageScrollView:(MMPageScrollView*)pageScrollView
@@ -113,6 +143,11 @@
     [self performSegueWithIdentifier:@"PushToUserDetailVC" sender:guideInfo];
 }
 
+#pragma mark - MMErrorViewDelegate
+- (void)errorViewButtonPressed {
+    [self.model fetchData];
+}
+
 #pragma mark - UIActionSheetDelegate
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex != 0) {
@@ -120,7 +155,8 @@
         [self.editSortBarButton setTitle:buttonTitle];
         
         // 做接下来的处理
-        [self.model fetchData:buttonIndex - 1];
+        self.model.fetchDataType = buttonIndex - 1;
+        [self.model fetchData];
     }
 }
 
