@@ -49,6 +49,11 @@
 
 #pragma mark - 网络回调函数
 - (void)getSearchNetBack:(id)searchResult forInfo:(id)customInfo {
+    
+    // 关闭loading
+    self.showLoading = NO;
+    
+    // 处理网络请求
     if (searchResult) {
         self.homeResult = (MMHomeResult *)searchResult;
         self.reloadData = YES;
@@ -56,6 +61,7 @@
     else {
         self.homeResult = nil;
         self.reloadData = NO;
+        [UIAlertView networkError];
     }
 }
 

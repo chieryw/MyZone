@@ -27,6 +27,7 @@
     // Do any additional setup after loading the view.
     
     [self initModel];
+    [self.model fetchData:MMFetchDataTypeNewest];
 }
 
 - (void)didReceiveMemoryWarning {
