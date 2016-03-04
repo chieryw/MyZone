@@ -7,6 +7,11 @@
 //
 
 #import "MMDetailUserDescriptionCell.h"
+#import "MMFriendsInfoResult.h"
+
+@interface MMDetailUserDescriptionCell ()
+@property (weak, nonatomic) IBOutlet UILabel *signLabel;
+@end
 
 @implementation MMDetailUserDescriptionCell
 
@@ -24,8 +29,10 @@
     return 44;
 }
 
-- (void)configCellWithData:(id)data {
-
+- (void)configCellWithData:(MMFriendsInfoResult *)data {
+    if (!data) return;
+    
+    self.signLabel.text = data.signName;
 }
 
 @end

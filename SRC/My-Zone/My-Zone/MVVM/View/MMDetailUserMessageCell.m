@@ -7,10 +7,15 @@
 //
 
 #import "MMDetailUserMessageCell.h"
+#import "MMFriendsInfoResult.h"
 
 @interface MMDetailUserMessageCell ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *sepratorLineHeight;
-
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ageLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *vipImage;
 @end
 
 @implementation MMDetailUserMessageCell
@@ -31,8 +36,14 @@
     return 64;
 }
 
-- (void)configCellWithData:(id)data {
-
+- (void)configCellWithData:(MMFriendsInfoResult *)data {
+    if (!data) return;
+    
+    self.nameLabel.text = data.humanName;
+    self.ageLabel.text = data.age;
+    self.vipImage.image = [UIImage imageNamed:@"VIP5"];
+    self.distanceLabel.text = @"暂无定位";
+    self.timeLabel.text = @"暂无加入该功能";
 }
 
 @end
