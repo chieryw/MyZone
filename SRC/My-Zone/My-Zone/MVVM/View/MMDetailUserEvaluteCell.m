@@ -7,9 +7,14 @@
 //
 
 #import "MMDetailUserEvaluteCell.h"
+#import "MMFriendsInfoResult.h"
 
 @interface MMDetailUserEvaluteCell ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *sepratorLineHeight;
+@property (weak, nonatomic) IBOutlet UILabel *goodLabel;
+@property (weak, nonatomic) IBOutlet UILabel *oohNoLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *goodEvaluteConstraint;
+
 
 @end
 
@@ -31,7 +36,11 @@
     return 50;
 }
 
-- (void)configCellWithData:(id)data {
+- (void)configCellWithData:(MMFriendsInfoResult *)data {
+    if (!data) return;
+    
+    self.goodLabel.text = data.praiseNum;
+    self.oohNoLabel.text = data.treadNum;
     
 }
 

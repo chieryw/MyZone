@@ -160,6 +160,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (!self.model.friendsInfoResult) return nil;
     UITableViewCell<MMTableViewCellProtocol> *cell = [tableView dequeueReusableCellWithIdentifier:self.tableViewCellTree[indexPath.row][0]];
+    [cell configCellWithData:self.model.friendsInfoResult];
     return cell;
 }
 
