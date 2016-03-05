@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15E39d" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -20,7 +20,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rank" translatesAutoresizingMaskIntoConstraints="NO" id="cb7-HD-2Ps">
                                 <rect key="frame" x="8" y="23" width="17" height="17"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="17" id="HWv-sl-vxf"/>
                                     <constraint firstAttribute="width" constant="17" id="qYD-uA-bH9"/>
@@ -28,7 +27,6 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="姓名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGz-dk-nXz">
                                 <rect key="frame" x="45" y="21" width="30" height="21"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="2uN-h7-PTp"/>
                                     <constraint firstAttribute="height" constant="21" id="trh-W8-3WR"/>
@@ -39,7 +37,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入你的姓名" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ar2-ow-pHO">
                                 <rect key="frame" x="177" y="23" width="105" height="17"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="140" id="E6y-Gz-sQV"/>
                                     <constraint firstAttribute="height" constant="17" id="Etb-mR-HAs"/>
@@ -49,7 +46,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lGz-dk-nXz" firstAttribute="leading" secondItem="cb7-HD-2Ps" secondAttribute="trailing" constant="20" id="2bg-3J-nwO"/>
@@ -72,7 +68,6 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
-                <animations/>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="IDk-FF-amJ" secondAttribute="trailing" constant="7" id="FKq-bh-zFo"/>
                     <constraint firstItem="IDk-FF-amJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-5" id="FQv-o3-1hY"/>
@@ -80,7 +75,6 @@
                     <constraint firstItem="IDk-FF-amJ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="7" id="RSZ-HH-JjC"/>
                 </constraints>
             </tableViewCellContentView>
-            <animations/>
             <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="backgroundMaskView" destination="IDk-FF-amJ" id="UY0-61-VPw"/>

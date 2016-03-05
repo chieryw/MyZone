@@ -8,13 +8,14 @@
 
 #import "MMDetailUserEvaluteCell.h"
 #import "MMFriendsInfoResult.h"
+#import "MMUserDetailVM.h"
 
 @interface MMDetailUserEvaluteCell ()
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *sepratorLineHeight;
 @property (weak, nonatomic) IBOutlet UILabel *goodLabel;
 @property (weak, nonatomic) IBOutlet UILabel *oohNoLabel;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *goodEvaluteConstraint;
-
+@property (nonatomic, strong) MMUserDetailVM *superModel;
 
 @end
 
@@ -44,4 +45,16 @@
     
 }
 
+- (void)linkSuperModel:(MMUserDetailVM *)model {
+    if (!model) return;
+    self.superModel = model;
+}
+
+- (IBAction)good:(id)sender {
+    self.superModel.goodAction = YES;
+}
+
+- (IBAction)oohNO:(id)sender {
+    self.superModel.oohNoActionClick = YES;
+}
 @end

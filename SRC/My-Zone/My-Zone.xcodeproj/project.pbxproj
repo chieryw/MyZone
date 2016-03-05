@@ -71,6 +71,7 @@
 		296BAB131C549FF000E585F6 /* MMPersonCenterResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BAB121C549FF000E585F6 /* MMPersonCenterResult.m */; };
 		296BAB161C54A19100E585F6 /* MMSimpleResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BAB151C54A19100E585F6 /* MMSimpleResult.m */; };
 		296BAB1A1C54A59500E585F6 /* MMNetServies.m in Sources */ = {isa = PBXBuildFile; fileRef = 296BAB191C54A59500E585F6 /* MMNetServies.m */; };
+		2980C1721C8AC0E50023AF62 /* MMEvaluteVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 2980C1711C8AC0E50023AF62 /* MMEvaluteVM.m */; };
 		298D01851BA3B87B00F5EDE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 298D01841BA3B87B00F5EDE7 /* main.m */; };
 		298D01881BA3B87B00F5EDE7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 298D01871BA3B87B00F5EDE7 /* AppDelegate.m */; };
 		298D01901BA3B87B00F5EDE7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298D018F1BA3B87B00F5EDE7 /* Images.xcassets */; };
@@ -386,6 +387,8 @@
 		296BAB151C54A19100E585F6 /* MMSimpleResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSimpleResult.m; sourceTree = "<group>"; };
 		296BAB181C54A59500E585F6 /* MMNetServies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNetServies.h; sourceTree = "<group>"; };
 		296BAB191C54A59500E585F6 /* MMNetServies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNetServies.m; sourceTree = "<group>"; };
+		2980C1701C8AC0E50023AF62 /* MMEvaluteVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMEvaluteVM.h; sourceTree = "<group>"; };
+		2980C1711C8AC0E50023AF62 /* MMEvaluteVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMEvaluteVM.m; sourceTree = "<group>"; };
 		298D017F1BA3B87B00F5EDE7 /* My-Zone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My-Zone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		298D01831BA3B87B00F5EDE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		298D01841BA3B87B00F5EDE7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -1173,6 +1176,8 @@
 				291655BA1C846BA9009442DD /* MMHomeVM.m */,
 				2934FC111C872321005BE0A4 /* MMUserDetailVM.h */,
 				2934FC121C872321005BE0A4 /* MMUserDetailVM.m */,
+				2980C1701C8AC0E50023AF62 /* MMEvaluteVM.h */,
+				2980C1711C8AC0E50023AF62 /* MMEvaluteVM.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1914,6 +1919,7 @@
 				298D02A61BA3CB2800F5EDE7 /* NSIndexSet+RACSequenceAdditions.m in Sources */,
 				2941E9B61BF717E900F9F29F /* XMChatBar.m in Sources */,
 				298D02FD1BA3CB2800F5EDE7 /* RVMViewModel.m in Sources */,
+				2980C1721C8AC0E50023AF62 /* MMEvaluteVM.m in Sources */,
 				291FC0011BB8EA6F00F55BAA /* MBProgressHUD.m in Sources */,
 				2941E9AD1BF717E900F9F29F /* XMImageMessage.m in Sources */,
 				29B570191BF3786D00F1F0E2 /* MMMainMessageVC.m in Sources */,

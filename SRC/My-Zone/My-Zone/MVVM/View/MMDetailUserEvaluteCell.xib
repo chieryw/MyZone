@@ -37,6 +37,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="width" relation="lessThanOrEqual" priority="750" constant="50" id="IFJ-uD-qRW"/>
                             <constraint firstItem="sZJ-Xe-CjL" firstAttribute="centerX" secondItem="SWS-n7-nQY" secondAttribute="centerX" id="KNe-5a-l0Q"/>
@@ -46,6 +47,9 @@
                             <constraint firstItem="sZJ-Xe-CjL" firstAttribute="top" secondItem="SWS-n7-nQY" secondAttribute="top" id="iav-rr-TVN"/>
                             <constraint firstItem="Zh3-AP-b1a" firstAttribute="width" secondItem="SWS-n7-nQY" secondAttribute="width" id="l53-lA-qHJ"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="nA2-JG-QI8" appends="YES" id="4jR-66-rCv"/>
+                        </connections>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebN-1l-EVk">
                         <rect key="frame" x="262" y="8" width="50" height="34"/>
@@ -69,6 +73,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="fjR-Tb-ZBa" firstAttribute="top" secondItem="ebN-1l-EVk" secondAttribute="top" id="1bd-1K-dP1"/>
                             <constraint firstItem="2hp-jQ-xwR" firstAttribute="width" secondItem="ebN-1l-EVk" secondAttribute="width" id="4jz-HH-n37"/>
@@ -78,6 +83,9 @@
                             <constraint firstItem="2hp-jQ-xwR" firstAttribute="leading" secondItem="ebN-1l-EVk" secondAttribute="leadingMargin" id="Yfh-L6-nOR"/>
                             <constraint firstItem="2hp-jQ-xwR" firstAttribute="top" secondItem="fjR-Tb-ZBa" secondAttribute="bottom" constant="1" id="rIR-jg-tWR"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Chp-Sj-Cie" appends="YES" id="7t9-cN-ZzS"/>
+                        </connections>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9OO-yt-8JY">
                         <rect key="frame" x="66" y="18" width="188" height="13.5"/>
@@ -123,6 +131,16 @@
             </connections>
             <point key="canvasLocation" x="278" y="380"/>
         </tableViewCell>
+        <tapGestureRecognizer id="nA2-JG-QI8">
+            <connections>
+                <action selector="good:" destination="KGk-i7-Jjw" id="Ofe-Eh-Ehz"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="Chp-Sj-Cie">
+            <connections>
+                <action selector="oohNO:" destination="KGk-i7-Jjw" id="wzS-GZ-ih0"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="BadEvalute" width="25" height="21"/>

@@ -246,6 +246,9 @@
                                         <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="submmit:" destination="n9l-ms-2jc" eventType="touchUpInside" id="hQm-ug-v5P"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -277,6 +280,13 @@
                             <constraint firstItem="zaF-ia-buu" firstAttribute="top" secondItem="Jph-ck-uTW" secondAttribute="bottom" constant="80" id="yMu-HW-m5C"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentMarkImage" destination="QMB-dr-4gE" id="peW-gn-DFW"/>
+                        <outlet property="evaluteTextField" destination="6aR-MS-MCe" id="VOW-Vv-vXX"/>
+                        <outlet property="userDescription" destination="6vh-CO-NRL" id="TzU-SQ-L1x"/>
+                        <outlet property="userHeaderImageView" destination="wg7-10-G7f" id="oa5-gf-jcO"/>
+                        <outlet property="userName" destination="lEZ-I7-dMH" id="tqC-WW-ZHe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o4K-7Q-aps" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
