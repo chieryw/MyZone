@@ -13,6 +13,8 @@
 #import "MMDetailUserDescriptionCell.h"
 #import "MMErrorView.h"
 #import "MMUserDetailVM.h"
+#import "MMEvaluteVC.h"
+#import "MMFriendsInfoResult.h"
 
 @interface MMUserDetailVC ()<UITableViewDataSource,UITableViewDelegate,MMErrorViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -54,6 +56,14 @@
     [RACObserve(self.model, showErrorView) subscribeNext:^(id x) {
         @strongify(self);
         [self updateErrorView];
+    }];
+    [RACObserve(self.model, goodAction) subscribeNext:^(id x) {
+        @strongify(self);
+        [self performSegueWithIdentifier:@"UserEvalute" sender:@"good"];
+    }];
+    [RACObserve(self.model, oohNoActionClick) subscribeNext:^(id x) {
+        @strongify(self);
+        [self performSegueWithIdentifier:@"UserEvalute" sender:@"oohNo"];
     }];
 }
 
@@ -161,13 +171,14 @@
     if (!self.model.friendsInfoResult) return nil;
     UITableViewCell<MMTableViewCellProtocol> *cell = [tableView dequeueReusableCellWithIdentifier:self.tableViewCellTree[indexPath.row][0]];
     [cell configCellWithData:self.model.friendsInfoResult];
+    if ([cell respondsToSelector:@selector(linkSuperModel:)]) [cell linkSuperModel:self.model];
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
-    [self performSegueWithIdentifier:@"UserEvalute" sender:nil];
+    // 暂时还没有时间需要实现
 }
 
 #pragma mark - MMErrorViewDelegate
@@ -176,9 +187,13 @@
 }
 
 #pragma mark - Navigation
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    NSString *tempSender = (NSString *)sender;
     
+    MMEvaluteVC *vc = segue.destinationViewController;
+    if ([tempSender isEqualToString:@"good"]) vc.isGood = YES;
+    else vc.isGood = NO;
+    vc.currentUserInfo = self.model.friendsInfoResult;
 }
 
 

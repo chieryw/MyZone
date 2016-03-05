@@ -15,6 +15,8 @@
 @property (nonatomic, assign) BOOL reloadData;      // 刷新界面
 @property (nonatomic, assign) BOOL showErrorView;
 @property (nonatomic, strong) MMFriendsInfoResult *friendsInfoResult;
+@property (nonatomic, assign) BOOL goodAction;
+@property (nonatomic, assign) BOOL oohNoActionClick;
 
 - (void)startLoadData;
 

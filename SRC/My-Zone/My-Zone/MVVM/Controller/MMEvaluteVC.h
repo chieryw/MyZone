@@ -7,7 +7,9 @@
 //
 
 #import "MMBaseViewController.h"
+#import "MMFriendsInfoResult.h"
 
 @interface MMEvaluteVC : MMBaseViewController
-
+@property (nonatomic, assign) BOOL isGood;
+@property (nonatomic, strong) MMFriendsInfoResult *currentUserInfo;
 @end

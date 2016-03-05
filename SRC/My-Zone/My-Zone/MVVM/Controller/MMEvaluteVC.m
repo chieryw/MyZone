@@ -7,9 +7,16 @@
 //
 
 #import "MMEvaluteVC.h"
+#import "MMEvaluteVM.h"
+#import "MMFriendsInfoResult.h"
 
-@interface MMEvaluteVC ()
-
+@interface MMEvaluteVC ()<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *userHeaderImageView;
+@property (weak, nonatomic) IBOutlet UILabel *userName;
+@property (weak, nonatomic) IBOutlet UILabel *userDescription;
+@property (weak, nonatomic) IBOutlet UIImageView *currentMarkImage;
+@property (weak, nonatomic) IBOutlet UITextField *evaluteTextField;
+@property (nonatomic, strong) MMEvaluteVM *model;
 @end
 
 @implementation MMEvaluteVC
@@ -17,9 +24,55 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    NSLog(@"%@",NSStringFromCGSize([[UIScreen mainScreen] bounds].size));
-//    NSLog(@"%f",[[UIScreen mainScreen] scale]);
-    self.title = @"赞";
+    [self configNavigationTitle];
+    [self configSubview];
+    
+    //  管理键盘
+    [self managerKeyboard];
+}
+
+- (void)configNavigationTitle {
+    if (self.isGood) self.title = @"赞";
+    else self.title = @"踩";
+}
+
+- (void)configSubview {
+    self.userHeaderImageView.image = [UIImage imageNamed:@""];
+    self.userName.text = self.currentUserInfo.humanName;
+    self.userDescription.text = [NSString stringWithFormat:@"达人导游，%@",self.currentUserInfo.age];
+    self.currentMarkImage.image = self.isGood?[UIImage imageNamed:@"GoodEvaluteBig"]:[UIImage imageNamed:@"BadEvaluteBig"];
+}
+
+- (void)bindRAC {
+    @weakify(self)
+    [RACObserve(self.model, showLoading) subscribeNext:^(id x) {
+        @strongify(self)
+        [self updateLoading];
+    }];
+}
+
+- (void)managerKeyboard {
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(currentViewEndEdit:)];
+    self.view.userInteractionEnabled = YES;
+    [self.view addGestureRecognizer:tapGesture];
+}
+
+- (void)currentViewEndEdit:(UITapGestureRecognizer *)gesture {
+    if ([gesture.view isKindOfClass:[UITextField class]]) {
+        return;
+    }
+    [self.view endEditing:YES];
+}
+
+
+- (void)updateLoading {
+    if (self.model.showLoading) {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    }
+    else {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,14 +80,9 @@
     
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)submmit:(id)sender {
+    [self.model submmitWithGuideId:self.currentUserInfo.humanID andEvalute:self.evaluteTextField.text andType:self.isGood];
 }
-*/
+
 
 @end

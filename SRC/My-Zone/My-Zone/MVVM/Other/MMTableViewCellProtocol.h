@@ -13,6 +13,7 @@
 - (void) configCellWithData:(id) data;
 
 @optional
+- (void)linkSuperModel:(id)model;
 + (CGFloat) cellHeightWithData:(id) cellData;
 
 + (id)create;
