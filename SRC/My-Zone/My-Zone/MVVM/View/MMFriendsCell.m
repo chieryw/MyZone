@@ -7,6 +7,16 @@
 //
 
 #import "MMFriendsCell.h"
+#import "MMFriendsInfo.h"
+
+@interface MMFriendsCell ()
+@property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *evaluteLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *usetHeaderImageView;
+@property (weak, nonatomic) IBOutlet UILabel *timeLable;
+
+@end
 
 @implementation MMFriendsCell
 
@@ -18,6 +28,10 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)configCellWithData:(MMFriendsInfo *)data {
+    // 在这里配置数据
 }
 
 @end

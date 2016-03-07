@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2906CB781C85D7EB0055CBA1 /* MMErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2906CB771C85D7EB0055CBA1 /* MMErrorView.m */; };
 		290ACA071BB020100017D2D4 /* UIAlertView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 290ACA061BB020100017D2D4 /* UIAlertView+Addition.m */; };
+		290F00501C8D9ED00041E919 /* MMFriendsZoneVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 290F004F1C8D9ED00041E919 /* MMFriendsZoneVM.m */; };
 		2910DA7C1C79B48900607426 /* MMHomeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 2910DA7B1C79B48900607426 /* MMHomeResult.m */; };
 		29152CD01BBAB5A900A626BB /* UIActionSheet+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 29152CCF1BBAB5A900A626BB /* UIActionSheet+Addition.m */; };
 		29152CD21BBABFB700A626BB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29152CD11BBABFB700A626BB /* MobileCoreServices.framework */; };
@@ -269,6 +270,8 @@
 		2906CB771C85D7EB0055CBA1 /* MMErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMErrorView.m; sourceTree = "<group>"; };
 		290ACA051BB020100017D2D4 /* UIAlertView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Addition.h"; sourceTree = "<group>"; };
 		290ACA061BB020100017D2D4 /* UIAlertView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Addition.m"; sourceTree = "<group>"; };
+		290F004E1C8D9ED00041E919 /* MMFriendsZoneVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFriendsZoneVM.h; sourceTree = "<group>"; };
+		290F004F1C8D9ED00041E919 /* MMFriendsZoneVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFriendsZoneVM.m; sourceTree = "<group>"; };
 		2910DA7A1C79B48900607426 /* MMHomeResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHomeResult.h; sourceTree = "<group>"; };
 		2910DA7B1C79B48900607426 /* MMHomeResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHomeResult.m; sourceTree = "<group>"; };
 		29152CCE1BBAB5A900A626BB /* UIActionSheet+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Addition.h"; sourceTree = "<group>"; };
@@ -1178,6 +1181,8 @@
 				2934FC121C872321005BE0A4 /* MMUserDetailVM.m */,
 				2980C1701C8AC0E50023AF62 /* MMEvaluteVM.h */,
 				2980C1711C8AC0E50023AF62 /* MMEvaluteVM.m */,
+				290F004E1C8D9ED00041E919 /* MMFriendsZoneVM.h */,
+				290F004F1C8D9ED00041E919 /* MMFriendsZoneVM.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1911,6 +1916,7 @@
 				2941E9A41BF717E900F9F29F /* UIImageView+XMWebImage.m in Sources */,
 				29CB31CC1BB962790037F80B /* MMPersonTableViewModel.m in Sources */,
 				298D02EC1BA3CB2800F5EDE7 /* UIBarButtonItem+RACCommandSupport.m in Sources */,
+				290F00501C8D9ED00041E919 /* MMFriendsZoneVM.m in Sources */,
 				295FC3501C82D8A200914633 /* MMFriendsInfoResult.m in Sources */,
 				298D031A1BA3D39500F5EDE7 /* MMLoginVM.m in Sources */,
 				29BC76421BA6CB3000518755 /* SDWebImageCompat.m in Sources */,

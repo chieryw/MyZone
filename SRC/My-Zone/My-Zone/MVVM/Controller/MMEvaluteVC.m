@@ -85,4 +85,12 @@
 }
 
 
+#pragma mark - Property
+- (MMEvaluteVM *)model {
+    if (!_model) {
+        _model = [MMEvaluteVM new];
+    }
+    return _model;
+}
+
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MMTableViewCellProtocol.h"
 
-@interface MMFriendsCell : UITableViewCell
+@interface MMFriendsCell : UITableViewCell<MMTableViewCellProtocol>
 
 @end
