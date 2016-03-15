@@ -75,7 +75,6 @@
 		2980C1721C8AC0E50023AF62 /* MMEvaluteVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 2980C1711C8AC0E50023AF62 /* MMEvaluteVM.m */; };
 		298D01851BA3B87B00F5EDE7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 298D01841BA3B87B00F5EDE7 /* main.m */; };
 		298D01881BA3B87B00F5EDE7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 298D01871BA3B87B00F5EDE7 /* AppDelegate.m */; };
-		298D01901BA3B87B00F5EDE7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 298D018F1BA3B87B00F5EDE7 /* Images.xcassets */; };
 		298D01931BA3B87B00F5EDE7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 298D01911BA3B87B00F5EDE7 /* LaunchScreen.xib */; };
 		298D019F1BA3B87B00F5EDE7 /* My_ZoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 298D019E1BA3B87B00F5EDE7 /* My_ZoneTests.m */; };
 		298D01B41BA3C36400F5EDE7 /* MMLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 298D01B31BA3C36400F5EDE7 /* MMLoginVC.m */; };
@@ -194,7 +193,6 @@
 		29AEA4B51BF4D1E900582F62 /* MMFriendsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29AEA4B31BF4D1E900582F62 /* MMFriendsCell.xib */; };
 		29AEA4B81BF4D4A200582F62 /* MMFriendsZoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29AEA4B71BF4D4A200582F62 /* MMFriendsZoneVC.m */; };
 		29B0A3EF1BAEBA410016879F /* MMBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B0A3EE1BAEBA410016879F /* MMBaseNavigationController.m */; };
-		29B0A3F11BAEC1040016879F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29B0A3F01BAEC1040016879F /* Main.storyboard */; };
 		29B3434E1C77ED4700EF75EE /* MMRequestPostUploadImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B3434D1C77ED4700EF75EE /* MMRequestPostUploadImage.m */; };
 		29B570191BF3786D00F1F0E2 /* MMMainMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B570181BF3786D00F1F0E2 /* MMMainMessageVC.m */; };
 		29B570201BF37AB500F1F0E2 /* TLSwipeForOptionsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B5701E1BF37AB500F1F0E2 /* TLSwipeForOptionsCell.m */; };
@@ -252,6 +250,8 @@
 		29E7FE9B1BAD099000673A7D /* MMAppSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E7FE9A1BAD099000673A7D /* MMAppSetting.m */; };
 		29E7FE9E1BAD0F4600673A7D /* CALayer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E7FE9D1BAD0F4600673A7D /* CALayer+Addition.m */; };
 		5AAB8214BC7EE6E4C15CA5AF /* libPods-My-Zone.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58A2995BA505C5114E7E5EA2 /* libPods-My-Zone.a */; };
+		646DB27C1C9852D100A76305 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646DB27B1C9852D100A76305 /* Images.xcassets */; };
+		646DB2801C98532800A76305 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 646DB27F1C98532800A76305 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -397,7 +397,6 @@
 		298D01841BA3B87B00F5EDE7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		298D01861BA3B87B00F5EDE7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		298D01871BA3B87B00F5EDE7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		298D018F1BA3B87B00F5EDE7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../Images.xcassets; sourceTree = "<group>"; };
 		298D01921BA3B87B00F5EDE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		298D01981BA3B87B00F5EDE7 /* My-ZoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "My-ZoneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		298D019D1BA3B87B00F5EDE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -640,7 +639,6 @@
 		29AEA4B71BF4D4A200582F62 /* MMFriendsZoneVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFriendsZoneVC.m; sourceTree = "<group>"; };
 		29B0A3ED1BAEBA410016879F /* MMBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMBaseNavigationController.h; sourceTree = "<group>"; };
 		29B0A3EE1BAEBA410016879F /* MMBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBaseNavigationController.m; sourceTree = "<group>"; };
-		29B0A3F01BAEC1040016879F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../Main.storyboard; sourceTree = "<group>"; };
 		29B3434C1C77ED4700EF75EE /* MMRequestPostUploadImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRequestPostUploadImage.h; sourceTree = "<group>"; };
 		29B3434D1C77ED4700EF75EE /* MMRequestPostUploadImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRequestPostUploadImage.m; sourceTree = "<group>"; };
 		29B570171BF3786D00F1F0E2 /* MMMainMessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMainMessageVC.h; sourceTree = "<group>"; };
@@ -752,6 +750,8 @@
 		29E7FE9C1BAD0F4600673A7D /* CALayer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Addition.h"; sourceTree = "<group>"; };
 		29E7FE9D1BAD0F4600673A7D /* CALayer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Addition.m"; sourceTree = "<group>"; };
 		58A2995BA505C5114E7E5EA2 /* libPods-My-Zone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-My-Zone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		646DB27B1C9852D100A76305 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		646DB27F1C98532800A76305 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B8D1EC581F29CCA2083D1AF3 /* Pods-My-Zone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My-Zone.release.xcconfig"; path = "Pods/Target Support Files/Pods-My-Zone/Pods-My-Zone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -982,6 +982,8 @@
 		298D01811BA3B87B00F5EDE7 /* My-Zone */ = {
 			isa = PBXGroup;
 			children = (
+				646DB27F1C98532800A76305 /* Main.storyboard */,
+				646DB27B1C9852D100A76305 /* Images.xcassets */,
 				29A96CDD1C2FE45C0048A2F4 /* Service */,
 				29E7FE8A1BAD095200673A7D /* Vendor */,
 				29F0FF661BA6EB9600F9CC59 /* Common */,
@@ -1051,7 +1053,6 @@
 		298D01AC1BA3BA4900F5EDE7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				298D018F1BA3B87B00F5EDE7 /* Images.xcassets */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1059,7 +1060,6 @@
 		298D01AD1BA3BA4900F5EDE7 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				29B0A3F01BAEC1040016879F /* Main.storyboard */,
 				29C153B41BEE039000C7E5EB /* Login.storyboard */,
 			);
 			path = Storyboards;
@@ -1740,16 +1740,16 @@
 				298D01931BA3B87B00F5EDE7 /* LaunchScreen.xib in Resources */,
 				2941E9A91BF717E900F9F29F /* face.plist in Resources */,
 				299B1C391BD7AA6C005D3B08 /* MMHotZoneCell.xib in Resources */,
-				298D01901BA3B87B00F5EDE7 /* Images.xcassets in Resources */,
 				29CB31C91BB95CDB0037F80B /* MMAddImageTableViewCell.xib in Resources */,
 				29AEA4B51BF4D1E900582F62 /* MMFriendsCell.xib in Resources */,
-				29B0A3F11BAEC1040016879F /* Main.storyboard in Resources */,
 				29A7BAA61BEB9962003CA4BE /* MMDetailUserMessageCell.xib in Resources */,
 				29CCA8841BBA3B6500F0A441 /* MMPersonMessageTVC.xib in Resources */,
 				29AD870B1BF0D60D00BDC882 /* MMRemoveCacheCell.xib in Resources */,
 				29E5E9341BDCD28D0016DCFC /* MMDetailImageCell.xib in Resources */,
+				646DB27C1C9852D100A76305 /* Images.xcassets in Resources */,
 				29BD24CB1BEC868300D83C34 /* MMDetailUserEvaluteCell.xib in Resources */,
 				29AD87061BF0D4CA00BDC882 /* MMPasswordCell.xib in Resources */,
+				646DB2801C98532800A76305 /* Main.storyboard in Resources */,
 				29C153B51BEE039000C7E5EB /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
