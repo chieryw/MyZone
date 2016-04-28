@@ -38,7 +38,7 @@
         [paraDict setObjectSafe:humanDI forKey:@"humanID"];
         [paraDict setObjectSafe:self.userNameTF.text forKey:@"humanName"];
         
-        BOOL networkState = [MMNetServies postUrl:@"sys/humaninfo.htm?action=humanName"
+        BOOL networkState = [MMNetServies postUrl:@"/tour/humaninfo.htm?action=humanName"
                                   resultContainer:[MMSimpleResult new]
                                          paraDict:[paraDict copy]
                                          delegate:self customInfo:nil];

@@ -22,7 +22,7 @@
 
 
 #define networkDomain           @"http://210.51.190.83:8080"
-#define MMDebugUrl              @"http://210.51.190.83:8090"   // 测试使用的url
+#define MMDebugUrl              @"http://101.201.36.7:8080"   // 测试使用的url
 
 
 #endif

@@ -22,7 +22,7 @@
     [paraDict setObjectSafe:guideID forKey:@"guideID"];
     [paraDict setObjectSafe:evalute forKey:@"treadNum"];
     
-    NSString *urlString = isGood?@"/sys/praise.htm":@"/sys/tread.htm";
+    NSString *urlString = isGood?@"/tour/praise.htm":@"/tour/tread.htm";
     BOOL networkState = [MMNetServies postUrl:urlString
                               resultContainer:[MMSimpleResult new]
                                      paraDict:[paraDict copy]

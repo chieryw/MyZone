@@ -80,7 +80,7 @@ NSString *TMP_UPLOAD_IMG_PATH=@"";
 
 - (IBAction)onPostData:(id)sender {
     if([TMP_UPLOAD_IMG_PATH isEqualToString:@""]){
-        [MMRequestPostUploadImage postRequestWithURL:@"sys/uploadfile.htm?fileType=headImg" postParems:nil picFilePath:nil picFileName:nil result:^(NSError *error, NSDictionary *resultInfo) {
+        [MMRequestPostUploadImage postRequestWithURL:@"/tour/uploadfile.htm?fileType=headImg" postParems:nil picFilePath:nil picFileName:nil result:^(NSError *error, NSDictionary *resultInfo) {
             if (resultInfo && !error) {
                 // 成功处理
             }
@@ -91,7 +91,7 @@ NSString *TMP_UPLOAD_IMG_PATH=@"";
     }else{
         NSLog(@"有图标上传");
         NSArray *nameAry=[TMP_UPLOAD_IMG_PATH componentsSeparatedByString:@"/"];
-        [MMRequestPostUploadImage postRequestWithURL:@"sys/uploadfile.htm?fileType=headImg" postParems:nil picFilePath:TMP_UPLOAD_IMG_PATH picFileName:[nameAry objectAtIndex:[nameAry count]-1] result:^(NSError *error, NSDictionary *resultInfo) {
+        [MMRequestPostUploadImage postRequestWithURL:@"/tour/uploadfile.htm?fileType=headImg" postParems:nil picFilePath:TMP_UPLOAD_IMG_PATH picFileName:[nameAry objectAtIndex:[nameAry count]-1] result:^(NSError *error, NSDictionary *resultInfo) {
             if (resultInfo && !error) {
                 // 成功处理
             }

@@ -76,7 +76,7 @@
     [paraDict setObjectSafe:self.model.userName forKey:@"mobileNum"];
     [paraDict setObjectSafe:self.model.password forKey:@"password"];
     
-    BOOL networkState = [MMNetServies postUrl:@"sys/logon.htm"
+    BOOL networkState = [MMNetServies postUrl:@"/sys/logon.htm"
                               resultContainer:[MMLoginResult new]
                                      paraDict:[paraDict copy]
                                      delegate:self customInfo:nil];

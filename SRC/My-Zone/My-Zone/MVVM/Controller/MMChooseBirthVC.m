@@ -86,7 +86,7 @@
         [paraDict setObjectSafe:humanDI forKey:@"humanID"];
         [paraDict setObjectSafe:self.tempDate forKey:@"brithday"];
         
-        BOOL networkState = [MMNetServies postUrl:@"/sys/humaninfo.htm?action=brithday"
+        BOOL networkState = [MMNetServies postUrl:@"/tour/humaninfo.htm?action=brithday"
                                   resultContainer:[MMSimpleResult new]
                                          paraDict:[paraDict copy]
                                          delegate:self customInfo:nil];

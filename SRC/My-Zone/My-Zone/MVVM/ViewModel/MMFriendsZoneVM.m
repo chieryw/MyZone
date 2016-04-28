@@ -33,7 +33,7 @@
     NSString *humanId = [[NSUserDefaults standardUserDefaults] objectForKey:MMUserID];
     [paraDict setObjectSafe:humanId forKey:@"humanID"];
     
-    BOOL networkState = [MMNetServies postUrl:@"/sys/friends/newFriends.htm"
+    BOOL networkState = [MMNetServies postUrl:@"/tour/friends/newFriends.htm"
                               resultContainer:[MMNewFriendsListResult new]
                                      paraDict:[paraDict copy]
                                      delegate:self customInfo:nil];

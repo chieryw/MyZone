@@ -35,7 +35,7 @@
     [paraDict setObjectSafe:humanId forKey:@"humanID"];
     [paraDict setObjectSafe:@(self.fetchDataType) forKey:@"queryType"];
     
-    BOOL networkState = [MMNetServies postUrl:@"/sys/queryguide.htm"
+    BOOL networkState = [MMNetServies postUrl:@"/tour/queryguide.htm"
                               resultContainer:[MMHomeResult new]
                                      paraDict:[paraDict copy]
                                      delegate:self customInfo:nil];
