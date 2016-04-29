@@ -101,8 +101,8 @@
 - (void)getSearchNetBack:(MMSimpleResult *)searchResult forInfo:(id)customInfo {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
-    NSString *networkState = searchResult.resultInfo.success;
-    if ([networkState isEqualToString:@"true"]) {
+    NSNumber *networkState = searchResult.resultInfo.success;
+    if ([networkState boolValue]) {
         self.userBirth.subTitle = self.tempDate;
     }
     [UIAlertView tipMessage:searchResult.resultInfo.message];

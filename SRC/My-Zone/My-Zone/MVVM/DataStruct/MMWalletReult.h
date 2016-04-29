@@ -9,7 +9,7 @@
 #import "MMSearchNetResult.h"
 
 @interface MMWalletInfo : MMSearchNetResult
-@property (nonatomic, strong) NSString *success;
+@property (nonatomic, strong) NSNumber *success;
 @property (nonatomic, strong) NSString *message;
 @property (nonatomic, strong) NSString *moneyNum;
 @end

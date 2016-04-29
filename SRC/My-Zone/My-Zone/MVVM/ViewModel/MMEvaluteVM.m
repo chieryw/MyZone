@@ -36,7 +36,7 @@
     self.showLoading = NO;
     
     // 处理网络请求
-    if (searchResult && [searchResult.resultInfo.success isEqualToString:@"true"]) {
+    if (searchResult && [searchResult.resultInfo.success boolValue]) {
         [UIAlertView showTitle:@"评价成功!"
                        message:nil
                       delegate:nil

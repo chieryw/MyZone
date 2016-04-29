@@ -76,7 +76,7 @@
     [paraDict setObjectSafe:self.model.userName forKey:@"mobileNum"];
     [paraDict setObjectSafe:self.model.password forKey:@"password"];
     
-    BOOL networkState = [MMNetServies postUrl:@"/sys/logon.htm"
+    BOOL networkState = [MMNetServies postUrl:@"/tour/login.htm"
                               resultContainer:[MMLoginResult new]
                                      paraDict:[paraDict copy]
                                      delegate:self customInfo:nil];
@@ -90,7 +90,7 @@
     [paraDict setObjectSafe:self.model.password forKey:@"password"];
     [paraDict setObjectSafe:self.model.checkString forKey:@"invitationCode"];
     
-    BOOL networkState = [MMNetServies postUrl:@"/sys/register.htm"
+    BOOL networkState = [MMNetServies postUrl:@"/tour/register.htm"
                               resultContainer:[MMLoginResult new]
                                      paraDict:[paraDict copy]
                                      delegate:self customInfo:nil];
@@ -149,8 +149,8 @@
 - (void)getSearchNetBack:(MMLoginResult *)searchResult forInfo:(id)customInfo {
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     
-    NSString *networkState = searchResult.resultInfo.success;
-    if ([networkState isEqualToString:@"true"]) {
+    NSNumber *networkState = searchResult.resultInfo.success;
+    if ([networkState boolValue]) {
         [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:MMUserHasLogin];
         [[NSUserDefaults standardUserDefaults] setObject:searchResult.resultInfo.humanID forKey:MMUserID];
         

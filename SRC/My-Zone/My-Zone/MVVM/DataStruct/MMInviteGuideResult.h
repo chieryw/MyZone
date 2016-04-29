@@ -9,7 +9,7 @@
 #import "MMSearchNetResult.h"
 
 @interface MMInviteGuideMessageResult : MMSearchNetResult
-@property (nonatomic, strong) NSString *success;
+@property (nonatomic, strong) NSNumber *success;
 @property (nonatomic, strong) NSString *message;
 @property (nonatomic, strong) NSString *fileID;
 @end

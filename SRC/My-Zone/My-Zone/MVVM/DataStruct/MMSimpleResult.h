@@ -10,7 +10,7 @@
 
 @protocol MMSimpleInfo @end
 @interface MMSimpleInfo : MMSearchNetResult
-@property (nonatomic, strong) NSString *success;
+@property (nonatomic, strong) NSNumber *success;
 @property (nonatomic, strong) NSString *message;
 @end
 
