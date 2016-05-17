@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F18b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -20,7 +20,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="Ypd-yr-FEQ">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.70311254649999999" green="0.76069917379999996" blue="0.90248184970000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="eue-aD-133"/>
@@ -28,7 +27,6 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rebbeca" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m3s-iJ-5XM">
                                 <rect key="frame" x="8" y="308" width="67.5" height="18"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="1D8-Rr-sAK"/>
                                     <constraint firstAttribute="height" constant="18" id="XQh-hH-SDm"/>
@@ -39,7 +37,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24岁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="khc-GD-oZT">
                                 <rect key="frame" x="83" y="308" width="27" height="18"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="40" id="TQf-dT-ypr"/>
                                     <constraint firstAttribute="height" constant="18" id="gAR-vV-dSK"/>
@@ -50,7 +47,6 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Locate" translatesAutoresizingMaskIntoConstraints="NO" id="UcM-PO-Zv1">
                                 <rect key="frame" x="8" y="334" width="8" height="9"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="8" id="AYx-6j-eSW"/>
                                     <constraint firstAttribute="height" constant="9" id="qxF-Fv-7tp"/>
@@ -58,7 +54,6 @@
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="LatestTime" translatesAutoresizingMaskIntoConstraints="NO" id="xdN-tD-VJ1">
                                 <rect key="frame" x="67" y="334" width="8" height="9"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="9" id="0S4-sW-chX"/>
                                     <constraint firstAttribute="width" constant="8" id="CBO-W8-1iv"/>
@@ -66,7 +61,6 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="800米" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3K-o4-rSL">
                                 <rect key="frame" x="21" y="331" width="35" height="14"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="bFI-W4-mw0"/>
                                     <constraint firstAttribute="height" constant="14" id="d8P-xc-Hd2"/>
@@ -77,7 +71,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6分钟前来过" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lS8-mt-1XV">
                                 <rect key="frame" x="88.5" y="331" width="68" height="14"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="14" id="CGL-bJ-EHO"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="120" id="eXL-VU-wft"/>
@@ -88,7 +81,6 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="VIP1" translatesAutoresizingMaskIntoConstraints="NO" id="Du0-kJ-KcH">
                                 <rect key="frame" x="261" y="312" width="31" height="10"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="31" id="Cqt-kW-Bzx"/>
                                     <constraint firstAttribute="height" constant="10" id="Gqw-Hg-eDG"/>
@@ -96,7 +88,6 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWx-Jv-yBC">
                                 <rect key="frame" x="8" y="351" width="284" height="1"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.74838226010101017" green="0.74838226010101017" blue="0.74838226010101017" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="OtV-bV-Ijy"/>
@@ -104,7 +95,6 @@
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="来自中国青年旅社，从事导游工作4年半，中青年控股有限公司美加部，个人特长接收了7年专业游泳训练。" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1q2-KH-t9K">
                                 <rect key="frame" x="8" y="360" width="284" height="29"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="V9j-Hs-dej"/>
                                 </constraints>
@@ -113,7 +103,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="khc-GD-oZT" firstAttribute="leading" secondItem="m3s-iJ-5XM" secondAttribute="trailing" constant="8" id="2dZ-VH-g6W"/>
@@ -147,7 +136,6 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
-                <animations/>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="DL6-ue-FlV" secondAttribute="trailing" constant="2" id="6aY-nP-lVg"/>
                     <constraint firstAttribute="bottomMargin" secondItem="DL6-ue-FlV" secondAttribute="bottom" id="K6o-FC-ntp"/>
@@ -155,7 +143,6 @@
                     <constraint firstItem="DL6-ue-FlV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="orW-bN-Uhe"/>
                 </constraints>
             </tableViewCellContentView>
-            <animations/>
             <connections>
                 <outlet property="speraLineHeight" destination="OtV-bV-Ijy" id="FNA-zx-gFB"/>
             </connections>

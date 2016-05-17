@@ -34,8 +34,8 @@
 - (void)initData {
     self.tableViewDataTree = @[
                                @[
-                                @[NSStringFromClass([MMUserCenterHeaderView class])],
-                                @[],
+                                   @[NSStringFromClass([MMUserCenterHeaderView class])],
+                                   @[],
                                    ],
                                @[
                                    @[],
@@ -57,20 +57,27 @@
 
 - (void)setupSubview {
     [self registerTableViewSubview];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
 }
 
 - (void)registerTableViewSubview {
-    for (NSArray *tempSection in self.tableViewDataTree) {
-        if (tempSection[0] && [tempSection[0] count] > 0) {
-            NSString *nibSectionName = tempSection[0][0];
-            [self.tableView registerNib:[UINib nibWithNibName:nibSectionName bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:nibSectionName];
-        }
-        if (tempSection[1] && [tempSection[1] count] > 0) {
-            for (NSString *tempCellNibName in tempSection[1]) {
-                [self.tableView registerNib:[UINib nibWithNibName:tempCellNibName bundle:[NSBundle mainBundle]] forCellReuseIdentifier:tempCellNibName];
-            }
-        }
-    }
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"MMDetailUserEvaluteCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"MMDetailUserEvaluteCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"MMUserCenterDefaultCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"MMUserCenterDefaultCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"MMUserCenterHeaderView" bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:@"MMUserCenterHeaderView"];
+    
+//    for (NSArray *tempSection in self.tableViewDataTree) {
+//        if (tempSection[0] && [tempSection[0] count] > 0) {
+//            NSString *nibSectionName = tempSection[0][0];
+//            [self.tableView registerNib:[UINib nibWithNibName:nibSectionName bundle:[NSBundle mainBundle]] forHeaderFooterViewReuseIdentifier:nibSectionName];
+//        }
+//        if (tempSection[1] && [tempSection[1] count] > 0) {
+//            for (NSString *tempCellNibName in tempSection[1]) {
+//                [self.tableView registerNib:[UINib nibWithNibName:tempCellNibName bundle:[NSBundle mainBundle]] forCellReuseIdentifier:tempCellNibName];
+//            }
+//        }
+//    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -117,7 +124,7 @@
             identifierCell = self.tableViewDataTree[indexPath.section][1][indexPath.row];
         }
     }
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierCell];
+    UITableViewCell<MMTableViewCellProtocol> *cell = [tableView dequeueReusableCellWithIdentifier:identifierCell];
     return cell;
 }
 

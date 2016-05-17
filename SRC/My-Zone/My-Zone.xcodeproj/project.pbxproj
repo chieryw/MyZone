@@ -1199,7 +1199,7 @@
 		58A2995BA505C5114E7E5EA2 /* libPods-My-Zone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-My-Zone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		642742751C9944D200279525 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
 		642742771C9944EB00279525 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
-		646DB27B1C9852D100A76305 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		646DB27B1C9852D100A76305 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../../Images.xcassets; sourceTree = "<group>"; };
 		646DB27F1C98532800A76305 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B8D1EC581F29CCA2083D1AF3 /* Pods-My-Zone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My-Zone.release.xcconfig"; path = "Pods/Target Support Files/Pods-My-Zone/Pods-My-Zone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1438,7 +1438,6 @@
 			isa = PBXGroup;
 			children = (
 				646DB27F1C98532800A76305 /* Main.storyboard */,
-				646DB27B1C9852D100A76305 /* Images.xcassets */,
 				29A96CDD1C2FE45C0048A2F4 /* Service */,
 				29E7FE8A1BAD095200673A7D /* Vendor */,
 				29F0FF661BA6EB9600F9CC59 /* Common */,
@@ -1508,6 +1507,7 @@
 		298D01AC1BA3BA4900F5EDE7 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				646DB27B1C9852D100A76305 /* Images.xcassets */,
 			);
 			path = Images;
 			sourceTree = "<group>";
