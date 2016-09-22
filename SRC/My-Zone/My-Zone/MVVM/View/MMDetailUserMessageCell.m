@@ -21,6 +21,7 @@
 @implementation MMDetailUserMessageCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
     self.sepratorLineHeight.constant = 0.5;
     [self setNeedsUpdateConstraints];

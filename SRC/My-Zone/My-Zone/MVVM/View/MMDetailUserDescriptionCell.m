@@ -16,6 +16,7 @@
 @implementation MMDetailUserDescriptionCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
 }
 

@@ -21,6 +21,7 @@
 @implementation MMFriendsCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
 }
 

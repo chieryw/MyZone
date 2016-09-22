@@ -11,6 +11,7 @@
 @implementation MMUserCenterDefaultCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
 }
 

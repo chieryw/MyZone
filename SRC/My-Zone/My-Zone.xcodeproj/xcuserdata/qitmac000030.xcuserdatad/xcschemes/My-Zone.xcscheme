@@ -20,20 +20,6 @@
                ReferencedContainer = "container:My-Zone.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "298D01971BA3B87B00F5EDE7"
-               BuildableName = "My-ZoneTests.xctest"
-               BlueprintName = "My-ZoneTests"
-               ReferencedContainer = "container:My-Zone.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
