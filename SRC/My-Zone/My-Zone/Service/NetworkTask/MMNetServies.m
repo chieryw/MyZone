@@ -31,7 +31,6 @@ resultContainer:(MMSearchNetResult *)result
             
             BOOL network = [MMNetworkTask postSearch:url
                                             forParam:tempString
-                                              forRes:YES
                                            withDelgt:netDelegate];
             return network;
         }

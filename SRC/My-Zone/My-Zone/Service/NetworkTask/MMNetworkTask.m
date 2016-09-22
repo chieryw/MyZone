@@ -139,8 +139,6 @@
 // 搜索
 + (BOOL)postSearch:(NSString *)service
           forParam:(NSString *)param
-            forRes:(BOOL)isSync
-    forTargetModel:(NSString *)targetModel
          withDelgt:(MMSearchNetDelgt *)searchNetDelgt
 {
     NSData *postData = [param dataUsingEncoding:NSUTF8StringEncoding];
@@ -170,15 +168,6 @@
     [[MMNetworkController getInstance] addConnection:task andDelegate:searchNetDelgt];
     
     return YES;
-}
-
-// 搜索
-+ (BOOL)postSearch:(NSString *)service
-          forParam:(NSString *)param
-            forRes:(BOOL)isSync
-         withDelgt:(MMSearchNetDelgt *)searchNetDelgt
-{
-    return [MMNetworkTask postSearch:service forParam:param forRes:isSync forTargetModel:nil withDelgt:searchNetDelgt];
 }
 
 @end
