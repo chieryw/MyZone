@@ -258,7 +258,7 @@
 - (void)handleTap:(UITapGestureRecognizer *)tap{
     NSString *faceName = [XMFaceManager faceNameWithFaceID:tap.view.tag];
     if (tap.view.tag != 999) {
-        [XMFaceManager saveRecentFace:@{@"face_id":[NSString stringWithFormat:@"%ld",tap.view.tag],@"face_name":faceName}];
+        [XMFaceManager saveRecentFace:@{@"face_id":[NSString stringWithFormat:@"%d",tap.view.tag],@"face_name":faceName}];
     }
     if (self.delegate && [self.delegate respondsToSelector:@selector(faceViewSendFace:)]) {
         [self.delegate faceViewSendFace:faceName];

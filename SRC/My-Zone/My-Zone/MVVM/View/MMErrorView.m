@@ -39,7 +39,6 @@
 
 - (void)layoutSubview {
     [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.mas_centerX).offset(-40);
         make.centerX.equalTo(self);
         make.width.height.equalTo(@80);
     }];

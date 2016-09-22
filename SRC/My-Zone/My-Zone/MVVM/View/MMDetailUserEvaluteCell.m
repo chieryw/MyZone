@@ -23,6 +23,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     self.sepratorLineHeight.constant = 0.5;
     [self setNeedsUpdateConstraints];
 }

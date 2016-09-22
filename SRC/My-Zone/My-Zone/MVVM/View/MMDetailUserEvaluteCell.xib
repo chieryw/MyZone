@@ -18,7 +18,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWS-n7-nQY">
                         <rect key="frame" x="8" y="8" width="50" height="34"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="502B6DFE-9578-474D-A970-3A2430177196" translatesAutoresizingMaskIntoConstraints="NO" id="sZJ-Xe-CjL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="44C80D05-C226-43CB-9071-CD155BF3C472" translatesAutoresizingMaskIntoConstraints="NO" id="sZJ-Xe-CjL">
                                 <rect key="frame" x="13" y="0.0" width="25" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="mLZ-D8-pep"/>
@@ -51,7 +51,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebN-1l-EVk">
                         <rect key="frame" x="262" y="8" width="50" height="34"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6444BED9-456D-4DC4-9EC4-2025259B65BF" translatesAutoresizingMaskIntoConstraints="NO" id="fjR-Tb-ZBa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="9A6DFC72-B46E-44A6-B8D1-C2D878ACBF6C" translatesAutoresizingMaskIntoConstraints="NO" id="fjR-Tb-ZBa">
                                 <rect key="frame" x="13" y="0.0" width="25" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="QOt-1p-PpK"/>
@@ -127,7 +127,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="502B6DFE-9578-474D-A970-3A2430177196" width="25" height="21">
+        <image name="44C80D05-C226-43CB-9071-CD155BF3C472" width="25" height="21">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -213,7 +213,7 @@ AMIA2QDbAN0RsxG4EcMRzBHfEeMR7hH3EfwSBBIHEgwSGxIfEiYSLhI7EkASQhJEEkkSURJUElkSYRJk
 EnYSeRJ+AAAAAAAAAgEAAAAAAAAAQQAAAAAAAAAAAAAAAAAAEoA
 </mutableData>
         </image>
-        <image name="6444BED9-456D-4DC4-9EC4-2025259B65BF" width="25" height="21">
+        <image name="9A6DFC72-B46E-44A6-B8D1-C2D878ACBF6C" width="25" height="21">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

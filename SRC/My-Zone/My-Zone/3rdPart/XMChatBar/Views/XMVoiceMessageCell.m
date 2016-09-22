@@ -123,7 +123,7 @@
 - (void)setMessage:(XMMessage *)message{
     XMVoiceMessage *voiceMessage = (XMVoiceMessage *)message;
     
-    [self.voiceSecondsLabel setText:[NSString stringWithFormat:@"%ld''",voiceMessage.voiceSeconds]];
+    [self.voiceSecondsLabel setText:[NSString stringWithFormat:@"%ld''",(unsigned long)voiceMessage.voiceSeconds]];
     if (voiceMessage.messageOwner == XMMessageOwnerTypeOther) {
         [self.voiceStateImageView setImage:[UIImage imageNamed:@"message_voice_receiver_normal"]];
     }else if (voiceMessage.messageOwner == XMMessageOwnerTypeSelf){
