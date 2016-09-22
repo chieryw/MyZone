@@ -11,7 +11,6 @@
 #import "Reachability.h"
 
 #import "MMNetworkTask.h"
-#import	"MMNetworkController.h"
 #import "MMSearchNetDelgt.h"
 
 #import <AdSupport/AdSupport.h>
@@ -137,16 +136,16 @@
 }
 
 // 搜索
-+ (BOOL)postSearch:(NSString *)service
-          forParam:(NSString *)param
-         withDelgt:(MMSearchNetDelgt *)searchNetDelgt
++ (NSURLSessionTask *)postSearch:(NSString *)service
+                        forParam:(NSString *)param
+                       withDelgt:(MMSearchNetDelgt *)searchNetDelgt
 {
     NSData *postData = [param dataUsingEncoding:NSUTF8StringEncoding];
     NSMutableString *httpGetURLString = [NSMutableString stringWithString:MMDebugUrl];
     
-    if ((service != nil) && ([service length] > 0)){
+    if ((service != nil) && ([service length] > 0))
         [httpGetURLString appendString:service];
-    }
+    else return nil;
     
     NSURL *url = [[NSURL alloc] initWithString:httpGetURLString];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url
@@ -165,9 +164,7 @@
     NSURLSessionTask *task = [session dataTaskWithRequest:request];
     [task resume];
     
-    [[MMNetworkController getInstance] addConnection:task andDelegate:searchNetDelgt];
-    
-    return YES;
+    return task;
 }
 
 @end

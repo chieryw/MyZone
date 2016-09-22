@@ -29,8 +29,8 @@
  *
  *
  */
-+ (BOOL)postSearch:(NSString *)service
-          forParam:(NSString *)param
-         withDelgt:(MMNetworkDelgt *)delegate;
++ (NSURLSessionTask *)postSearch:(NSString *)service
+                        forParam:(NSString *)param
+                       withDelgt:(MMNetworkDelgt *)delegate;
 
 @end

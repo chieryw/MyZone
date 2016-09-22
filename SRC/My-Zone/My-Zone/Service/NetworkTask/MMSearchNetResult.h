@@ -8,13 +8,14 @@
 
 #import "MMNetworkDelgt.h"
 #import "MMJSONModel.h"
+#import "MMSearchNetStatus.h"
 
 @interface MMSearchNetResult : MMJSONModel
 
-// 解析所有数据
+@property (nonatomic, strong) MMSearchNetStatus *bstatus;
+
 - (void)parseAllNetResult:(NSDictionary *)jsonDictionary;
 
-// 解析业务数据
 - (void)parseNetResult:(NSDictionary *)jsonDictionary;
 
 @end

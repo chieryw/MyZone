@@ -7,18 +7,12 @@
 //
 
 #import "MMBaseViewController.h"
-#import "MMNetworkController.h"
 
 @interface MMBaseViewController ()
 
 @end
 
 @implementation MMBaseViewController
-
-- (void)dealloc {
-    // 删除当前ViewController中的请求
-    [[MMNetworkController getInstance] removeConnectionsByRequest:self];
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

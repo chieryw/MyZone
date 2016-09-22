@@ -11,6 +11,7 @@
 		290ACA071BB020100017D2D4 /* UIAlertView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 290ACA061BB020100017D2D4 /* UIAlertView+Addition.m */; };
 		290F00501C8D9ED00041E919 /* MMFriendsZoneVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 290F004F1C8D9ED00041E919 /* MMFriendsZoneVM.m */; };
 		2910DA7C1C79B48900607426 /* MMHomeResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 2910DA7B1C79B48900607426 /* MMHomeResult.m */; };
+		2913A1DB1D93CD06000C9D21 /* MMSearchNetStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 2913A1DA1D93CD06000C9D21 /* MMSearchNetStatus.m */; };
 		29152CD01BBAB5A900A626BB /* UIActionSheet+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 29152CCF1BBAB5A900A626BB /* UIActionSheet+Addition.m */; };
 		29152CD21BBABFB700A626BB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29152CD11BBABFB700A626BB /* MobileCoreServices.framework */; };
 		291655BB1C846BA9009442DD /* MMHomeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 291655BA1C846BA9009442DD /* MMHomeVM.m */; };
@@ -198,10 +199,8 @@
 		29CD74CC1C422F0E0087065F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 29CD74CB1C422F0E0087065F /* libz.tbd */; };
 		29CD74D21C422FBA0087065F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD74CF1C422FBA0087065F /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		29CD74D31C422FBA0087065F /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD74D11C422FBA0087065F /* SSKeychain.m */; };
-		29CD74E61C4230520087065F /* MMFetchNetworkDelgt.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD74D61C4230520087065F /* MMFetchNetworkDelgt.m */; };
 		29CD74E71C4230520087065F /* MMJSONMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD74D81C4230520087065F /* MMJSONMapping.m */; };
 		29CD74E81C4230520087065F /* MMJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD74DA1C4230520087065F /* MMJSONModel.m */; };
-		29CD74E91C4230520087065F /* MMNetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD74DC1C4230520087065F /* MMNetworkController.m */; };
 		29CD74EA1C4230520087065F /* MMNetworkDelgt.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD74DE1C4230520087065F /* MMNetworkDelgt.m */; };
 		29CD74EB1C4230520087065F /* MMNetworkTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD74E01C4230520087065F /* MMNetworkTask.m */; };
 		29CD74EC1C4230520087065F /* MMSearchNetDelgt.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD74E21C4230520087065F /* MMSearchNetDelgt.m */; };
@@ -247,6 +246,8 @@
 		290F004F1C8D9ED00041E919 /* MMFriendsZoneVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFriendsZoneVM.m; sourceTree = "<group>"; };
 		2910DA7A1C79B48900607426 /* MMHomeResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMHomeResult.h; sourceTree = "<group>"; };
 		2910DA7B1C79B48900607426 /* MMHomeResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMHomeResult.m; sourceTree = "<group>"; };
+		2913A1D91D93CD06000C9D21 /* MMSearchNetStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSearchNetStatus.h; sourceTree = "<group>"; };
+		2913A1DA1D93CD06000C9D21 /* MMSearchNetStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSearchNetStatus.m; sourceTree = "<group>"; };
 		29152CCE1BBAB5A900A626BB /* UIActionSheet+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+Addition.h"; sourceTree = "<group>"; };
 		29152CCF1BBAB5A900A626BB /* UIActionSheet+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+Addition.m"; sourceTree = "<group>"; };
 		29152CD11BBABFB700A626BB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -617,14 +618,10 @@
 		29CD74CF1C422FBA0087065F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		29CD74D01C422FBA0087065F /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
 		29CD74D11C422FBA0087065F /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
-		29CD74D51C4230520087065F /* MMFetchNetworkDelgt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFetchNetworkDelgt.h; sourceTree = "<group>"; };
-		29CD74D61C4230520087065F /* MMFetchNetworkDelgt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFetchNetworkDelgt.m; sourceTree = "<group>"; };
 		29CD74D71C4230520087065F /* MMJSONMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMJSONMapping.h; sourceTree = "<group>"; };
 		29CD74D81C4230520087065F /* MMJSONMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMJSONMapping.m; sourceTree = "<group>"; };
 		29CD74D91C4230520087065F /* MMJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMJSONModel.h; sourceTree = "<group>"; };
 		29CD74DA1C4230520087065F /* MMJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMJSONModel.m; sourceTree = "<group>"; };
-		29CD74DB1C4230520087065F /* MMNetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNetworkController.h; sourceTree = "<group>"; };
-		29CD74DC1C4230520087065F /* MMNetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNetworkController.m; sourceTree = "<group>"; };
 		29CD74DD1C4230520087065F /* MMNetworkDelgt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNetworkDelgt.h; sourceTree = "<group>"; };
 		29CD74DE1C4230520087065F /* MMNetworkDelgt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMNetworkDelgt.m; sourceTree = "<group>"; };
 		29CD74DF1C4230520087065F /* MMNetworkTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNetworkTask.h; sourceTree = "<group>"; };
@@ -633,7 +630,6 @@
 		29CD74E21C4230520087065F /* MMSearchNetDelgt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSearchNetDelgt.m; sourceTree = "<group>"; };
 		29CD74E31C4230520087065F /* MMSearchNetResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSearchNetResult.h; sourceTree = "<group>"; };
 		29CD74E41C4230520087065F /* MMSearchNetResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSearchNetResult.m; sourceTree = "<group>"; };
-		29CD74E51C4230520087065F /* MMNetworkPtc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMNetworkPtc.h; sourceTree = "<group>"; };
 		29D63A131BD502F40039C101 /* MMSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSearchVC.h; sourceTree = "<group>"; };
 		29D63A141BD502F40039C101 /* MMSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSearchVC.m; sourceTree = "<group>"; };
 		29D922961BC4D2F200192761 /* MMSandBOX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSandBOX.h; sourceTree = "<group>"; };
@@ -1321,14 +1317,10 @@
 		29CD74D41C4230520087065F /* NetworkTask */ = {
 			isa = PBXGroup;
 			children = (
-				29CD74D51C4230520087065F /* MMFetchNetworkDelgt.h */,
-				29CD74D61C4230520087065F /* MMFetchNetworkDelgt.m */,
 				29CD74D71C4230520087065F /* MMJSONMapping.h */,
 				29CD74D81C4230520087065F /* MMJSONMapping.m */,
 				29CD74D91C4230520087065F /* MMJSONModel.h */,
 				29CD74DA1C4230520087065F /* MMJSONModel.m */,
-				29CD74DB1C4230520087065F /* MMNetworkController.h */,
-				29CD74DC1C4230520087065F /* MMNetworkController.m */,
 				29CD74DD1C4230520087065F /* MMNetworkDelgt.h */,
 				29CD74DE1C4230520087065F /* MMNetworkDelgt.m */,
 				29CD74DF1C4230520087065F /* MMNetworkTask.h */,
@@ -1337,9 +1329,10 @@
 				29CD74E21C4230520087065F /* MMSearchNetDelgt.m */,
 				29CD74E31C4230520087065F /* MMSearchNetResult.h */,
 				29CD74E41C4230520087065F /* MMSearchNetResult.m */,
-				29CD74E51C4230520087065F /* MMNetworkPtc.h */,
 				296BAB181C54A59500E585F6 /* MMNetServies.h */,
 				296BAB191C54A59500E585F6 /* MMNetServies.m */,
+				2913A1D91D93CD06000C9D21 /* MMSearchNetStatus.h */,
+				2913A1DA1D93CD06000C9D21 /* MMSearchNetStatus.m */,
 			);
 			path = NetworkTask;
 			sourceTree = "<group>";
@@ -1714,7 +1707,6 @@
 				2934FC131C872321005BE0A4 /* MMUserDetailVM.m in Sources */,
 				298D02AF1BA3CB2800F5EDE7 /* NSObject+RACSelectorSignal.m in Sources */,
 				29B3434E1C77ED4700EF75EE /* MMRequestPostUploadImage.m in Sources */,
-				29CD74E91C4230520087065F /* MMNetworkController.m in Sources */,
 				298D02F61BA3CB2800F5EDE7 /* UISlider+RACSignalSupport.m in Sources */,
 				298D02DE1BA3CB2800F5EDE7 /* RACStringSequence.m in Sources */,
 				29BC76451BA6CB3000518755 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -1739,6 +1731,7 @@
 				29D63A151BD502F40039C101 /* MMSearchVC.m in Sources */,
 				295FC3591C82DB5500914633 /* MMGuideListResult.m in Sources */,
 				29BC764A1BA6CB3000518755 /* UIImage+MultiFormat.m in Sources */,
+				2913A1DB1D93CD06000C9D21 /* MMSearchNetStatus.m in Sources */,
 				298D02F21BA3CB2800F5EDE7 /* UIGestureRecognizer+RACSignalSupport.m in Sources */,
 				298D02D81BA3CB2800F5EDE7 /* RACSerialDisposable.m in Sources */,
 				2917368E1BD3B1890050658E /* MMBaseTabBarController.m in Sources */,
@@ -1752,7 +1745,6 @@
 				298D02A21BA3CB2800F5EDE7 /* NSData+RACSupport.m in Sources */,
 				298D02CF1BA3CB2800F5EDE7 /* RACMulticastConnection.m in Sources */,
 				298D02B81BA3CB2800F5EDE7 /* RACArraySequence.m in Sources */,
-				29CD74E61C4230520087065F /* MMFetchNetworkDelgt.m in Sources */,
 				295FC3531C82D8DD00914633 /* MMGuideInfoResult.m in Sources */,
 				29AD870A1BF0D60D00BDC882 /* MMRemoveCacheCell.m in Sources */,
 				29CD74D21C422FBA0087065F /* Reachability.m in Sources */,

@@ -10,7 +10,6 @@
 #import "MMSearchNetResult.h"
 #import "MMSearchNetDelgt.h"
 
-
 @interface MMNetServies : NSObject
 
 /**
@@ -24,10 +23,15 @@
  *
  *  @return 请求是否存在
  */
-+ (BOOL)postUrl:(NSString *)url
-resultContainer:(MMSearchNetResult *)result
-       paraDict:(NSDictionary *)paraDict
-       delegate:(id<MMNetworkPtc>)delegate
-     customInfo:(id)info;
++ (NSURLSessionTask *)postUrl:(NSString *)url
+              resultContainer:(MMSearchNetResult *)result
+                     paraDict:(NSDictionary *)paraDict
+                   customInfo:(id)info
+                  resultBlock:(void(^)(MMSearchNetStatus *status,id data))resultBlcok;
+
++ (RACSignal *)postRequest:(NSString *)servie
+           resultContainer:(MMSearchNetResult *)resultInstance
+                  paraDict:(NSDictionary *)paraDict
+                customInfo:(id)customInfo;
 
 @end

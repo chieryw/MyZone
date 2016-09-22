@@ -22,10 +22,16 @@
 // 解析所有数据
 - (void)parseAllNetResult:(NSDictionary *)jsonDictionary
 {
-    if(jsonDictionary != nil)
-    {
-        // 解析简单数据
-        [self parseNetResult:jsonDictionary];
+    NSAssert(jsonDictionary, @"网络回调数据为空！！！！");
+    
+    // 解析业务线数据
+    NSDictionary *data = jsonDictionary[@"data"];
+    if(data) [self parseNetResult:data];
+    
+    NSDictionary *netStatus = jsonDictionary[@"netStatus"];
+    if (netStatus) {
+        MMSearchNetStatus *status = [MMSearchNetStatus new];
+        [MMJSONMapping mappingObject:status withJSON:netStatus];
     }
 }
 

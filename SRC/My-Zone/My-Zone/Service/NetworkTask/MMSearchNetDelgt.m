@@ -7,6 +7,7 @@
 //
 
 #import "MMSearchNetDelgt.h"
+#import "MMSearchNetStatus.h"
 
 @implementation MMSearchNetDelgt
 
@@ -23,11 +24,8 @@
         }
     }
     
-    // 回调
-    if([self.delegate respondsToSelector:@selector(getSearchNetBack:forInfo:)])
-    {
-        // 回调
-        [self.delegate getSearchNetBack:_searchResult forInfo:self.customInfo];
+    if (self.resultBlock) {
+        self.resultBlock(_searchResult.bstatus,_searchResult);
     }
     
     [super URLSession:session task:task didCompleteWithError:error];

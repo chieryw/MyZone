@@ -10,7 +10,7 @@
 #import "MMPersonTableViewModel.h"
 #import "MMSimpleResult.h"
 
-@interface MMChooseBirthVC ()<MMNetworkPtc>
+@interface MMChooseBirthVC ()
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePickerView;
 
@@ -85,13 +85,21 @@
         NSMutableDictionary *paraDict = [NSMutableDictionary new];
         [paraDict setObjectSafe:humanDI forKey:@"humanID"];
         [paraDict setObjectSafe:self.tempDate forKey:@"brithday"];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         
-        BOOL networkState = [MMNetServies postUrl:@"/tour/humaninfo.htm?action=brithday"
-                                  resultContainer:[MMSimpleResult new]
-                                         paraDict:[paraDict copy]
-                                         delegate:self customInfo:nil];
-        if (networkState) [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        else [UIAlertView networkError];
+        @weakify(self);
+        [[MMNetServies postRequest:@"/u/brithday"
+                  resultContainer:[MMSimpleInfo new]
+                         paraDict:[paraDict copy]
+                       customInfo:nil] subscribeNext:^(id x) {
+            @strongify(self);
+            if ([x isKindOfClass:[MMSearchNetStatus class]]) {
+                [UIAlertView networkError];
+            }
+            else {
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            }
+        }];
     }
     else {
         [UIAlertView tipMessage:@"还没有选择出生日期"];

@@ -7,20 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MMNetworkPtc.h"
+#import "MMSearchNetStatus.h"
 
-// ==================================================================
-// 网络代理对象的逻辑基类
-// ==================================================================
+//
+//typedef void(^QWHNetworkFailurBlock)(SearchNetStatus * staus,id data);
+//
+//typedef void(^QWHNetworkSuccessBlock)(id data);
+//
+typedef void(^MMNetResultBlock)(MMSearchNetStatus * status,id data);
 
 @interface MMNetworkDelgt : NSObject <NSURLSessionTaskDelegate, NSURLSessionDataDelegate, NSURLSessionDelegate>
 
-@property (nonatomic, strong) id customInfo;    // 代理
-@property (nonatomic, weak) id <MMNetworkPtc> delegate;   // 自定义图片信息
-@property (nonatomic, strong) NSMutableData *receivedData;  // 数据接收对象
+@property (nonatomic, strong) id customInfo;                    // 代理
+@property (nonatomic, copy) MMNetResultBlock resultBlock;       // 回调的block
+@property (nonatomic, strong) NSMutableData *receivedData;      // 数据接收对象
 @property (nonatomic, strong) NSString *decodeKey;				// 加密字符
-
-// 回调对象是否一样
-- (bool)isSame:(id)delegateObject;
 
 @end

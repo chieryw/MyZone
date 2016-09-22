@@ -7,7 +7,7 @@
 //
 
 #import "MMNetworkDelgt.h"
-#import "MMNetworkController.h"
+#import "MMSearchNetStatus.h"
 
 @implementation MMNetworkDelgt
 
@@ -19,14 +19,6 @@
     return self;
 }
 
-- (bool)isSame:(id<MMNetworkPtc>)delegateObject
-{
-    return [_delegate isEqual:delegateObject];
-}
-
-// =============================================================================
-// 代理函数
-// =============================================================================
 - (void)URLSession:(NSURLSession *)session dataTask:(NSURLSessionDataTask *)dataTask
     didReceiveData:(NSData *)data
 {
@@ -40,23 +32,26 @@
 
 - (void)URLSession:(NSURLSession *)session task:(NSURLSessionTask *)task didCompleteWithError:(NSError *)error
 {
+    MMSearchNetStatus *status = [MMSearchNetStatus new];
+    
     NSURLResponse *response = task.response;
-    if ([response respondsToSelector:@selector(statusCode)])
-    {
+    if ([response respondsToSelector:@selector(statusCode)]) {
         NSInteger statusCode = [((NSHTTPURLResponse *)response) statusCode];
-        if (statusCode >= 400)
-        {
-#if DEBUG
+        status.code = @(statusCode);
+        if (statusCode >= 400) {
+            #if DEBUG
             NSLog(@"Server returned HTTP Error code %ld", (long)statusCode);
-#endif
+            #endif
         }
     }
     
-    [[MMNetworkController getInstance] removeConnection:task];
+    if (error) status.des = error.localizedDescription;
+    if (self.resultBlock) self.resultBlock(status,nil);
 }
 
 - (void)URLSessionDidFinishEventsForBackgroundURLSession:(NSURLSession *)session
 {
+    // 当有backGround请求的时候需要在这里处理协议
     NSLog(@"%@", session);
 }
 
