@@ -9,7 +9,7 @@
 #import "MMEvaluteVM.h"
 #import "MMSimpleResult.h"
 
-@interface MMEvaluteVM ()<MMNetworkPtc>
+@interface MMEvaluteVM ()
 
 @end
 
@@ -23,29 +23,28 @@
     [paraDict setObjectSafe:evalute forKey:@"treadNum"];
     
     NSString *urlString = isGood?@"/tour/praise.htm":@"/tour/tread.htm";
-    BOOL networkState = [MMNetServies postUrl:urlString
-                              resultContainer:[MMSimpleResult new]
-                                     paraDict:[paraDict copy]
-                                     delegate:self customInfo:nil];
-    if (networkState) self.showLoading = YES;
-    else [UIAlertView networkError];
-}
-
-- (void)getSearchNetBack:(MMSimpleResult *)searchResult forInfo:(id)customInfo {
-    // 关闭loading
-    self.showLoading = NO;
     
-    // 处理网络请求
-    if (searchResult && [searchResult.resultInfo.success boolValue]) {
-        [UIAlertView showTitle:@"评价成功!"
-                       message:nil
-                      delegate:nil
-             cancelButtonTitle:@"确定"
-             otherButtonTitles:nil];
-    }
-    else {
+    self.showLoading = YES;
+    [[MMNetServies postRequest:urlString resultContainer:[MMSimpleResult new] paraDict:[paraDict copy] customInfo:nil] subscribeNext:^(id x) {
+        NSParameterAssert([x isKindOfClass:[MMSimpleResult class]]);
+        
+        // 关闭loading
+        self.showLoading = NO;
+        
+        // 处理网络请求
+        if (x) {
+            [UIAlertView showTitle:@"评价成功!"
+                           message:nil
+                          delegate:nil
+                 cancelButtonTitle:@"确定"
+                 otherButtonTitles:nil];
+        }
+        else {
+            [UIAlertView networkError];
+        }
+    } error:^(NSError *error) {
         [UIAlertView networkError];
-    }
+    }];
 }
 
 @end

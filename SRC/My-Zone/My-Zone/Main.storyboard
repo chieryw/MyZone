@@ -559,7 +559,7 @@
             <objects>
                 <navigationController id="0cf-Xc-669" customClass="MMBaseNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我" image="MeIcon" selectedImage="MeIcon" id="X3r-dh-aJH"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="KbD-O0-gAO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="KbD-O0-gAO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -576,7 +576,7 @@
             <objects>
                 <navigationController id="zrf-Jx-x7X" customClass="MMBaseNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="通讯录" image="FriendsIcon" selectedImage="FriendsIcon" id="vcg-QK-wo7"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="odT-Hk-qbp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="odT-Hk-qbp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -593,7 +593,7 @@
             <objects>
                 <navigationController id="7Qe-6F-4zE" customClass="MMBaseNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="消息" image="MessageIcon" selectedImage="MessageIcon" id="s9K-Q4-CSm"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="7Uh-xL-imu">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="7Uh-xL-imu">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -610,7 +610,7 @@
             <objects>
                 <navigationController id="ZZm-3A-z2Y" customClass="MMBaseNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="找游客" image="SearchIcon" selectedImage="SearchIcon" id="HRk-GA-QfL"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="NVL-mi-cTi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="NVL-mi-cTi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

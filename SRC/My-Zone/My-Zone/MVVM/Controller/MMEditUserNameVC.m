@@ -10,7 +10,7 @@
 #import "MMPersonTableViewModel.h"
 #import "MMSimpleResult.h"
 
-@interface MMEditUserNameVC ()<MMNetworkPtc>
+@interface MMEditUserNameVC ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameTF;
 
 @end
@@ -38,29 +38,29 @@
         [paraDict setObjectSafe:humanDI forKey:@"humanID"];
         [paraDict setObjectSafe:self.userNameTF.text forKey:@"humanName"];
         
-        BOOL networkState = [MMNetServies postUrl:@"/tour/humaninfo.htm?action=humanName"
-                                  resultContainer:[MMSimpleResult new]
-                                         paraDict:[paraDict copy]
-                                         delegate:self customInfo:nil];
-        if (networkState) [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        else [UIAlertView networkError];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        @weakify(self);
+        [[MMNetServies postRequest:@"/u/setting/name" resultContainer:[MMSimpleResult new] paraDict:[paraDict copy] customInfo:nil] subscribeNext:^(id x) {
+            NSParameterAssert([x isKindOfClass:[MMSimpleResult class]]);
+            @strongify(self);
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+//            NSNumber *networkState = searchResult.resultInfo.success;
+//            if ([networkState boolValue]) {
+//                self.userName.subTitle = self.userNameTF.text;
+//            }
+//            [UIAlertView tipMessage:searchResult.resultInfo.message];
+            
+        } error:^(NSError *error) {
+            @strongify(self);
+            [MBProgressHUD hideHUDForView:self.view animated:NO];
+            [UIAlertView networkError];
+        }];
     }
     else {
         [UIAlertView tipMessage:@"用户名不能为空"];
     }
 }
-
-- (void)getSearchNetBack:(MMSimpleResult *)searchResult forInfo:(id)customInfo {
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    
-    NSNumber *networkState = searchResult.resultInfo.success;
-    if ([networkState boolValue]) {
-        self.userName.subTitle = self.userNameTF.text;
-    }
-    [UIAlertView tipMessage:searchResult.resultInfo.message];
-    
-}
-
 /*
 #pragma mark - Navigation
 

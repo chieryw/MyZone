@@ -8,7 +8,7 @@
 
 #import "MMFriendsZoneVM.h"
 
-@interface MMFriendsZoneVM ()<MMNetworkPtc>
+@interface MMFriendsZoneVM ()
 
 @end
 
@@ -33,36 +33,32 @@
     NSString *humanId = [[NSUserDefaults standardUserDefaults] objectForKey:MMUserID];
     [paraDict setObjectSafe:humanId forKey:@"humanID"];
     
-    BOOL networkState = [MMNetServies postUrl:@"/tour/friends/newFriends.htm"
-                              resultContainer:[MMNewFriendsListResult new]
-                                     paraDict:[paraDict copy]
-                                     delegate:self customInfo:nil];
-    if (networkState) self.showLoading = YES;
-    else [UIAlertView networkError];
+    self.showLoading = YES;
+    [[MMNetServies postRequest:@"/u/friends/new" resultContainer:[MMNewFriendsListResult new] paraDict:[paraDict copy] customInfo:nil] subscribeNext:^(id x) {
+        NSParameterAssert([x isKindOfClass:[MMNewFriendsListResult class]]);
+        // 关闭loading
+        self.showLoading = NO;
+        
+        // 处理网络请求
+        if (x) {
+            self.friendsList = (MMNewFriendsListResult *)x;
+            self.showErrorView = NO;
+            self.reloadData = YES;
+        }
+        else {
+            self.friendsList = nil;
+            self.showErrorView = YES;
+            self.reloadData = NO;
+            [UIAlertView networkError];
+        }
+        
+    } error:^(NSError *error) {
+        [UIAlertView networkError];
+    }];
 }
 
 - (void)loadMore {
     
-}
-
-#pragma mark - 网络回调函数
-- (void)getSearchNetBack:(id)searchResult forInfo:(id)customInfo {
-    
-    // 关闭loading
-    self.showLoading = NO;
-    
-    // 处理网络请求
-    if (searchResult) {
-        self.friendsList = (MMNewFriendsListResult *)searchResult;
-        self.showErrorView = NO;
-        self.reloadData = YES;
-    }
-    else {
-        self.friendsList = nil;
-        self.showErrorView = YES;
-        self.reloadData = NO;
-        [UIAlertView networkError];
-    }
 }
 
 @end

@@ -55,14 +55,14 @@
     [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
      setTitleTextAttributes:@{
                               NSFontAttributeName:[UIFont MMTextFont12],
-                              NSForegroundColorAttributeName:[UIColor whiteColor]
+                              NSForegroundColorAttributeName:[UIColor MMTextColor]
                               }
      forState:UIControlStateNormal];
 
     
     [[UITabBarItem appearanceWhenContainedIn:[UITabBar class], nil]
      setTitleTextAttributes:@{
-                              NSForegroundColorAttributeName:[UIColor whiteColor],
+                              NSForegroundColorAttributeName:[UIColor MMTextColor],
                               NSFontAttributeName:[UIFont MMTextFont12]
                               }
      forState:UIControlStateSelected];

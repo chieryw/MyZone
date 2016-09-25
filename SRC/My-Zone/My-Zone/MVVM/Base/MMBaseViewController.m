@@ -24,7 +24,8 @@
 }
 
 - (void)initSelf {
-
+    
+    self.view.backgroundColor = RGB(252.0, 252.0, 252.0);
     if (self.navigationController.viewControllers.count > 1) {
         UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"NavigationBackImage"]
                                                                      style:UIBarButtonItemStyleDone

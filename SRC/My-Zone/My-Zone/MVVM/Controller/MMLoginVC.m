@@ -14,7 +14,7 @@
 #import "MMSearchNetDelgt.h"
 #import "MMLoginResult.h"
 
-@interface MMLoginVC ()<UITextFieldDelegate,MMNetworkPtc>
+@interface MMLoginVC ()<UITextFieldDelegate>
 
 @property (nonatomic, strong) MMLoginVM *model;
 @property (weak, nonatomic) IBOutlet UITextField *userNameTF;
@@ -44,8 +44,6 @@
 }
 
 - (void)configSelf {
-    // 为UI配置统一的元素
-    [self configUI];
     
     // 添加对应元素的代理
     [self addDelegate];
@@ -76,12 +74,33 @@
     [paraDict setObjectSafe:self.model.userName forKey:@"mobileNum"];
     [paraDict setObjectSafe:self.model.password forKey:@"password"];
     
-    BOOL networkState = [MMNetServies postUrl:@"/tour/login.htm"
-                              resultContainer:[MMLoginResult new]
-                                     paraDict:[paraDict copy]
-                                     delegate:self customInfo:nil];
-    if (networkState) [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    else [UIAlertView networkError];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    @weakify(self);
+    [[MMNetServies postRequest:@"/u/login" resultContainer:[MMLoginResult new] paraDict:[paraDict copy] customInfo:nil] subscribeNext:^(id x) {
+        @strongify(self);
+        NSParameterAssert([x isKindOfClass:[MMLoginResult class]]);
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        
+//        NSNumber *networkState = searchResult.resultInfo.success;
+//        if ([networkState boolValue]) {
+//            [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:MMUserHasLogin];
+//            [[NSUserDefaults standardUserDefaults] setObject:searchResult.resultInfo.humanID forKey:MMUserID];
+//            
+//            if (self.model.enterType == MMEnterTypeLogin) [self dismissViewControllerAnimated:YES completion:nil];
+//            else [self performSegueWithIdentifier:@"nextSegue" sender:nil];
+//        }
+//        else {
+//            [[NSUserDefaults standardUserDefaults] removeObjectForKey:MMUserHasLogin];
+//            [[NSUserDefaults standardUserDefaults] removeObjectForKey:MMUserID];
+//        }
+//        
+//        NSString *netMessage = searchResult.resultInfo.message;
+//        if ([netMessage isStringSafe]) [UIAlertView tipMessage:netMessage];
+//        else [UIAlertView networkError];
+        
+    } error:^(NSError *error) {
+        [UIAlertView networkError];
+    }];
 }
 
 - (void)signUp {
@@ -90,12 +109,16 @@
     [paraDict setObjectSafe:self.model.password forKey:@"password"];
     [paraDict setObjectSafe:self.model.checkString forKey:@"invitationCode"];
     
-    BOOL networkState = [MMNetServies postUrl:@"/tour/register.htm"
-                              resultContainer:[MMLoginResult new]
-                                     paraDict:[paraDict copy]
-                                     delegate:self customInfo:nil];
-    if (networkState) [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    else [UIAlertView networkError];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    @weakify(self);
+    [[MMNetServies postRequest:@"/u/register" resultContainer:[MMLoginResult new] paraDict:[paraDict copy] customInfo:nil] subscribeNext:^(id x) {
+        NSParameterAssert([x isKindOfClass:[MMLoginResult class]]);
+        @strongify(self);
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+    } error:^(NSError *error) {
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [UIAlertView networkError];
+    }];
 }
 
 - (IBAction)valideAction:(UIButton *)sender {
@@ -122,13 +145,6 @@
     [self.view endEditing:YES];
 }
 
-#pragma mark - 微调UI元素
-- (void)configUI {
-
-    // 统一颜色设置
-    self.confirmButton.backgroundColor = [UIColor MMBlueColor];
-}
-
 - (void)addDelegate {
 
     self.userNameTF.delegate = self;
@@ -138,35 +154,11 @@
 }
 
 - (void)managerKeyboard {
-    
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(currentViewEndEdit:)];
     self.view.userInteractionEnabled = YES;
     [self.view addGestureRecognizer:tapGesture];
     
 }
-
-#pragma mark - networkBack
-- (void)getSearchNetBack:(MMLoginResult *)searchResult forInfo:(id)customInfo {
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    
-    NSNumber *networkState = searchResult.resultInfo.success;
-    if ([networkState boolValue]) {
-        [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:MMUserHasLogin];
-        [[NSUserDefaults standardUserDefaults] setObject:searchResult.resultInfo.humanID forKey:MMUserID];
-        
-        if (self.model.enterType == MMEnterTypeLogin) [self dismissViewControllerAnimated:YES completion:nil];
-        else [self performSegueWithIdentifier:@"nextSegue" sender:nil];
-    }
-    else {
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:MMUserHasLogin];
-        [[NSUserDefaults standardUserDefaults] removeObjectForKey:MMUserID];
-    }
-    
-    NSString *netMessage = searchResult.resultInfo.message;
-    if ([netMessage isStringSafe]) [UIAlertView tipMessage:netMessage];
-    else [UIAlertView networkError];
-}
-
 #pragma mark - 初始化配置
 - (MMLoginVM *)model {
 
@@ -194,7 +186,6 @@
     RAC(self.model, userName) = self.userNameTF.rac_textSignal;
     RAC(self.model, password) = self.passwordTF.rac_textSignal;
     RAC(self.model, checkString) = self.checkTF.rac_textSignal;
-    
     
     RAC(self.model, checkSelected) = RACObserve(self.checkButton, selected);
     

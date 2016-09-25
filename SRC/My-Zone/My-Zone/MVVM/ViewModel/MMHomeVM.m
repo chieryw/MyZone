@@ -9,7 +9,7 @@
 #import "MMHomeVM.h"
 #import "MMHomeResult.h"
 
-@interface MMHomeVM ()<MMNetworkPtc>
+@interface MMHomeVM ()
 
 @end
 
@@ -35,36 +35,35 @@
     [paraDict setObjectSafe:humanId forKey:@"humanID"];
     [paraDict setObjectSafe:@(self.fetchDataType) forKey:@"queryType"];
     
-    BOOL networkState = [MMNetServies postUrl:@"/tour/queryguide.htm"
-                              resultContainer:[MMHomeResult new]
-                                     paraDict:[paraDict copy]
-                                     delegate:self customInfo:nil];
-    if (networkState) self.showLoading = YES;
-    else [UIAlertView networkError];
+    self.showLoading = YES;
+    @weakify(self);
+    [[MMNetServies postRequest:@"/list/guider" resultContainer:[MMHomeResult new] paraDict:[paraDict copy] customInfo:nil] subscribeNext:^(id x) {
+        NSParameterAssert([x isKindOfClass:[MMHomeResult class]]);
+        @strongify(self);
+        self.showLoading = NO;
+        
+        // 处理网络请求
+        if (x) {
+            self.homeResult = (MMHomeResult *)x;
+            self.showErrorView = NO;
+            self.reloadData = YES;
+        }
+        else {
+            self.homeResult = nil;
+            self.showErrorView = YES;
+            self.reloadData = NO;
+            [UIAlertView networkError];
+        }
+        
+    } error:^(NSError *error) {
+        @strongify(self);
+        self.showLoading = NO;
+        [UIAlertView networkError];
+    }];
 }
 
 - (void)loadMore {
     
-}
-
-#pragma mark - 网络回调函数
-- (void)getSearchNetBack:(id)searchResult forInfo:(id)customInfo {
-    
-    // 关闭loading
-    self.showLoading = NO;
-    
-    // 处理网络请求
-    if (searchResult) {
-        self.homeResult = (MMHomeResult *)searchResult;
-        self.showErrorView = NO;
-        self.reloadData = YES;
-    }
-    else {
-        self.homeResult = nil;
-        self.showErrorView = YES;
-        self.reloadData = NO;
-        [UIAlertView networkError];
-    }
 }
 
 @end

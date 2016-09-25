@@ -9,7 +9,7 @@
 #import "MMUserDetailVM.h"
 #import "MMFriendsInfoResult.h"
 
-@interface MMUserDetailVM ()<MMNetworkPtc>
+@interface MMUserDetailVM ()
 
 @end
 
@@ -33,30 +33,29 @@
     NSString *humanId = [[NSUserDefaults standardUserDefaults] objectForKey:MMUserID];
     [paraDict setObjectSafe:humanId forKey:@"humanID"];
     
-    BOOL networkState = [MMNetServies postUrl:@"/tour/guidefriendsinfo.htm"
-                              resultContainer:[MMFriendsInfoResult new]
-                                     paraDict:[paraDict copy]
-                                     delegate:self customInfo:nil];
-    if (networkState) self.showLoading = YES;
-    else [UIAlertView networkError];
-}
-
-- (void)getSearchNetBack:(id)searchResult forInfo:(id)customInfo {
-    // 关闭loading
-    self.showLoading = NO;
-    
-    // 处理网络请求
-    if (searchResult) {
-        self.friendsInfoResult = (MMFriendsInfoResult *)searchResult;
-        self.showErrorView = NO;
-        self.reloadData = YES;
-    }
-    else {
-        self.friendsInfoResult = nil;
-        self.showErrorView = YES;
-        self.reloadData = NO;
+    self.showLoading = YES;
+    [[MMNetServies postRequest:@"/u/friends/guider/info" resultContainer:[MMFriendsInfoResult new] paraDict:[paraDict copy] customInfo:nil] subscribeNext:^(id x) {
+        NSParameterAssert([x isKindOfClass:[MMFriendsInfoResult class]]);
+        
+        // 关闭loading
+        self.showLoading = NO;
+        
+        // 处理网络请求
+        if (x) {
+            self.friendsInfoResult = (MMFriendsInfoResult *)x;
+            self.showErrorView = NO;
+            self.reloadData = YES;
+        }
+        else {
+            self.friendsInfoResult = nil;
+            self.showErrorView = YES;
+            self.reloadData = NO;
+            [UIAlertView networkError];
+        }
+        
+    } error:^(NSError *error) {
         [UIAlertView networkError];
-    }
+    }];
 }
 
 @end

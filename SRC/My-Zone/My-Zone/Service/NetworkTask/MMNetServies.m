@@ -54,8 +54,10 @@
                                          [subscriber sendCompleted];
                                      }
                                      else{
-                                         [subscriber sendNext:status];
-                                         [subscriber sendCompleted];
+                                         if (status) {
+                                             NSError *error = [[NSError alloc] initWithDomain:@"myzone.com" code:status.code.integerValue userInfo:@{@"description":status.des?:@"未知错误！！！"}];
+                                             [subscriber sendError:error];
+                                         }
                                      }
                                 }];
         

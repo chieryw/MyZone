@@ -10,7 +10,7 @@
 #import "MMPersonTableViewModel.h"
 #import "MMSimpleResult.h"
 
-@interface MMEditUserSignVC ()<MMNetworkPtc>
+@interface MMEditUserSignVC ()
 @property (weak, nonatomic) IBOutlet UITextField *signTF;
 
 @end
@@ -39,28 +39,26 @@
         [paraDict setObjectSafe:humanDI forKey:@"humanID"];
         [paraDict setObjectSafe:self.signTF.text forKey:@"signName"];
         
-        BOOL networkState = [MMNetServies postUrl:@"/tour/humaninfo.htm?action=signName"
-                                  resultContainer:[MMSimpleResult new]
-                                         paraDict:[paraDict copy]
-                                         delegate:self customInfo:nil];
-        if (networkState) [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        else [UIAlertView networkError];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        @weakify(self);
+        [[MMNetServies postRequest:@"/u/setting" resultContainer:[MMSimpleResult new] paraDict:[paraDict copy] customInfo:nil] subscribeNext:^(id x) {
+            NSParameterAssert([x isKindOfClass:[MMSimpleResult class]]);
+            @strongify(self);
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+//            NSNumber *networkState = searchResult.resultInfo.success;
+//            if ([networkState boolValue]) {
+//                self.userSignModel.subTitle = self.signTF.text;
+//            }
+//            [UIAlertView tipMessage:searchResult.resultInfo.message];
+            
+        } error:^(NSError *error) {
+            [UIAlertView networkError];
+        }];
     }
     else {
         [UIAlertView tipMessage:@"签名不能为空"];
     }
 }
-
-- (void)getSearchNetBack:(MMSimpleResult *)searchResult forInfo:(id)customInfo {
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    
-    NSNumber *networkState = searchResult.resultInfo.success;
-    if ([networkState boolValue]) {
-        self.userSignModel.subTitle = self.signTF.text;
-    }
-    [UIAlertView tipMessage:searchResult.resultInfo.message];
-    
-}
-
 
 @end

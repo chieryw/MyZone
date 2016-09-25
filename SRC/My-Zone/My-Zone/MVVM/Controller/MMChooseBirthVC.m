@@ -89,12 +89,17 @@
         
         @weakify(self);
         [[MMNetServies postRequest:@"/u/brithday"
-                  resultContainer:[MMSimpleInfo new]
+                  resultContainer:[MMSimpleResult new]
                          paraDict:[paraDict copy]
                        customInfo:nil] subscribeNext:^(id x) {
             @strongify(self);
             if ([x isKindOfClass:[MMSearchNetStatus class]]) {
                 [UIAlertView networkError];
+//                NSNumber *networkState = searchResult.resultInfo.success;
+//                if ([networkState boolValue]) {
+//                    self.userBirth.subTitle = self.tempDate;
+//                }
+//                [UIAlertView tipMessage:searchResult.resultInfo.message];
             }
             else {
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
@@ -104,17 +109,6 @@
     else {
         [UIAlertView tipMessage:@"还没有选择出生日期"];
     }
-}
-
-- (void)getSearchNetBack:(MMSimpleResult *)searchResult forInfo:(id)customInfo {
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    
-    NSNumber *networkState = searchResult.resultInfo.success;
-    if ([networkState boolValue]) {
-        self.userBirth.subTitle = self.tempDate;
-    }
-    [UIAlertView tipMessage:searchResult.resultInfo.message];
-    
 }
 
 

@@ -42,10 +42,11 @@
             #if DEBUG
             NSLog(@"Server returned HTTP Error code %ld", (long)statusCode);
             #endif
+            status.des = [NSString stringWithFormat:@"Server returned HTTP Error code %ld",(long)statusCode];
         }
     }
     
-    if (error) status.des = error.localizedDescription;
+    if (error && error.localizedDescription) status.des = error.localizedDescription;
     if (self.resultBlock) self.resultBlock(status,nil);
 }
 

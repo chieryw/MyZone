@@ -31,9 +31,6 @@
     [super URLSession:session task:task didCompleteWithError:error];
 }
 
-// =============================================================================
-// 其他函数
-// =============================================================================
 // 解析请求结果
 + (BOOL)parseSearchResult:(NSData *)resultData
                  toResult:(MMSearchNetResult *)searchNetResult

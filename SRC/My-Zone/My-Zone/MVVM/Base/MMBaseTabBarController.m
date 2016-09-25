@@ -16,7 +16,6 @@
 
 @property (nonatomic, strong) MMIntroView *introView;
 
-
 @end
 
 @implementation MMBaseTabBarController
