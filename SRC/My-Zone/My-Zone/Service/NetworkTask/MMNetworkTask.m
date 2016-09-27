@@ -156,6 +156,8 @@
     [request setHTTPBody:postData];
     [request setHTTPMethod:@"POST"];
     [request setValue:@"Close" forHTTPHeaderField:@"Connection"];
+    // 告诉node.js要将参数做parserJson的解析
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request setValue:[NSString stringWithFormat:@"%lu", (unsigned long)[postData length]] forHTTPHeaderField:@"Content-Length"];
     
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];

@@ -23,7 +23,6 @@
     
 //    self.delegate = self;
     
-    [self configureSelf];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -31,7 +30,6 @@
 }
 
 - (void)configureSelf {
-    self.navigationBar.tintColor =[ UIColor whiteColor];
 }
 
 

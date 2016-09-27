@@ -32,6 +32,7 @@
     if (netStatus) {
         MMSearchNetStatus *status = [MMSearchNetStatus new];
         [MMJSONMapping mappingObject:status withJSON:netStatus];
+        self.bstatus = status;
     }
 }
 

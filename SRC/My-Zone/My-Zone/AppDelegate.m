@@ -63,7 +63,7 @@
     [[UITabBarItem appearanceWhenContainedIn:[UITabBar class], nil]
      setTitleTextAttributes:@{
                               NSForegroundColorAttributeName:[UIColor MMTextColor],
-                              NSFontAttributeName:[UIFont MMTextFont12]
+                              NSFontAttributeName:[UIFont MMTextFont12],
                               }
      forState:UIControlStateSelected];
 }

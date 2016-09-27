@@ -9,15 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "MMSearchNetResult.h"
 
-@protocol MMLoginResultDetail @end
-@interface MMLoginResultDetail : MMSearchNetResult
-@property (nonatomic, strong) NSNumber *success;
-@property (nonatomic, strong) NSString *message;
-@property (nonatomic, strong) NSString *humanID;
-@end
-
-
 @interface MMLoginResult : MMSearchNetResult
-@property (nonatomic, strong) MMLoginResultDetail *resultInfo;
-@property (nonatomic, strong) NSArray <MMLoginResultDetail> *testArray;
+@property (nonatomic, strong) NSString *userID;
 @end

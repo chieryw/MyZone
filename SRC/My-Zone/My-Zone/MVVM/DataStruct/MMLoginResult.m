@@ -8,10 +8,6 @@
 
 #import "MMLoginResult.h"
 
-@implementation MMLoginResultDetail
-
-@end
-
 @implementation MMLoginResult
 
 @end

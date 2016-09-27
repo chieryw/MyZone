@@ -71,7 +71,7 @@
 
 - (void)login {
     NSMutableDictionary *paraDict = [NSMutableDictionary new];
-    [paraDict setObjectSafe:self.model.userName forKey:@"mobileNum"];
+    [paraDict setObjectSafe:self.model.userName forKey:@"name"];
     [paraDict setObjectSafe:self.model.password forKey:@"password"];
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -81,31 +81,33 @@
         NSParameterAssert([x isKindOfClass:[MMLoginResult class]]);
         [MBProgressHUD hideHUDForView:self.view animated:YES];
         
-//        NSNumber *networkState = searchResult.resultInfo.success;
-//        if ([networkState boolValue]) {
-//            [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:MMUserHasLogin];
-//            [[NSUserDefaults standardUserDefaults] setObject:searchResult.resultInfo.humanID forKey:MMUserID];
-//            
-//            if (self.model.enterType == MMEnterTypeLogin) [self dismissViewControllerAnimated:YES completion:nil];
-//            else [self performSegueWithIdentifier:@"nextSegue" sender:nil];
-//        }
-//        else {
-//            [[NSUserDefaults standardUserDefaults] removeObjectForKey:MMUserHasLogin];
-//            [[NSUserDefaults standardUserDefaults] removeObjectForKey:MMUserID];
-//        }
-//        
-//        NSString *netMessage = searchResult.resultInfo.message;
-//        if ([netMessage isStringSafe]) [UIAlertView tipMessage:netMessage];
-//        else [UIAlertView networkError];
+        MMLoginResult *result = (MMLoginResult *)x;
+        if (![result.bstatus.code boolValue]) {
+            [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:MMUserHasLogin];
+            [[NSUserDefaults standardUserDefaults] setObject:result.userID forKey:MMUserID];
+            
+            if (self.model.enterType == MMEnterTypeLogin) [self dismissViewControllerAnimated:YES completion:nil];
+            else [self performSegueWithIdentifier:@"nextSegue" sender:nil];
+        }
+        else {
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:MMUserHasLogin];
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:MMUserID];
+        }
+        
+        NSString *netMessage = result.bstatus.des;
+        if ([netMessage isStringSafe]) [UIAlertView tipMessage:netMessage];
+        else [UIAlertView networkError];
         
     } error:^(NSError *error) {
+        @strongify(self);
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
         [UIAlertView networkError];
     }];
 }
 
 - (void)signUp {
     NSMutableDictionary *paraDict = [NSMutableDictionary new];
-    [paraDict setObjectSafe:self.model.userName forKey:@"mobileNum"];
+    [paraDict setObjectSafe:self.model.userName forKey:@"name"];
     [paraDict setObjectSafe:self.model.password forKey:@"password"];
     [paraDict setObjectSafe:self.model.checkString forKey:@"invitationCode"];
     
@@ -116,8 +118,9 @@
         @strongify(self);
         [MBProgressHUD hideHUDForView:self.view animated:YES];
     } error:^(NSError *error) {
+        @strongify(self);
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-        [UIAlertView networkError];
+        [UIAlertView tipMessage:error.userInfo[@"description"]];
     }];
 }
 

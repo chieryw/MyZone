@@ -65,14 +65,12 @@
         return [RACDisposable disposableWithBlock:^{
             [task cancel];
         }];
-        
     }] takeUntil:self.rac_willDeallocSignal];
     
     // 在这里打上一个记录标记，方便debug
     [signal setNameWithFormat:@"-connectionSignal: %@", servie];
     
     return signal;
-    
 }
 
 @end

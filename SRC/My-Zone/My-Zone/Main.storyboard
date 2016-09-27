@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A313a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WeI-9N-9mj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2327e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WeI-9N-9mj">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -11,15 +11,16 @@
         <scene sceneID="9k0-Aw-ftA">
             <objects>
                 <tabBarController hidesBottomBarWhenPushed="YES" id="WeI-9N-9mj" customClass="MMBaseTabBarController" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="n4s-d2-ncO">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="n4s-d2-ncO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="ZZm-3A-z2Y" kind="relationship" relationship="viewControllers" id="Kba-vi-d9n"/>
-                        <segue destination="7Qe-6F-4zE" kind="relationship" relationship="viewControllers" id="1Vp-qS-FU5"/>
                         <segue destination="zrf-Jx-x7X" kind="relationship" relationship="viewControllers" id="Ley-qr-VzL"/>
                         <segue destination="0cf-Xc-669" kind="relationship" relationship="viewControllers" id="Xo8-Bd-rmr"/>
                         <segue destination="WxI-qO-bDD" kind="presentation" identifier="NeedUserInfo" id="JzB-0B-JNS"/>
@@ -278,44 +279,7 @@
             </objects>
             <point key="canvasLocation" x="3383" y="2057"/>
         </scene>
-        <!--消息-->
-        <scene sceneID="3hn-y8-4Og">
-            <objects>
-                <viewController id="DDx-5X-I0a" customClass="MMMainMessageVC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kFw-ic-Ob4"/>
-                        <viewControllerLayoutGuide type="bottom" id="wY1-aN-gYP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BUo-DZ-Uzk">
-                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Lto-bZ-8zY">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="DDx-5X-I0a" id="CWb-QY-Ll9"/>
-                                    <outlet property="delegate" destination="DDx-5X-I0a" id="RdE-1X-B4u"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Lto-bZ-8zY" firstAttribute="top" secondItem="kFw-ic-Ob4" secondAttribute="bottom" id="3wX-TT-QTc"/>
-                            <constraint firstItem="Lto-bZ-8zY" firstAttribute="leading" secondItem="BUo-DZ-Uzk" secondAttribute="leadingMargin" constant="-20" id="YqZ-7f-zph"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Lto-bZ-8zY" secondAttribute="trailing" constant="-20" id="hK3-94-Feg"/>
-                            <constraint firstItem="wY1-aN-gYP" firstAttribute="top" secondItem="Lto-bZ-8zY" secondAttribute="bottom" id="tek-Kg-myW"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="消息" id="Hvm-lE-wYz"/>
-                    <connections>
-                        <outlet property="tableView" destination="Lto-bZ-8zY" id="SLb-Eq-5Zb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wKn-lK-svq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1900" y="2804.347826086957"/>
-        </scene>
-        <!--Friends ZoneVC-->
+        <!--通讯录-->
         <scene sceneID="VIG-3I-o01">
             <objects>
                 <viewController id="JlL-ev-dGu" customClass="MMFriendsZoneVC" sceneMemberID="viewController">
@@ -345,7 +309,7 @@
                             <constraint firstItem="i1P-qm-NHr" firstAttribute="leading" secondItem="nRk-YA-P0R" secondAttribute="leadingMargin" constant="-20" id="zwy-af-zMS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="WIe-xk-EPp"/>
+                    <navigationItem key="navigationItem" title="通讯录" id="WIe-xk-EPp"/>
                     <connections>
                         <outlet property="tableView" destination="i1P-qm-NHr" id="zm1-sa-5Fs"/>
                     </connections>
@@ -559,7 +523,7 @@
             <objects>
                 <navigationController id="0cf-Xc-669" customClass="MMBaseNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我" image="MeIcon" selectedImage="MeIcon" id="X3r-dh-aJH"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="KbD-O0-gAO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="KbD-O0-gAO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -576,7 +540,7 @@
             <objects>
                 <navigationController id="zrf-Jx-x7X" customClass="MMBaseNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="通讯录" image="FriendsIcon" selectedImage="FriendsIcon" id="vcg-QK-wo7"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="odT-Hk-qbp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="odT-Hk-qbp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -588,29 +552,12 @@
             </objects>
             <point key="canvasLocation" x="1088" y="3519"/>
         </scene>
-        <!--消息-->
-        <scene sceneID="oKU-jx-tl3">
-            <objects>
-                <navigationController id="7Qe-6F-4zE" customClass="MMBaseNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="消息" image="MessageIcon" selectedImage="MessageIcon" id="s9K-Q4-CSm"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="7Uh-xL-imu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="DDx-5X-I0a" kind="relationship" relationship="rootViewController" id="VMq-RV-uvY"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FVD-Fn-b3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1088" y="2795"/>
-        </scene>
         <!--找游客-->
         <scene sceneID="xwE-H2-skG">
             <objects>
                 <navigationController id="ZZm-3A-z2Y" customClass="MMBaseNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="找游客" image="SearchIcon" selectedImage="SearchIcon" id="HRk-GA-QfL"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="NVL-mi-cTi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="NVL-mi-cTi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -636,7 +583,6 @@
         <image name="FriendsIcon" width="20" height="16"/>
         <image name="GoodEvaluteBig" width="46" height="48"/>
         <image name="MeIcon" width="20" height="16"/>
-        <image name="MessageIcon" width="20" height="16"/>
         <image name="SearchIcon" width="20" height="16"/>
     </resources>
 </document>

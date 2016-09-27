@@ -42,8 +42,6 @@
 
 #pragma mark - 基本配置
 - (void)configureSelf {
-    self.tabBar.tintColor = [UIColor whiteColor];
-    
 }
 
 - (void)checkUserLogin {
