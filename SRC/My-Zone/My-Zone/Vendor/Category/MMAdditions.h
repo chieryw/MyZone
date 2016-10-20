@@ -19,5 +19,6 @@
 #import "NSString+Addtion.h"
 #import "NSData+Addition.h"
 #import "NSMutableDictionary+Addition.h"
+#import "UIView+Addition.h"
 
 #endif
