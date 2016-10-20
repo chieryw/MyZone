@@ -9,8 +9,14 @@
 #ifndef My_Zone_MMSizeMarcor_h
 #define My_Zone_MMSizeMarcor_h
 
+#ifndef kScreenWidth
 #define kScreenWidth            [[UIScreen mainScreen] bounds].size.width
+#endif
+
+#ifndef kScreenHeight
 #define kScreenHeight           [[UIScreen mainScreen] bounds].size.height
+#endif
+
 #define kStatusBarHeight        20.0f
 #define kNavigationBarHeight    44.0f
 #define kTabBarHeight           49.0f
