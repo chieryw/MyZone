@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11535.1" systemVersion="16B2548a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WeI-9N-9mj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11535.1" systemVersion="16B2553a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WeI-9N-9mj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -380,7 +380,7 @@
             <objects>
                 <navigationController id="rR8-qU-2Sp" customClass="MMBaseNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="测试" id="0f0-8Q-Auy"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="k2u-mj-p1p">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="k2u-mj-p1p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -474,7 +474,7 @@
         <!--图片-->
         <scene sceneID="cBi-0M-JyS">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="ehn-Sa-Qzc" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="ehn-Sa-Qzc" customClass="MMTestImageSelectVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xQu-zT-SNi"/>
                         <viewControllerLayoutGuide type="bottom" id="bUH-Ji-aTN"/>
@@ -489,6 +489,9 @@
                                     <constraint firstAttribute="height" constant="40" id="Hk8-NB-you"/>
                                 </constraints>
                                 <state key="normal" title="上传"/>
+                                <connections>
+                                    <action selector="uploadImage:" destination="ehn-Sa-Qzc" eventType="touchUpInside" id="vQ2-Nd-K5l"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwT-ja-0oh">
                                 <rect key="frame" x="56" y="80" width="263" height="40"/>
@@ -496,6 +499,9 @@
                                     <constraint firstAttribute="height" constant="40" id="m16-pJ-lAE"/>
                                 </constraints>
                                 <state key="normal" title="下载"/>
+                                <connections>
+                                    <action selector="downloadImage:" destination="ehn-Sa-Qzc" eventType="touchUpInside" id="rdd-rt-2Tj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjy-Bb-821">
                                 <rect key="frame" x="56" y="140" width="263" height="40"/>
@@ -520,6 +526,9 @@
                                     <constraint firstAttribute="height" constant="40" id="ZQZ-EW-tvY"/>
                                 </constraints>
                                 <state key="normal" title="网络图片加载"/>
+                                <connections>
+                                    <action selector="jumpWebImageVC:" destination="ehn-Sa-Qzc" eventType="touchUpInside" id="gp6-qe-I3V"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -19,7 +19,7 @@ static NSString * const FORM_FLE_INPUT = @"file";
                           result:(void (^)(NSError *error, NSDictionary *resultInfo))imageHandle
 {
     //住址Url
-    NSURL *requestUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",MMDebugUrl,url]];
+    NSURL *requestUrl = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",MMDebugUrl,url]];
     
     NSString *TWITTERFON_FORM_BOUNDARY = @"0xKhTmLbOuNdArY";
     //根据url初始化request
@@ -70,7 +70,7 @@ static NSString * const FORM_FLE_INPUT = @"file";
         [body appendFormat:@"%@\r\n",MPboundary];
         
         //声明pic字段，文件名为boris.png
-        [body appendFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n",FORM_FLE_INPUT,picFileName];
+        [body appendFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n",FORM_FLE_INPUT,[self fileName:picFileName WithType:[[YYImage imageWithContentsOfFile:picFilePath] animatedImageType]]];
         //声明上传文件的格式
         [body appendFormat:@"Content-Type: image/jpge,image/gif, image/jpeg, image/pjpeg, image/pjpeg\r\n\r\n"];
     }
@@ -100,24 +100,32 @@ static NSString * const FORM_FLE_INPUT = @"file";
     //http method
     [request setHTTPMethod:@"POST"];
     
-    
-    NSHTTPURLResponse *urlResponese = nil;
-    NSError *error = [[NSError alloc]init];
-    NSData* resultData = [NSURLConnection sendSynchronousRequest:request   returningResponse:&urlResponese error:&error];
-    NSString* result= [[NSString alloc] initWithData:resultData encoding:NSUTF8StringEncoding];
-    if([urlResponese statusCode] >=200&&[urlResponese statusCode]<300){
-        NSLog(@"返回结果=====%@",result);
-        if (!resultData || resultData.length == 0) {
-            imageHandle(nil,nil);
-        }
-        else {
-            NSDictionary *resultDict = [NSJSONSerialization JSONObjectWithData:resultData options:NSJSONReadingMutableContainers error:nil];
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue new] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+        if (!connectionError || data.length) {
+            NSDictionary *resultDict = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
             imageHandle(nil,resultDict);
         }
-        return result;
-    }
-    imageHandle(error, nil);
+        else {
+            imageHandle(connectionError,nil);
+        }
+    }];
+    
     return nil;
+}
+
++ (NSString *)fileName:(NSString *)fileName WithType:(YYImageType)type {
+    switch (type) {
+        case YYImageTypeJPEG:
+            return [NSString stringWithFormat:@"%@.jpg",fileName];
+            break;
+        case YYImageTypePNG:
+            return [NSString stringWithFormat:@"%@.png",fileName];
+            break;
+            
+        default:
+            return fileName;
+            break;
+    }
 }
 
 /**
