@@ -222,6 +222,8 @@
 		29CD74EB1C4230520087065F /* MMNetworkTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD74E01C4230520087065F /* MMNetworkTask.m */; };
 		29CD74EC1C4230520087065F /* MMSearchNetDelgt.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD74E21C4230520087065F /* MMSearchNetDelgt.m */; };
 		29CD74ED1C4230520087065F /* MMSearchNetResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CD74E41C4230520087065F /* MMSearchNetResult.m */; };
+		29CED2421DBDBDBC0074FA19 /* MMWebImageExampleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CED2411DBDBDBC0074FA19 /* MMWebImageExampleVC.m */; };
+		29CED2451DBDE6D40074FA19 /* MMTestImageSelectVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CED2441DBDE6D40074FA19 /* MMTestImageSelectVC.m */; };
 		29D63A151BD502F40039C101 /* MMSearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D63A141BD502F40039C101 /* MMSearchVC.m */; };
 		29D922981BC4D2F200192761 /* MMSandBOX.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D922971BC4D2F200192761 /* MMSandBOX.m */; };
 		29DC47481BEF8093003A1769 /* MMUserCenterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DC47471BEF8093003A1769 /* MMUserCenterVC.m */; };
@@ -678,6 +680,10 @@
 		29CD74E21C4230520087065F /* MMSearchNetDelgt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSearchNetDelgt.m; sourceTree = "<group>"; };
 		29CD74E31C4230520087065F /* MMSearchNetResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSearchNetResult.h; sourceTree = "<group>"; };
 		29CD74E41C4230520087065F /* MMSearchNetResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSearchNetResult.m; sourceTree = "<group>"; };
+		29CED2401DBDBDBC0074FA19 /* MMWebImageExampleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMWebImageExampleVC.h; sourceTree = "<group>"; };
+		29CED2411DBDBDBC0074FA19 /* MMWebImageExampleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMWebImageExampleVC.m; sourceTree = "<group>"; };
+		29CED2431DBDE6D40074FA19 /* MMTestImageSelectVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTestImageSelectVC.h; sourceTree = "<group>"; };
+		29CED2441DBDE6D40074FA19 /* MMTestImageSelectVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTestImageSelectVC.m; sourceTree = "<group>"; };
 		29D63A131BD502F40039C101 /* MMSearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSearchVC.h; sourceTree = "<group>"; };
 		29D63A141BD502F40039C101 /* MMSearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMSearchVC.m; sourceTree = "<group>"; };
 		29D922961BC4D2F200192761 /* MMSandBOX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMSandBOX.h; sourceTree = "<group>"; };
@@ -967,6 +973,10 @@
 				2998BE5E1DB7251300997F61 /* MMTestImageVC.m */,
 				2998BEA41DB768F600997F61 /* MMImageDisplayVC.h */,
 				2998BEA51DB768F600997F61 /* MMImageDisplayVC.m */,
+				29CED2401DBDBDBC0074FA19 /* MMWebImageExampleVC.h */,
+				29CED2411DBDBDBC0074FA19 /* MMWebImageExampleVC.m */,
+				29CED2431DBDE6D40074FA19 /* MMTestImageSelectVC.h */,
+				29CED2441DBDE6D40074FA19 /* MMTestImageSelectVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1699,6 +1709,7 @@
 				298D02BC1BA3CB2800F5EDE7 /* RACCommand.m in Sources */,
 				298D02E31BA3CB2800F5EDE7 /* RACTargetQueueScheduler.m in Sources */,
 				298D02CC1BA3CB2800F5EDE7 /* RACKVOChannel.m in Sources */,
+				29CED2451DBDE6D40074FA19 /* MMTestImageSelectVC.m in Sources */,
 				298D02D21BA3CB2800F5EDE7 /* RACQueueScheduler.m in Sources */,
 				298D02FC1BA3CB2800F5EDE7 /* UITextView+RACSignalSupport.m in Sources */,
 				298D02E61BA3CB2800F5EDE7 /* RACTupleSequence.m in Sources */,
@@ -1715,6 +1726,7 @@
 				298D02B41BA3CB2800F5EDE7 /* NSString+RACSupport.m in Sources */,
 				298D02E41BA3CB2800F5EDE7 /* RACTestScheduler.m in Sources */,
 				295FC36B1C82DECA00914633 /* MMNewFriendsListResult.m in Sources */,
+				29CED2421DBDBDBC0074FA19 /* MMWebImageExampleVC.m in Sources */,
 				29BC764E1BA6CB3000518755 /* UIView+WebCacheOperation.m in Sources */,
 				295FC3561C82DABF00914633 /* MMInviteGuideResult.m in Sources */,
 				298D02F41BA3CB2800F5EDE7 /* UIRefreshControl+RACCommandSupport.m in Sources */,
