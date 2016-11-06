@@ -27,6 +27,8 @@ CGFloat const progressLayerHeight = 4;
     
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     [self initSelf];
+    
+    // 将文件布局放在系统的函数中，可以直接实现lazyLoad,存在的问题也是非常的明显，滚动的时候会加载这个函数，离屏将task cacel
     [self layoutSubviews];
     
     return self;
@@ -161,8 +163,9 @@ CGFloat const progressLayerHeight = 4;
                         You can add your image url here.
                         */
                        
-                       // progressive jpeg
+                       // 测试nodeJS Get jpeg图片
                        [NSString stringWithFormat:@"%@%@",MMDebugUrl,@"/download/image/mew_baseline.jpg"],
+                       // progressive jpeg
                        @"https://s-media-cache-ak0.pinimg.com/1200x/2e/0c/c5/2e0cc5d86e7b7cd42af225c29f21c37f.jpg",
                        
                        // animated gif: http://cinemagraphs.com/

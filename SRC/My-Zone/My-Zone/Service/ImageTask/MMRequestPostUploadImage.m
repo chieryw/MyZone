@@ -70,7 +70,7 @@ static NSString * const FORM_FLE_INPUT = @"file";
         [body appendFormat:@"%@\r\n",MPboundary];
         
         //声明pic字段，文件名为boris.png
-        [body appendFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n",FORM_FLE_INPUT,[self fileName:picFileName WithType:[[YYImage imageWithContentsOfFile:picFilePath] animatedImageType]]];
+        [body appendFormat:@"Content-Disposition: form-data; name=\"%@\"; filename=\"%@\"\r\n",FORM_FLE_INPUT,[self fileName:picFileName filePath:picFilePath]];
         //声明上传文件的格式
         [body appendFormat:@"Content-Type: image/jpge,image/gif, image/jpeg, image/pjpeg, image/pjpeg\r\n\r\n"];
     }
@@ -113,7 +113,18 @@ static NSString * const FORM_FLE_INPUT = @"file";
     return nil;
 }
 
-+ (NSString *)fileName:(NSString *)fileName WithType:(YYImageType)type {
+
+
+/**
+ 根据文件类型，为文件添加后缀
+
+ @param fileName 即将存储的文件名
+ @param filePath 本地文件存储的地址
+ @return 即将存储的文件名加上文件后缀
+ */
++ (NSString *)fileName:(NSString *)fileName filePath:(NSString *)filePath {
+    
+    YYImageType type = [[YYImage imageWithContentsOfFile:filePath] animatedImageType];
     switch (type) {
         case YYImageTypeJPEG:
             return [NSString stringWithFormat:@"%@.jpg",fileName];

@@ -46,6 +46,7 @@
 }
 
 - (IBAction)downloadImage:(id)sender {
+    // 图片下载的操作在网络图片加载中执行
 }
 
 
