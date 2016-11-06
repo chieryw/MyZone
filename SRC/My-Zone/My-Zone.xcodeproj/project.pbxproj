@@ -153,6 +153,8 @@
 		298D03211BA51C0900F5EDE7 /* MMIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 298D03201BA51C0900F5EDE7 /* MMIntroView.m */; };
 		298D033E1BA56EE400F5EDE7 /* MMIntroViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 298D033D1BA56EE400F5EDE7 /* MMIntroViewModel.m */; };
 		2997168B1DCFD96000FE47E7 /* MMMPMediaPlayerControllerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2997168A1DCFD96000FE47E7 /* MMMPMediaPlayerControllerVC.m */; };
+		2997168E1DCFEE4900FE47E7 /* MMAVAudioRecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2997168D1DCFEE4900FE47E7 /* MMAVAudioRecordVC.m */; };
+		299716921DCFEE9100FE47E7 /* MMCricleProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 299716911DCFEE9100FE47E7 /* MMCricleProgressView.m */; };
 		2998BE5C1DB721C200997F61 /* MMTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2998BE5B1DB721C200997F61 /* MMTestVC.m */; };
 		2998BE5F1DB7251300997F61 /* MMTestImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2998BE5E1DB7251300997F61 /* MMTestImageVC.m */; };
 		2998BEA61DB768F600997F61 /* MMImageDisplayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2998BEA51DB768F600997F61 /* MMImageDisplayVC.m */; };
@@ -566,6 +568,10 @@
 		298D033F1BA5753300F5EDE7 /* My-Zone-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "My-Zone-Prefix.pch"; sourceTree = "<group>"; };
 		299716891DCFD96000FE47E7 /* MMMPMediaPlayerControllerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMMPMediaPlayerControllerVC.h; sourceTree = "<group>"; };
 		2997168A1DCFD96000FE47E7 /* MMMPMediaPlayerControllerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMMPMediaPlayerControllerVC.m; sourceTree = "<group>"; };
+		2997168C1DCFEE4900FE47E7 /* MMAVAudioRecordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAVAudioRecordVC.h; sourceTree = "<group>"; };
+		2997168D1DCFEE4900FE47E7 /* MMAVAudioRecordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAVAudioRecordVC.m; sourceTree = "<group>"; };
+		299716901DCFEE9100FE47E7 /* MMCricleProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCricleProgressView.h; sourceTree = "<group>"; };
+		299716911DCFEE9100FE47E7 /* MMCricleProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCricleProgressView.m; sourceTree = "<group>"; };
 		2998BE5A1DB721C200997F61 /* MMTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTestVC.h; sourceTree = "<group>"; };
 		2998BE5B1DB721C200997F61 /* MMTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMTestVC.m; sourceTree = "<group>"; };
 		2998BE5D1DB7251300997F61 /* MMTestImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMTestImageVC.h; sourceTree = "<group>"; };
@@ -1023,6 +1029,8 @@
 				2935B2611DC0AD7A00455C98 /* MMAVAudioPlayerVC.m */,
 				299716891DCFD96000FE47E7 /* MMMPMediaPlayerControllerVC.h */,
 				2997168A1DCFD96000FE47E7 /* MMMPMediaPlayerControllerVC.m */,
+				2997168C1DCFEE4900FE47E7 /* MMAVAudioRecordVC.h */,
+				2997168D1DCFEE4900FE47E7 /* MMAVAudioRecordVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1030,6 +1038,7 @@
 		298D01B01BA3BAC500F5EDE7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2997168F1DCFEE9100FE47E7 /* MMCricleView */,
 				29AE67B01C4FDBDC00A572D3 /* MMScrollView */,
 				298D031F1BA51C0900F5EDE7 /* MMIntroView.h */,
 				298D03201BA51C0900F5EDE7 /* MMIntroView.m */,
@@ -1349,6 +1358,15 @@
 				2917368D1BD3B1890050658E /* MMBaseTabBarController.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		2997168F1DCFEE9100FE47E7 /* MMCricleView */ = {
+			isa = PBXGroup;
+			children = (
+				299716901DCFEE9100FE47E7 /* MMCricleProgressView.h */,
+				299716911DCFEE9100FE47E7 /* MMCricleProgressView.m */,
+			);
+			path = MMCricleView;
 			sourceTree = "<group>";
 		};
 		29A96CDD1C2FE45C0048A2F4 /* Service */ = {
@@ -1749,8 +1767,10 @@
 			files = (
 				29CB31A31BB92FBE0037F80B /* MMPersonVC.m in Sources */,
 				298D02E71BA3CB2800F5EDE7 /* RACUnarySequence.m in Sources */,
+				2997168E1DCFEE4900FE47E7 /* MMAVAudioRecordVC.m in Sources */,
 				29AD87051BF0D4CA00BDC882 /* MMPasswordCell.m in Sources */,
 				29DC47481BEF8093003A1769 /* MMUserCenterVC.m in Sources */,
+				299716921DCFEE9100FE47E7 /* MMCricleProgressView.m in Sources */,
 				291768231C4D355C002AC1E9 /* MMLoginResult.m in Sources */,
 				2998BEA61DB768F600997F61 /* MMImageDisplayVC.m in Sources */,
 				29BC76471BA6CB3000518755 /* SDWebImagePrefetcher.m in Sources */,

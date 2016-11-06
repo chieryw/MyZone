@@ -172,7 +172,7 @@
 }
 
 - (IBAction)volumeSlider:(UISlider *)sender {
-    self.musicPlayer.volume = sender.value;
+//  self.musicPlayer.volume = sender.value;
 }
 
 - (IBAction)playAction:(UIButton *)sender {
