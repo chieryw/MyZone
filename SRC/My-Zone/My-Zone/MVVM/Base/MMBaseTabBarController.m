@@ -31,8 +31,8 @@
     [[MMAppSetting getInstance] configureIntroView];
     
     NSNumber *isfirstEnter = [[NSUserDefaults standardUserDefaults] valueForKey:MMApplicationFirstEnter];
-    if (isfirstEnter && isfirstEnter.boolValue) [self addIntroView];
-    else [self checkUserLogin];
+//    if (isfirstEnter && isfirstEnter.boolValue) [self addIntroView];
+//    else [self checkUserLogin];
 }
 
 - (void)didReceiveMemoryWarning {
