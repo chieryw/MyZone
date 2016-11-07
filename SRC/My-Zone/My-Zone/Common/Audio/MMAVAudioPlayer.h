@@ -50,6 +50,14 @@
 
 
 /**
+ 用文件的地址来初始化对象
+
+ @param url 文件地址
+ @return 实例对象
+ */
+- (instancetype)initWithContentOfURL:(NSURL *)url;
+
+/**
  播放声音
  */
 - (void)play;

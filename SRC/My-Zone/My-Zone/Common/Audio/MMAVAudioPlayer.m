@@ -12,6 +12,7 @@
 @interface MMAVAudioPlayer ()<AVAudioPlayerDelegate>
 @property (nonatomic, strong) AVAudioPlayer *player;
 @property (nonatomic, strong) NSString *fileName;
+@property (nonatomic, strong) NSURL *contentURL;
 @property (nonatomic, strong) NSTimer *timer;
 @property (nonatomic, readwrite) CGFloat currentProgress;
 @end
@@ -39,6 +40,21 @@
 
 
 /**
+ 初始化对象
+
+ @param url 文件路径
+ @return 实例对象
+ */
+- (instancetype)initWithContentOfURL:(NSURL *)url {
+    if (self = [super init]) {
+        _contentURL = url;
+        [self initSelf];
+    }
+    return self;
+}
+
+
+/**
  设置默认值
  */
 - (void)initSelf {
@@ -47,6 +63,23 @@
 }
 
 
+
+/**
+ 根据初始化的不同来获取文件路径
+
+ @return 文件路径
+ */
+- (NSURL *)getFileURL {
+    NSURL *fileURL = nil;
+    if (_fileName) {
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:self.fileName ofType:nil];
+        fileURL = [NSURL URLWithString:filePath];
+    } else if (_contentURL) {
+        fileURL = _contentURL;
+    }
+    return fileURL;
+}
+
 /**
  初始化player对象
 
@@ -54,8 +87,7 @@
  */
 - (AVAudioPlayer *)player {
     if (!_player) {
-        NSString *filePath = [[NSBundle mainBundle] pathForResource:self.fileName ofType:nil];
-        NSURL *fileURL = [NSURL URLWithString:filePath];
+        NSURL *fileURL = [self getFileURL];
         NSError *error = nil;
         _player = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:&error];
         if (error) {

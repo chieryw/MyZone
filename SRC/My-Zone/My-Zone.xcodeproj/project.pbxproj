@@ -17,6 +17,8 @@
 		291768231C4D355C002AC1E9 /* MMLoginResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 291768221C4D355C002AC1E9 /* MMLoginResult.m */; };
 		291FC0011BB8EA6F00F55BAA /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 291FC0001BB8EA6F00F55BAA /* MBProgressHUD.m */; };
 		291FC0071BB8F33300F55BAA /* MMEnterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 291FC0061BB8F33300F55BAA /* MMEnterVC.m */; };
+		2923142E1DD0CC6F00E92C8C /* MMRecordRadioLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2923142D1DD0CC6F00E92C8C /* MMRecordRadioLayer.m */; };
+		292314311DD0DA1500E92C8C /* MMAVAudioRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 292314301DD0DA1500E92C8C /* MMAVAudioRecord.m */; };
 		2926574C1BCA2687001490A3 /* MMDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2926574B1BCA2687001490A3 /* MMDate.m */; };
 		2934FC131C872321005BE0A4 /* MMUserDetailVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 2934FC121C872321005BE0A4 /* MMUserDetailVM.m */; };
 		2935B2511DC055A500455C98 /* MMSystemSoundServie.m in Sources */ = {isa = PBXBuildFile; fileRef = 2935B2501DC055A500455C98 /* MMSystemSoundServie.m */; };
@@ -288,6 +290,10 @@
 		291FC0001BB8EA6F00F55BAA /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		291FC0051BB8F33300F55BAA /* MMEnterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMEnterVC.h; sourceTree = "<group>"; };
 		291FC0061BB8F33300F55BAA /* MMEnterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMEnterVC.m; sourceTree = "<group>"; };
+		2923142C1DD0CC6F00E92C8C /* MMRecordRadioLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMRecordRadioLayer.h; sourceTree = "<group>"; };
+		2923142D1DD0CC6F00E92C8C /* MMRecordRadioLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMRecordRadioLayer.m; sourceTree = "<group>"; };
+		2923142F1DD0DA1500E92C8C /* MMAVAudioRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAVAudioRecord.h; sourceTree = "<group>"; };
+		292314301DD0DA1500E92C8C /* MMAVAudioRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAVAudioRecord.m; sourceTree = "<group>"; };
 		2926574A1BCA2687001490A3 /* MMDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDate.h; sourceTree = "<group>"; };
 		2926574B1BCA2687001490A3 /* MMDate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMDate.m; sourceTree = "<group>"; };
 		2934FC111C872321005BE0A4 /* MMUserDetailVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMUserDetailVM.h; sourceTree = "<group>"; };
@@ -836,6 +842,8 @@
 				2935B2501DC055A500455C98 /* MMSystemSoundServie.m */,
 				2935B25D1DC0A81A00455C98 /* MMAVAudioPlayer.h */,
 				2935B25E1DC0A81A00455C98 /* MMAVAudioPlayer.m */,
+				2923142F1DD0DA1500E92C8C /* MMAVAudioRecord.h */,
+				292314301DD0DA1500E92C8C /* MMAVAudioRecord.m */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -1365,6 +1373,8 @@
 			children = (
 				299716901DCFEE9100FE47E7 /* MMCricleProgressView.h */,
 				299716911DCFEE9100FE47E7 /* MMCricleProgressView.m */,
+				2923142C1DD0CC6F00E92C8C /* MMRecordRadioLayer.h */,
+				2923142D1DD0CC6F00E92C8C /* MMRecordRadioLayer.m */,
 			);
 			path = MMCricleView;
 			sourceTree = "<group>";
@@ -1847,6 +1857,7 @@
 				298D02AE1BA3CB2800F5EDE7 /* NSObject+RACPropertySubscribing.m in Sources */,
 				29C153B31BEE034700C7E5EB /* MMEvaluteVC.m in Sources */,
 				298D029F1BA3CB2800F5EDE7 /* NSArray+RACSequenceAdditions.m in Sources */,
+				292314311DD0DA1500E92C8C /* MMAVAudioRecord.m in Sources */,
 				2946B3331C422E010092D0BD /* NSData+Addition.m in Sources */,
 				29AD54CE1BD7DAA100087A14 /* NSString+Addtion.m in Sources */,
 				298D02D31BA3CB2800F5EDE7 /* RACReplaySubject.m in Sources */,
@@ -1856,6 +1867,7 @@
 				29AEA4B81BF4D4A200582F62 /* MMFriendsZoneVC.m in Sources */,
 				29E7FE971BAD095200673A7D /* UIColor+Addition.m in Sources */,
 				29AEA4B41BF4D1E900582F62 /* MMFriendsCell.m in Sources */,
+				2923142E1DD0CC6F00E92C8C /* MMRecordRadioLayer.m in Sources */,
 				29BC763F1BA6CB3000518755 /* MKAnnotationView+WebCache.m in Sources */,
 				298D033E1BA56EE400F5EDE7 /* MMIntroViewModel.m in Sources */,
 				298D02C61BA3CB2800F5EDE7 /* RACEmptySignal.m in Sources */,
