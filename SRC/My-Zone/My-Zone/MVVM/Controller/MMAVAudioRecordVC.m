@@ -18,6 +18,8 @@
 @property (nonatomic, strong) MMAVAudioRecord *audioRecord;
 @property (nonatomic, strong) MMAVAudioPlayer *audioPlayer;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
+@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, assign) CGFloat recorderProgress;
 @end
 
 @implementation MMAVAudioRecordVC
@@ -27,10 +29,10 @@
     [self.view addSubview:self.progressView];
     [self.view addSubview:self.recorderButton];
     
-    [self RACRecordVolume];
+    [self RACBind];
 }
 
-- (void)RACRecordVolume {
+- (void)RACBind {
     [RACObserve(self.audioRecord, currentVolume) subscribeNext:^(id x) {
         MMRecordRadioLayer *radioLayer = [MMRecordRadioLayer layer];
         radioLayer.frame = CGRectMake(0, 0, 280, 280);
@@ -38,6 +40,9 @@
         radioLayer.volume = [x floatValue];
         [radioLayer startAnimation];
         [self.view.layer addSublayer:radioLayer];
+    }];
+    [RACObserve(self, recorderProgress) subscribeNext:^(id x) {
+        self.progressView.progress = [x floatValue]/60;
     }];
 }
 
@@ -85,6 +90,23 @@
     return _audioRecord;
 }
 
+- (NSTimer *)timer {
+    if (!_timer) {
+        _timer = [NSTimer scheduledTimerWithTimeInterval:0.02 block:^(NSTimer * _Nonnull timer) {
+            [self updateRecorderProgress];
+        } repeats:YES];
+    }
+    return _timer;
+}
+
+- (void)updateRecorderProgress {
+    if (self.recorderProgress > 60) {
+        [self stopRecorder];
+        return;
+    }
+    self.recorderProgress += 0.02;
+}
+
 - (NSURL *)getSavePath {
     NSString *urlStr=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     urlStr=[urlStr stringByAppendingPathComponent:@"myRecord.caf"];
@@ -95,11 +117,15 @@
 
 - (void)startRecorder {
     self.recorderButton.selected = YES;
+    self.recorderProgress = 0.0f;
     [self.audioRecord start];
+    [self.timer setFireDate:[NSDate date]];
 }
 
 - (void)stopRecorder {
     self.recorderButton.selected = NO;
+    self.recorderProgress = 0.0f;
+    [self.timer setFireDate:[NSDate distantFuture]];
     [self.audioRecord stop];
 }
 

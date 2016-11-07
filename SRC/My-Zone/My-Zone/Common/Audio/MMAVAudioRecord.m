@@ -25,9 +25,16 @@ static const CGFloat recordTimerInterval = 0.08;
 {
     self = [super init];
     if (self) {
-        [self recorder];
+        [self setAudioSession];
     }
     return self;
+}
+
+-(void)setAudioSession{
+    AVAudioSession *audioSession=[AVAudioSession sharedInstance];
+    //设置为播放和录音状态，以便可以在录制完之后播放录音
+    [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+    [audioSession setActive:YES error:nil];
 }
 
 - (NSURL *)getSavePath {
