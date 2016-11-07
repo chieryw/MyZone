@@ -380,7 +380,7 @@
         <scene sceneID="o2I-gs-FOl">
             <objects>
                 <navigationController id="rR8-qU-2Sp" customClass="MMBaseNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="测试" id="0f0-8Q-Auy"/>
+                    <tabBarItem key="tabBarItem" title="测试" image="Edit" selectedImage="Edit" id="0f0-8Q-Auy"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="k2u-mj-p1p">
@@ -1282,6 +1282,7 @@
     <resources>
         <image name="AddPhoto" width="37" height="37"/>
         <image name="BackImage1" width="540" height="960"/>
+        <image name="Edit" width="20" height="20"/>
         <image name="Forward" width="40" height="40"/>
         <image name="FriendsIcon" width="20" height="16"/>
         <image name="GoodEvaluteBig" width="46" height="48"/>
