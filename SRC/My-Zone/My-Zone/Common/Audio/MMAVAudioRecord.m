@@ -50,11 +50,11 @@ static const CGFloat recordTimerInterval = 0.08;
     NSMutableDictionary *dicM=[NSMutableDictionary dictionary];
     //设置录音格式
     [dicM setObject:@(kAudioFormatLinearPCM) forKey:AVFormatIDKey];
-    //设置录音采样率，8000是电话采样率，对于一般录音已经够了
+    //设置录音采样率，8000是电话采样率，对于一般录音已经够了，录音一般使用44100采样率
     [dicM setObject:@(8000) forKey:AVSampleRateKey];
     //设置通道,这里采用单声道
     [dicM setObject:@(1) forKey:AVNumberOfChannelsKey];
-    //每个采样点位数,分为8、16、24、32
+    //每个采样点位数,分为8、16、24、32 默认给出的是16
     [dicM setObject:@(8) forKey:AVLinearPCMBitDepthKey];
     //是否使用浮点数采样
     [dicM setObject:@(YES) forKey:AVLinearPCMIsFloatKey];
