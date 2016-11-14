@@ -30,7 +30,6 @@
  @param clientData 回调时传递的参数
  */
 void soundCompleteCallback(SystemSoundID soundID,void * clientData){
-    NSLog(@"播放完成...");
     if ([[MMSystemSoundServie getInstance] completeHandle]) {
         [MMSystemSoundServie getInstance].completeHandle(soundID,clientData);
         // 执行完成回调之后，将回调数据置为nil，方便下次使用

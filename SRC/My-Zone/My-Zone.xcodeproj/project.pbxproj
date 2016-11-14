@@ -241,6 +241,9 @@
 		29DC474D1BEF8265003A1769 /* MMUserCenterHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29DC474C1BEF8265003A1769 /* MMUserCenterHeaderView.xib */; };
 		29DC47511BEF84B6003A1769 /* MMUserCenterDefaultCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DC474F1BEF84B6003A1769 /* MMUserCenterDefaultCell.m */; };
 		29DC47521BEF84B6003A1769 /* MMUserCenterDefaultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29DC47501BEF84B6003A1769 /* MMUserCenterDefaultCell.xib */; };
+		29DD5C9E1DD4FF5700DAF378 /* MMAVAudioSessionServieVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DD5C9D1DD4FF5700DAF378 /* MMAVAudioSessionServieVC.m */; };
+		29DD5CA11DD8E8E400DAF378 /* MMAudioCoreRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DD5CA01DD8E8E400DAF378 /* MMAudioCoreRecorder.m */; };
+		29DD5CA41DD92BA300DAF378 /* MMAudioCorePlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29DD5CA31DD92BA300DAF378 /* MMAudioCorePlayer.m */; };
 		29E5E92C1BDCC2210016DCFC /* MMUserDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E5E92B1BDCC2210016DCFC /* MMUserDetailVC.m */; };
 		29E5E9331BDCD28D0016DCFC /* MMDetailImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E5E9311BDCD28D0016DCFC /* MMDetailImageCell.m */; };
 		29E5E9341BDCD28D0016DCFC /* MMDetailImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29E5E9321BDCD28D0016DCFC /* MMDetailImageCell.xib */; };
@@ -726,6 +729,12 @@
 		29DC474E1BEF84B6003A1769 /* MMUserCenterDefaultCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMUserCenterDefaultCell.h; sourceTree = "<group>"; };
 		29DC474F1BEF84B6003A1769 /* MMUserCenterDefaultCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMUserCenterDefaultCell.m; sourceTree = "<group>"; };
 		29DC47501BEF84B6003A1769 /* MMUserCenterDefaultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MMUserCenterDefaultCell.xib; sourceTree = "<group>"; };
+		29DD5C9C1DD4FF5700DAF378 /* MMAVAudioSessionServieVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAVAudioSessionServieVC.h; sourceTree = "<group>"; };
+		29DD5C9D1DD4FF5700DAF378 /* MMAVAudioSessionServieVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAVAudioSessionServieVC.m; sourceTree = "<group>"; };
+		29DD5C9F1DD8E8E400DAF378 /* MMAudioCoreRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAudioCoreRecorder.h; sourceTree = "<group>"; };
+		29DD5CA01DD8E8E400DAF378 /* MMAudioCoreRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAudioCoreRecorder.m; sourceTree = "<group>"; };
+		29DD5CA21DD92BA300DAF378 /* MMAudioCorePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAudioCorePlayer.h; sourceTree = "<group>"; };
+		29DD5CA31DD92BA300DAF378 /* MMAudioCorePlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAudioCorePlayer.m; sourceTree = "<group>"; };
 		29E5E92A1BDCC2210016DCFC /* MMUserDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMUserDetailVC.h; sourceTree = "<group>"; };
 		29E5E92B1BDCC2210016DCFC /* MMUserDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMUserDetailVC.m; sourceTree = "<group>"; };
 		29E5E9301BDCD28D0016DCFC /* MMDetailImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMDetailImageCell.h; sourceTree = "<group>"; };
@@ -844,6 +853,10 @@
 				2935B25E1DC0A81A00455C98 /* MMAVAudioPlayer.m */,
 				2923142F1DD0DA1500E92C8C /* MMAVAudioRecord.h */,
 				292314301DD0DA1500E92C8C /* MMAVAudioRecord.m */,
+				29DD5C9F1DD8E8E400DAF378 /* MMAudioCoreRecorder.h */,
+				29DD5CA01DD8E8E400DAF378 /* MMAudioCoreRecorder.m */,
+				29DD5CA21DD92BA300DAF378 /* MMAudioCorePlayer.h */,
+				29DD5CA31DD92BA300DAF378 /* MMAudioCorePlayer.m */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -1039,6 +1052,8 @@
 				2997168A1DCFD96000FE47E7 /* MMMPMediaPlayerControllerVC.m */,
 				2997168C1DCFEE4900FE47E7 /* MMAVAudioRecordVC.h */,
 				2997168D1DCFEE4900FE47E7 /* MMAVAudioRecordVC.m */,
+				29DD5C9C1DD4FF5700DAF378 /* MMAVAudioSessionServieVC.h */,
+				29DD5C9D1DD4FF5700DAF378 /* MMAVAudioSessionServieVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1799,6 +1814,7 @@
 				298D02A31BA3CB2800F5EDE7 /* NSDictionary+RACSequenceAdditions.m in Sources */,
 				29E7FE9E1BAD0F4600673A7D /* CALayer+Addition.m in Sources */,
 				298D02CA1BA3CB2800F5EDE7 /* RACImmediateScheduler.m in Sources */,
+				29DD5C9E1DD4FF5700DAF378 /* MMAVAudioSessionServieVC.m in Sources */,
 				29BD24CA1BEC868300D83C34 /* MMDetailUserEvaluteCell.m in Sources */,
 				29B0A3EF1BAEBA410016879F /* MMBaseNavigationController.m in Sources */,
 				298D02CB1BA3CB2800F5EDE7 /* RACIndexSetSequence.m in Sources */,
@@ -1866,6 +1882,7 @@
 				296BAB1A1C54A59500E585F6 /* MMNetServies.m in Sources */,
 				29AEA4B81BF4D4A200582F62 /* MMFriendsZoneVC.m in Sources */,
 				29E7FE971BAD095200673A7D /* UIColor+Addition.m in Sources */,
+				29DD5CA41DD92BA300DAF378 /* MMAudioCorePlayer.m in Sources */,
 				29AEA4B41BF4D1E900582F62 /* MMFriendsCell.m in Sources */,
 				2923142E1DD0CC6F00E92C8C /* MMRecordRadioLayer.m in Sources */,
 				29BC763F1BA6CB3000518755 /* MKAnnotationView+WebCache.m in Sources */,
@@ -1916,6 +1933,7 @@
 				298D02A41BA3CB2800F5EDE7 /* NSEnumerator+RACSequenceAdditions.m in Sources */,
 				29DC47511BEF84B6003A1769 /* MMUserCenterDefaultCell.m in Sources */,
 				298D01B41BA3C36400F5EDE7 /* MMLoginVC.m in Sources */,
+				29DD5CA11DD8E8E400DAF378 /* MMAudioCoreRecorder.m in Sources */,
 				2946B3341C422E010092D0BD /* NSMutableDictionary+Addition.m in Sources */,
 				2935B25A1DC09AAC00455C98 /* MMSystemSoundServieVC.m in Sources */,
 				2997168B1DCFD96000FE47E7 /* MMMPMediaPlayerControllerVC.m in Sources */,

@@ -99,7 +99,7 @@ static const CGFloat recordTimerInterval = 0.08;
 }
 
 - (void)start {
-    if (!self.recorder.isRecording) {
+    if (!self.recorder.isRecording && [self.recorder prepareToRecord]) {
         [self.recorder record];
         self.timer.fireDate = [NSDate date];
     }
