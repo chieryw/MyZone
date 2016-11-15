@@ -8,7 +8,7 @@
 
 #import "MMAudioCorePlayer.h"
 #import <AVFoundation/AVFoundation.h>
-
+#import "MMASBFormat.h"
 
 static const int kNumberBuffers = 3;                              // 1
 typedef struct {
@@ -38,7 +38,7 @@ static void HandleOutputBuffer (void                *aqData,
     if (pAqData->mIsRunning == 0) return;
     UInt32 numBytesReadFromFile;
     UInt32 numPackets = pAqData->mNumPacketsToRead;
-    AudioFileReadPackets (pAqData->mAudioFile,
+    AudioFileReadPacketData (pAqData->mAudioFile,
                           false,
                           &numBytesReadFromFile,
                           pAqData->mPacketDescs,
@@ -89,15 +89,40 @@ void DeriveBufferSize (AudioStreamBasicDescription ASBDesc,
 }
 
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self initSelf];
+    }
+    return self;
+}
+
+- (void)initSelf {
+    [MMASBFormat configASBFormat:&playerState.mDataFormat];
+    [self openAudioFileForPlayback];
+    [self settingPlaybackAudioQueueBufferSizeAndNumberOfPacketsToRead];
+}
+
+#pragma mark - Property setter
+- (void)setVolume:(CGFloat)volume {
+    _volume = volume;
+    
+    if ([self prepareForPlay]) {
+        if (AudioQueueSetParameter(playerState.mQueue, kAudioQueueParam_Volume, volume) == 0) {
+            NSLog(@"设置音效成功！");
+        }
+    }
+}
+
 // 创建文件路径
 - (NSString *)getSavePath {
     NSString *urlStr=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    urlStr=[urlStr stringByAppendingPathComponent:@"tempAudioRecord.caf"];
+    urlStr=[urlStr stringByAppendingPathComponent:@"tempAudioRecord.mp3"];
     return urlStr;
 }
 
-// 创建文件路径，用来存储音频数据
-- (void)createAudioSaveFile {
+- (void)openAudioFileForPlayback {
     
     CFURLRef audioFileURL =
     CFURLCreateFromFileSystemRepresentation (NULL,
@@ -105,27 +130,86 @@ void DeriveBufferSize (AudioStreamBasicDescription ASBDesc,
                                              strlen ([[self getSavePath] UTF8String]),
                                              false);
     
-    AudioFileCreateWithURL (audioFileURL,
-                            kAudioFileAIFFType,
-                            &playerState.mDataFormat,
-                            kAudioFileFlags_EraseFile,
-                            &playerState.mAudioFile);
+    OSStatus result = AudioFileOpenURL (audioFileURL,
+                      kAudioFileReadPermission,
+                      0,
+                      &playerState.mAudioFile
+                      );
+    if (result == 0) {
+        NSLog(@"文件读取成功！！！可以准备播放了");
+    }
+    
+    CFRelease (audioFileURL);
 }
 
-// 为录制设置初始ASB
-- (void)setupAudioFormat:(AudioStreamBasicDescription*)format {
-    format->mSampleRate = 44100.0;
+- (void)settingPlaybackAudioQueueBufferSizeAndNumberOfPacketsToRead {
+    UInt32 maxPacketSize;
+    UInt32 propertySize = sizeof (maxPacketSize);
+    AudioFileGetProperty (playerState.mAudioFile,
+                          kAudioFilePropertyPacketSizeUpperBound,
+                          &propertySize,
+                          &maxPacketSize);
     
-    format->mFormatID = kAudioFormatLinearPCM;
-    format->mFormatFlags =
-    kLinearPCMFormatFlagIsBigEndian
-    | kLinearPCMFormatFlagIsSignedInteger
-    | kLinearPCMFormatFlagIsPacked;
-    format->mFramesPerPacket  = 1;
-    format->mChannelsPerFrame = 2;
-    format->mBytesPerFrame    = format->mChannelsPerFrame * sizeof (SInt16);
-    format->mBytesPerPacket   = format->mBytesPerFrame;
-    format->mBitsPerChannel   = 16;
+    DeriveBufferSize (playerState.mDataFormat,
+                      maxPacketSize,
+                      0.5,
+                      &playerState.bufferByteSize,
+                      &playerState.mNumPacketsToRead);
+}
+
+- (BOOL)prepareForPlay {
+    OSStatus status;
+    status = AudioQueueNewOutput(&playerState.mDataFormat,
+                                 HandleOutputBuffer,
+                                 &playerState,
+                                 CFRunLoopGetCurrent(),
+                                 kCFRunLoopCommonModes,
+                                 0,
+                                 &playerState.mQueue);
+    
+    if (status == 0) return YES;
+    return NO;
+}
+
+- (void)play {
+    playerState.mCurrentPacket = true;
+    
+    if ([self prepareForPlay]) {
+        for (int i = 0; i < kNumberBuffers; ++i) {
+            AudioQueueAllocateBuffer (playerState.mQueue,
+                                      playerState.bufferByteSize,
+                                      &playerState.mBuffers[i]);
+            
+            HandleOutputBuffer (&playerState,
+                                playerState.mQueue,
+                                playerState.mBuffers[i]);
+        }
+        
+        
+        playerState.mIsRunning = true;
+        OSStatus status = AudioQueueStart(playerState.mQueue, NULL);
+        
+        if (status == 0) {
+            NSLog(@"当前录制对象已经开始");
+        }
+    }
+}
+
+- (void)stop {
+    playerState.mIsRunning = false;
+    
+    AudioQueueStop(playerState.mQueue, true);
+    
+    for (int i = 0; i < kNumberBuffers; i++) {
+        AudioQueueFreeBuffer(playerState.mQueue, playerState.mBuffers[i]);
+    }
+    
+    AudioQueueDispose(playerState.mQueue, true);
+    AudioFileClose(playerState.mAudioFile);
+}
+
+- (void)pause {
+    AudioQueuePause(playerState.mQueue);
 }
 
 @end

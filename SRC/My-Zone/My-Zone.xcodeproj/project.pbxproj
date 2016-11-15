@@ -15,6 +15,7 @@
 		291655BB1C846BA9009442DD /* MMHomeVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 291655BA1C846BA9009442DD /* MMHomeVM.m */; };
 		2917368E1BD3B1890050658E /* MMBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2917368D1BD3B1890050658E /* MMBaseTabBarController.m */; };
 		291768231C4D355C002AC1E9 /* MMLoginResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 291768221C4D355C002AC1E9 /* MMLoginResult.m */; };
+		291F23AB1DDB950D00E376F7 /* MMASBFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 291F23AA1DDB950D00E376F7 /* MMASBFormat.m */; };
 		291FC0011BB8EA6F00F55BAA /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 291FC0001BB8EA6F00F55BAA /* MBProgressHUD.m */; };
 		291FC0071BB8F33300F55BAA /* MMEnterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 291FC0061BB8F33300F55BAA /* MMEnterVC.m */; };
 		2923142E1DD0CC6F00E92C8C /* MMRecordRadioLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2923142D1DD0CC6F00E92C8C /* MMRecordRadioLayer.m */; };
@@ -289,6 +290,8 @@
 		2917368D1BD3B1890050658E /* MMBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMBaseTabBarController.m; sourceTree = "<group>"; };
 		291768211C4D355C002AC1E9 /* MMLoginResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMLoginResult.h; sourceTree = "<group>"; };
 		291768221C4D355C002AC1E9 /* MMLoginResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMLoginResult.m; sourceTree = "<group>"; };
+		291F23A91DDB950D00E376F7 /* MMASBFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMASBFormat.h; sourceTree = "<group>"; };
+		291F23AA1DDB950D00E376F7 /* MMASBFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMASBFormat.m; sourceTree = "<group>"; };
 		291FBFFF1BB8EA6F00F55BAA /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		291FC0001BB8EA6F00F55BAA /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		291FC0051BB8F33300F55BAA /* MMEnterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMEnterVC.h; sourceTree = "<group>"; };
@@ -857,6 +860,8 @@
 				29DD5CA01DD8E8E400DAF378 /* MMAudioCoreRecorder.m */,
 				29DD5CA21DD92BA300DAF378 /* MMAudioCorePlayer.h */,
 				29DD5CA31DD92BA300DAF378 /* MMAudioCorePlayer.m */,
+				291F23A91DDB950D00E376F7 /* MMASBFormat.h */,
+				291F23AA1DDB950D00E376F7 /* MMASBFormat.m */,
 			);
 			path = Audio;
 			sourceTree = "<group>";
@@ -1937,6 +1942,7 @@
 				2946B3341C422E010092D0BD /* NSMutableDictionary+Addition.m in Sources */,
 				2935B25A1DC09AAC00455C98 /* MMSystemSoundServieVC.m in Sources */,
 				2997168B1DCFD96000FE47E7 /* MMMPMediaPlayerControllerVC.m in Sources */,
+				291F23AB1DDB950D00E376F7 /* MMASBFormat.m in Sources */,
 				298D02F71BA3CB2800F5EDE7 /* UIStepper+RACSignalSupport.m in Sources */,
 				29616B321BC923CD000F66CE /* MMChooseBirthVC.m in Sources */,
 				298D02CE1BA3CB2800F5EDE7 /* RACKVOTrampoline.m in Sources */,

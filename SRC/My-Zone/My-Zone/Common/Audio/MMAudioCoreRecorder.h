@@ -11,8 +11,9 @@
 
 @interface MMAudioCoreRecorder : NSObject
 
+@property (nonatomic, readonly) CGFloat volume;
+
 - (void)startRecording;
 - (void)stopRecording;
-
 
 @end

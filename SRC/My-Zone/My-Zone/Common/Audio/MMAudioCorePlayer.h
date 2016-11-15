@@ -10,4 +10,11 @@
 
 @interface MMAudioCorePlayer : NSObject
 
+@property (nonatomic, assign) CGFloat volume;
+@property (nonatomic, assign) CGFloat progress;
+
+- (void)play;
+- (void)pause;
+- (void)stop;
+
 @end

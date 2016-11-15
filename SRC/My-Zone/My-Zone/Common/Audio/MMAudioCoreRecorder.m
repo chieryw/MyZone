@@ -8,7 +8,7 @@
 
 #import "MMAudioCoreRecorder.h"
 #import <AVFoundation/AVFoundation.h>
-
+#import "MMASBFormat.h"
 
 static const int kNumberBuffers = 3;
 typedef struct {
@@ -26,6 +26,9 @@ typedef struct {
 @interface MMAudioCoreRecorder (){
     AQRecorderState recordState;
 }
+
+@property (nonatomic, strong) NSTimer *timer;
+@property (nonatomic, readwrite) CGFloat volume;
 
 @end
 
@@ -109,20 +112,25 @@ OSStatus SetMagicCookieForFile (AudioQueueRef inQueue,
     return result;
 }
 
-// 为录制设置初始ASB
-- (void)setupAudioFormat:(AudioStreamBasicDescription*)format {
-    format->mSampleRate = 44100.0;
-    
-    format->mFormatID = kAudioFormatLinearPCM;
-    format->mFormatFlags =
-    kLinearPCMFormatFlagIsBigEndian
-    | kLinearPCMFormatFlagIsSignedInteger
-    | kLinearPCMFormatFlagIsPacked;
-    format->mFramesPerPacket  = 1;
-    format->mChannelsPerFrame = 2;
-    format->mBytesPerFrame    = format->mChannelsPerFrame * sizeof (SInt16);
-    format->mBytesPerPacket   = format->mBytesPerFrame;
-    format->mBitsPerChannel   = 16;
+- (void)dealloc {
+    [self.timer invalidate];
+    self.timer = nil;
+}
+
+// 初始化对象
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self initSelf];
+    }
+    return self;
+}
+
+// 初始化基础对象
+- (void)initSelf {
+    [MMASBFormat configASBFormat:&recordState.mDataFormat];
+    [self createAudioSaveFile];
 }
 
 // 使用存在的ASB信息
@@ -138,7 +146,8 @@ OSStatus SetMagicCookieForFile (AudioQueueRef inQueue,
 // 创建文件路径
 - (NSString *)getSavePath {
     NSString *urlStr=[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    urlStr=[urlStr stringByAppendingPathComponent:@"tempAudioRecord.caf"];
+    urlStr=[urlStr stringByAppendingPathComponent:@"tempAudioRecord.mp3"];
+    NSLog(@"文件录制的路径地址:%@",urlStr);
     return urlStr;
 }
 
@@ -156,12 +165,23 @@ OSStatus SetMagicCookieForFile (AudioQueueRef inQueue,
                             &recordState.mDataFormat,
                             kAudioFileFlags_EraseFile,
                             &recordState.mAudioFile);
+    CFRelease(audioFileURL);
+}
+
+- (NSTimer *)timer {
+    if (!_timer) {
+        _timer = [NSTimer scheduledTimerWithTimeInterval:0.02 block:^(NSTimer * _Nonnull timer) {
+            [self readVolume];
+        } repeats:YES];
+    }
+    return _timer;
+}
+
+- (void)readVolume {
+    
 }
 
 - (void)startRecording {
-    
-    [self setupAudioFormat:&recordState.mDataFormat];
-    [self createAudioSaveFile];
     recordState.mCurrentPacket = 0;
     
     OSStatus status;
@@ -182,10 +202,15 @@ OSStatus SetMagicCookieForFile (AudioQueueRef inQueue,
         
         recordState.mIsRunning = true;
         status = AudioQueueStart(recordState.mQueue, NULL);
+        
+        if (status == 0) {
+            NSLog(@"当前录制对象已经开始");
+        }
     }
 }
 
 - (void)stopRecording {
+    NSLog(@"当前录制已经结束！！！");
     recordState.mIsRunning = false;
     
     AudioQueueStop(recordState.mQueue, true);
