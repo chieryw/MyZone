@@ -74,12 +74,12 @@
     [paraDict setObjectSafe:self.model.userName forKey:@"name"];
     [paraDict setObjectSafe:self.model.password forKey:@"password"];
     
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    MBProgressHUDShowInSelfWithAnimation
     @weakify(self);
     [[MMNetServies postRequest:@"/u/login" resultContainer:[MMLoginResult new] paraDict:[paraDict copy] customInfo:nil] subscribeNext:^(id x) {
         @strongify(self);
         NSParameterAssert([x isKindOfClass:[MMLoginResult class]]);
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        MBProgressHUDHideWithAnimation
         
         MMLoginResult *result = (MMLoginResult *)x;
         if (![result.bstatus.code boolValue]) {
@@ -100,7 +100,7 @@
         
     } error:^(NSError *error) {
         @strongify(self);
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        MBProgressHUDHideWithAnimation
         [UIAlertView networkError];
     }];
 }
@@ -111,15 +111,15 @@
     [paraDict setObjectSafe:self.model.password forKey:@"password"];
     [paraDict setObjectSafe:self.model.checkString forKey:@"invitationCode"];
     
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    MBProgressHUDShowInSelfWithAnimation
     @weakify(self);
     [[MMNetServies postRequest:@"/u/register" resultContainer:[MMLoginResult new] paraDict:[paraDict copy] customInfo:nil] subscribeNext:^(id x) {
         NSParameterAssert([x isKindOfClass:[MMLoginResult class]]);
         @strongify(self);
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        MBProgressHUDHideWithAnimation
     } error:^(NSError *error) {
         @strongify(self);
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        MBProgressHUDHideWithAnimation
         [UIAlertView tipMessage:error.userInfo[@"description"]];
     }];
 }

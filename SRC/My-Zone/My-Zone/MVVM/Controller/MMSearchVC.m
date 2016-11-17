@@ -66,10 +66,10 @@
 #pragma mark - 更新视图
 - (void)updateLoading {
     if (self.model.showLoading) {
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        MBProgressHUDShowInSelfWithAnimation
     }
     else {
-        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        MBProgressHUDHideWithAnimation
     }
 }
 

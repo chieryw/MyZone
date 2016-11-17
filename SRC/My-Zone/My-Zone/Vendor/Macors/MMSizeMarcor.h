@@ -30,5 +30,7 @@
 #define networkDomain           @"http://210.51.190.83:8080"
 #define MMDebugUrl              @"http://localhost:3000"   // 测试使用的url
 
+#define MBProgressHUDShowInSelfWithAnimation                    [[MBProgressHUD showHUDAddedTo:self.view animated:YES] setColor:RGBA(0, 0, 0, 0.3)];
+#define MBProgressHUDHideWithAnimation                          [MBProgressHUD hideHUDForView:self.view animated:YES];
 
 #endif

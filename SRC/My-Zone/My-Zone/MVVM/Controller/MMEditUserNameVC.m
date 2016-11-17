@@ -38,12 +38,12 @@
         [paraDict setObjectSafe:humanDI forKey:@"humanID"];
         [paraDict setObjectSafe:self.userNameTF.text forKey:@"humanName"];
         
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        MBProgressHUDShowInSelfWithAnimation
         @weakify(self);
         [[MMNetServies postRequest:@"/u/setting/name" resultContainer:[MMSimpleResult new] paraDict:[paraDict copy] customInfo:nil] subscribeNext:^(id x) {
             NSParameterAssert([x isKindOfClass:[MMSimpleResult class]]);
             @strongify(self);
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            MBProgressHUDHideWithAnimation
             
 //            NSNumber *networkState = searchResult.resultInfo.success;
 //            if ([networkState boolValue]) {

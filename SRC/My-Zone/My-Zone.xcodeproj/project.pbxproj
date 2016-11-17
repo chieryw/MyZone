@@ -255,6 +255,10 @@
 		29E7FE9B1BAD099000673A7D /* MMAppSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E7FE9A1BAD099000673A7D /* MMAppSetting.m */; };
 		29E7FE9E1BAD0F4600673A7D /* CALayer+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E7FE9D1BAD0F4600673A7D /* CALayer+Addition.m */; };
 		29EDED791DC1F0DA00B76C67 /* jazz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 29EDED781DC1F0DA00B76C67 /* jazz.mp3 */; };
+		29FD79521DDCEB67005DF1C9 /* MMAVPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FD79511DDCEB67005DF1C9 /* MMAVPlayer.m */; };
+		29FD79541DDCFFF3005DF1C9 /* AudioCore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29FD79531DDCFFF3005DF1C9 /* AudioCore.storyboard */; };
+		29FD79581DDD0249005DF1C9 /* Video.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29FD79571DDD0249005DF1C9 /* Video.storyboard */; };
+		29FD795B1DDD030D005DF1C9 /* MMAVPlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FD795A1DDD030D005DF1C9 /* MMAVPlayerVC.m */; };
 		642742781C9944EB00279525 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 642742771C9944EB00279525 /* libxml2.2.tbd */; };
 		646DB27C1C9852D100A76305 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 646DB27B1C9852D100A76305 /* Images.xcassets */; };
 		646DB2801C98532800A76305 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 646DB27F1C98532800A76305 /* Main.storyboard */; };
@@ -759,6 +763,12 @@
 		29E7FE9C1BAD0F4600673A7D /* CALayer+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Addition.h"; sourceTree = "<group>"; };
 		29E7FE9D1BAD0F4600673A7D /* CALayer+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Addition.m"; sourceTree = "<group>"; };
 		29EDED781DC1F0DA00B76C67 /* jazz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jazz.mp3; sourceTree = "<group>"; };
+		29FD79501DDCEB67005DF1C9 /* MMAVPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAVPlayer.h; sourceTree = "<group>"; };
+		29FD79511DDCEB67005DF1C9 /* MMAVPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAVPlayer.m; sourceTree = "<group>"; };
+		29FD79531DDCFFF3005DF1C9 /* AudioCore.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AudioCore.storyboard; sourceTree = "<group>"; };
+		29FD79571DDD0249005DF1C9 /* Video.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Video.storyboard; sourceTree = "<group>"; };
+		29FD79591DDD030D005DF1C9 /* MMAVPlayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMAVPlayerVC.h; sourceTree = "<group>"; };
+		29FD795A1DDD030D005DF1C9 /* MMAVPlayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMAVPlayerVC.m; sourceTree = "<group>"; };
 		58A2995BA505C5114E7E5EA2 /* libPods-My-Zone.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-My-Zone.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		642742751C9944D200279525 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
 		642742771C9944EB00279525 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
@@ -992,6 +1002,8 @@
 		298D01AD1BA3BA4900F5EDE7 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				29FD79571DDD0249005DF1C9 /* Video.storyboard */,
+				29FD79531DDCFFF3005DF1C9 /* AudioCore.storyboard */,
 				29C153B41BEE039000C7E5EB /* Login.storyboard */,
 			);
 			path = Storyboards;
@@ -1059,6 +1071,8 @@
 				2997168D1DCFEE4900FE47E7 /* MMAVAudioRecordVC.m */,
 				29DD5C9C1DD4FF5700DAF378 /* MMAVAudioSessionServieVC.h */,
 				29DD5C9D1DD4FF5700DAF378 /* MMAVAudioSessionServieVC.m */,
+				29FD79591DDD030D005DF1C9 /* MMAVPlayerVC.h */,
+				29FD795A1DDD030D005DF1C9 /* MMAVPlayerVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1571,11 +1585,21 @@
 		29F0FF661BA6EB9600F9CC59 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				29FD794F1DDCEB50005DF1C9 /* Video */,
 				2935B24E1DC0556500455C98 /* Audio */,
 				29E7FE991BAD099000673A7D /* MMAppSetting.h */,
 				29E7FE9A1BAD099000673A7D /* MMAppSetting.m */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		29FD794F1DDCEB50005DF1C9 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				29FD79501DDCEB67005DF1C9 /* MMAVPlayer.h */,
+				29FD79511DDCEB67005DF1C9 /* MMAVPlayer.m */,
+			);
+			path = Video;
 			sourceTree = "<group>";
 		};
 		84A42F7FB59AC7DF73A3266B /* Frameworks */ = {
@@ -1706,6 +1730,7 @@
 				29EDED791DC1F0DA00B76C67 /* jazz.mp3 in Resources */,
 				298D01931BA3B87B00F5EDE7 /* LaunchScreen.xib in Resources */,
 				2998BEBE1DB76F1B00997F61 /* cube@2x.png in Resources */,
+				29FD79581DDD0249005DF1C9 /* Video.storyboard in Resources */,
 				2998BEBA1DB76F1B00997F61 /* niconiconi@2x.gif in Resources */,
 				2998BEC01DB76F1B00997F61 /* mew_baseline.jpg in Resources */,
 				299B1C391BD7AA6C005D3B08 /* MMHotZoneCell.xib in Resources */,
@@ -1727,6 +1752,7 @@
 				2998BEB81DB76F1B00997F61 /* ResourceTwitter.bundle in Resources */,
 				2998BEC21DB76F1B00997F61 /* mew_baseline.png in Resources */,
 				646DB2801C98532800A76305 /* Main.storyboard in Resources */,
+				29FD79541DDCFFF3005DF1C9 /* AudioCore.storyboard in Resources */,
 				2998BEC51DB76F1B00997F61 /* mew_interlaced.gif in Resources */,
 				2998BEBF1DB76F1B00997F61 /* wall-e@2x.webp in Resources */,
 				29C153B51BEE039000C7E5EB /* Login.storyboard in Resources */,
@@ -1936,6 +1962,7 @@
 				29AD54B41BD7D82B00087A14 /* MMHotZoneCellModel.m in Sources */,
 				298D02DF1BA3CB2800F5EDE7 /* RACSubject.m in Sources */,
 				298D02A41BA3CB2800F5EDE7 /* NSEnumerator+RACSequenceAdditions.m in Sources */,
+				29FD79521DDCEB67005DF1C9 /* MMAVPlayer.m in Sources */,
 				29DC47511BEF84B6003A1769 /* MMUserCenterDefaultCell.m in Sources */,
 				298D01B41BA3C36400F5EDE7 /* MMLoginVC.m in Sources */,
 				29DD5CA11DD8E8E400DAF378 /* MMAudioCoreRecorder.m in Sources */,
@@ -1962,6 +1989,7 @@
 				291655BB1C846BA9009442DD /* MMHomeVM.m in Sources */,
 				298D02A21BA3CB2800F5EDE7 /* NSData+RACSupport.m in Sources */,
 				298D02CF1BA3CB2800F5EDE7 /* RACMulticastConnection.m in Sources */,
+				29FD795B1DDD030D005DF1C9 /* MMAVPlayerVC.m in Sources */,
 				298D02B81BA3CB2800F5EDE7 /* RACArraySequence.m in Sources */,
 				295FC3531C82D8DD00914633 /* MMGuideInfoResult.m in Sources */,
 				29AD870A1BF0D60D00BDC882 /* MMRemoveCacheCell.m in Sources */,

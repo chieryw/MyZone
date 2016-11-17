@@ -59,7 +59,7 @@ static void HandleOutputBuffer (void                *aqData,
     }
 }
 
-void DeriveBufferSize (AudioStreamBasicDescription ASBDesc,
+void DeriveBufferSizeForPlay (AudioStreamBasicDescription ASBDesc,
                        UInt32                      maxPacketSize,
                        Float64                     seconds,
                        UInt32                      *outBufferSize,
@@ -150,7 +150,7 @@ void DeriveBufferSize (AudioStreamBasicDescription ASBDesc,
                           &propertySize,
                           &maxPacketSize);
     
-    DeriveBufferSize (playerState.mDataFormat,
+    DeriveBufferSizeForPlay (playerState.mDataFormat,
                       maxPacketSize,
                       0.5,
                       &playerState.bufferByteSize,

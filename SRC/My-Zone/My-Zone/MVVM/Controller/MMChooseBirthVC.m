@@ -85,7 +85,7 @@
         NSMutableDictionary *paraDict = [NSMutableDictionary new];
         [paraDict setObjectSafe:humanDI forKey:@"humanID"];
         [paraDict setObjectSafe:self.tempDate forKey:@"brithday"];
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        MBProgressHUDShowInSelfWithAnimation
         
         @weakify(self);
         [[MMNetServies postRequest:@"/u/brithday"
@@ -102,7 +102,7 @@
 //                [UIAlertView tipMessage:searchResult.resultInfo.message];
             }
             else {
-                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                MBProgressHUDHideWithAnimation
             }
         }];
     }
