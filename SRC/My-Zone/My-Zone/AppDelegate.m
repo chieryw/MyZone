@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "TalkingData.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    [self configureTalkingData];
     // 配置对应的UI显示
     [self configureApplication:application];
     
@@ -49,6 +51,11 @@
 }
 
 #pragma mark - 辅助函数
+
+- (void)configureTalkingData {
+     [TalkingData sessionStarted:@"B04CEB4F2DF444D981A92E995CCC4CB9" withChannelId:@"channelApplication"];
+}
+
 // 做一些UI上的预设置
 - (void)configureApplication:(UIApplication *)application {
     

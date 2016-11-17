@@ -33,6 +33,11 @@
 		29467FE21BEC8F310052B19B /* MMDetailUserDescriptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 29467FE01BEC8F310052B19B /* MMDetailUserDescriptionCell.xib */; };
 		2946B3331C422E010092D0BD /* NSData+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 2946B3301C422E010092D0BD /* NSData+Addition.m */; };
 		2946B3341C422E010092D0BD /* NSMutableDictionary+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 2946B3321C422E010092D0BD /* NSMutableDictionary+Addition.m */; };
+		295E03921DDE534800C1EAD0 /* libTalkingData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 295E03901DDE534800C1EAD0 /* libTalkingData.a */; };
+		295E03941DDE538000C1EAD0 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295E03931DDE538000C1EAD0 /* AdSupport.framework */; };
+		295E03961DDE538D00C1EAD0 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295E03951DDE538D00C1EAD0 /* CoreTelephony.framework */; };
+		295E03981DDE539400C1EAD0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295E03971DDE539400C1EAD0 /* CoreMotion.framework */; };
+		295E039A1DDE53A700C1EAD0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 295E03991DDE53A700C1EAD0 /* SystemConfiguration.framework */; };
 		295FC3501C82D8A200914633 /* MMFriendsInfoResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 295FC34F1C82D8A200914633 /* MMFriendsInfoResult.m */; };
 		295FC3531C82D8DD00914633 /* MMGuideInfoResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 295FC3521C82D8DD00914633 /* MMGuideInfoResult.m */; };
 		295FC3561C82DABF00914633 /* MMInviteGuideResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 295FC3551C82DABF00914633 /* MMInviteGuideResult.m */; };
@@ -326,6 +331,12 @@
 		2946B3301C422E010092D0BD /* NSData+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Addition.m"; sourceTree = "<group>"; };
 		2946B3311C422E010092D0BD /* NSMutableDictionary+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Addition.h"; sourceTree = "<group>"; };
 		2946B3321C422E010092D0BD /* NSMutableDictionary+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Addition.m"; sourceTree = "<group>"; };
+		295E03901DDE534800C1EAD0 /* libTalkingData.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTalkingData.a; sourceTree = "<group>"; };
+		295E03911DDE534800C1EAD0 /* TalkingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TalkingData.h; sourceTree = "<group>"; };
+		295E03931DDE538000C1EAD0 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		295E03951DDE538D00C1EAD0 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		295E03971DDE539400C1EAD0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		295E03991DDE53A700C1EAD0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		295FC34E1C82D8A200914633 /* MMFriendsInfoResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMFriendsInfoResult.h; sourceTree = "<group>"; };
 		295FC34F1C82D8A200914633 /* MMFriendsInfoResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMFriendsInfoResult.m; sourceTree = "<group>"; };
 		295FC3511C82D8DD00914633 /* MMGuideInfoResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMGuideInfoResult.h; sourceTree = "<group>"; };
@@ -782,13 +793,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				295E039A1DDE53A700C1EAD0 /* SystemConfiguration.framework in Frameworks */,
+				297B2DEF1C99582D008FE231 /* Security.framework in Frameworks */,
+				295E03981DDE539400C1EAD0 /* CoreMotion.framework in Frameworks */,
+				295E03961DDE538D00C1EAD0 /* CoreTelephony.framework in Frameworks */,
+				295E03941DDE538000C1EAD0 /* AdSupport.framework in Frameworks */,
 				2998BEF11DB8ACC400997F61 /* libPods-My-Zone.a in Frameworks */,
 				29C42B361C99AB28007D4EF7 /* libiconv.tbd in Frameworks */,
 				29C42B341C99A97C007D4EF7 /* libresolv.tbd in Frameworks */,
-				297B2DEF1C99582D008FE231 /* Security.framework in Frameworks */,
 				297B2DED1C995823008FE231 /* CFNetwork.framework in Frameworks */,
 				642742781C9944EB00279525 /* libxml2.2.tbd in Frameworks */,
 				29CD74CC1C422F0E0087065F /* libz.tbd in Frameworks */,
+				295E03921DDE534800C1EAD0 /* libTalkingData.a in Frameworks */,
 				2941E9C21BF78BE400F9F29F /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -806,6 +822,8 @@
 		29152CD31BBABFC200A626BB /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				295E03901DDE534800C1EAD0 /* libTalkingData.a */,
+				295E03911DDE534800C1EAD0 /* TalkingData.h */,
 				29152CD11BBABFB700A626BB /* MobileCoreServices.framework */,
 			);
 			name = Framework;
@@ -1605,6 +1623,10 @@
 		84A42F7FB59AC7DF73A3266B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				295E03991DDE53A700C1EAD0 /* SystemConfiguration.framework */,
+				295E03971DDE539400C1EAD0 /* CoreMotion.framework */,
+				295E03951DDE538D00C1EAD0 /* CoreTelephony.framework */,
+				295E03931DDE538000C1EAD0 /* AdSupport.framework */,
 				2998BEEF1DB8A52B00997F61 /* libPods-My-Zone.a */,
 				2998BEED1DB7793E00997F61 /* Accelerate.framework */,
 				2998BEEB1DB7793300997F61 /* ImageIO.framework */,
@@ -2179,7 +2201,10 @@
 				INFOPLIST_FILE = "My-Zone/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-all_load",
@@ -2221,7 +2246,10 @@
 				INFOPLIST_FILE = "My-Zone/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
 					"-all_load",
