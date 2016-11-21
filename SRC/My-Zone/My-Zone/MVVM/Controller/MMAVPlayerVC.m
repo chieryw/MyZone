@@ -91,7 +91,6 @@
     [self.player setVolume:sender.value];
 }
 
-
 - (IBAction)play:(UIButton *)sender {
     if (sender.selected) {
         sender.selected = NO;

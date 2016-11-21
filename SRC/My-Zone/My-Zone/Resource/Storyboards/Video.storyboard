@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C48b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qVe-IQ-mk6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16C48b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qVe-IQ-mk6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,6 +38,26 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="z5v-7Q-iPF" kind="show" id="19J-Zf-YAY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Xqh-Rc-zBE" style="IBUITableViewCellStyleDefault" id="3Qq-1G-tog">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Qq-1G-tog" id="eBe-wz-Twr">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="IJKMediaPlayer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xqh-Rc-zBE">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="8of-sy-mHH" kind="show" id="wcf-TB-uMd"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -185,7 +205,57 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJe-nO-4s8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2458" y="4875"/>
+            <point key="canvasLocation" x="2388" y="4637"/>
+        </scene>
+        <!--网络视频播放-->
+        <scene sceneID="81Q-UM-x1u">
+            <objects>
+                <viewController id="8of-sy-mHH" customClass="MMIJKMediaPlayerVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mG8-gi-4Rf"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Sv-JI-VTV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t5k-vz-b33">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZpZ-h0-2WK">
+                                <rect key="frame" x="162" y="548" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="sGL-Js-xzS"/>
+                                    <constraint firstAttribute="width" constant="50" id="yCt-YT-qjx"/>
+                                </constraints>
+                                <state key="normal" image="Play"/>
+                                <state key="selected" image="Pause"/>
+                                <connections>
+                                    <action selector="Play:" destination="8of-sy-mHH" eventType="touchUpInside" id="tQv-qK-u67"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ze-bS-SyB">
+                                <rect key="frame" x="0.0" y="64" width="375" height="240"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="X3n-Rk-rhW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="7Ze-bS-SyB" secondAttribute="trailing" id="Wbm-NG-o6Y"/>
+                            <constraint firstItem="7Ze-bS-SyB" firstAttribute="top" secondItem="mG8-gi-4Rf" secondAttribute="bottom" id="eoD-Pg-BRR"/>
+                            <constraint firstItem="ZpZ-h0-2WK" firstAttribute="centerX" secondItem="t5k-vz-b33" secondAttribute="centerX" id="h1S-XX-0Db"/>
+                            <constraint firstItem="7Ze-bS-SyB" firstAttribute="leading" secondItem="t5k-vz-b33" secondAttribute="leading" id="o8b-x7-6Xn"/>
+                            <constraint firstItem="9Sv-JI-VTV" firstAttribute="top" secondItem="ZpZ-h0-2WK" secondAttribute="bottom" constant="20" id="y1Z-C0-Mr5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="网络视频播放" id="wre-PJ-GYZ"/>
+                    <connections>
+                        <outlet property="playerView" destination="7Ze-bS-SyB" id="3LO-h2-eGn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ejo-M1-dlr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2388" y="5645.1274362818594"/>
         </scene>
     </scenes>
     <resources>
